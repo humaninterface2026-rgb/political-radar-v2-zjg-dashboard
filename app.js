@@ -53,58 +53,61 @@ const YELLOW_RATIO_WARN = 0.40;   // 40% non-green: yellow banner
 
 const DEFAULT_HOTSPOTS = [
   {
-    title: '台中槍案',
-    place: '台中市西區府後街',
-    lat: 24.1388,
-    lng: 120.6697,
+    title: '消防超勤爭議',
+    place: '雲林縣政府（斗六）',
+    lat: 23.7075,
+    lng: 120.5439,
     level: 'red',
     source: 'news',
     platform: '新聞',
-    note: '社會治安高關注事件'
+    note: '消防員加班補償／嘉獎爭議'
   }
 ];
 
 const COMMENT_EVENT_RULES = [
   {
-    title: '廚餘山',
-    place: '台中市霧峰區',
-    lat: 24.046,
-    lng: 120.698,
+    title: '消防超勤爭議',
+    place: '雲林縣政府（斗六）',
+    lat: 23.7075,
+    lng: 120.5439,
     level: 'red',
-    keywords: ['廚餘山', '廚餘']
+    keywords: ['消防', '超勤', '加班', '嘉獎', '補償']
   },
   {
-    title: '垃圾山',
-    place: '台中市大里區',
-    lat: 24.104,
-    lng: 120.69,
+    title: '議員衝突',
+    place: '雲林（斗六）',
+    lat: 23.7120,
+    lng: 120.5400,
     level: 'red',
-    keywords: ['垃圾山', '垃圾掩埋場']
+    keywords: ['賞巴掌', '霸凌', '議員']
   },
   {
-    title: '捷運藍線爭議',
-    place: '台中市政府（西屯）',
-    lat: 24.1617,
-    lng: 120.6469,
+    title: '六輕／空污',
+    place: '麥寮鄉',
+    lat: 23.7906,
+    lng: 120.2535,
     level: 'yellow',
-    keywords: ['捷運', '藍線']
+    keywords: ['六輕', '麥寮', '空污', '污染']
   },
   {
-    title: '行人地獄討論',
-    place: '台中市中區',
-    lat: 24.1402,
-    lng: 120.6839,
+    title: '農業議題',
+    place: '虎尾／西螺',
+    lat: 23.7079,
+    lng: 120.4318,
     level: 'yellow',
-    keywords: ['行人地獄']
+    keywords: ['農業', '農民', '稻', '花生']
   }
 ];
 
 const LOCATION_HINTS = [
-  { k: '府後街', place: '台中市西區府後街', lat: 24.1388, lng: 120.6697 },
-  { k: '霧峰', place: '台中市霧峰區', lat: 24.046, lng: 120.698 },
-  { k: '大里', place: '台中市大里區', lat: 24.104, lng: 120.69 },
-  { k: '西屯', place: '台中市西屯區', lat: 24.1818, lng: 120.6252 },
-  { k: '西區', place: '台中市西區', lat: 24.1437, lng: 120.6626 }
+  { k: '斗六', place: '雲林縣斗六市', lat: 23.7075, lng: 120.5439 },
+  { k: '虎尾', place: '雲林縣虎尾鎮', lat: 23.7079, lng: 120.4318 },
+  { k: '麥寮', place: '雲林縣麥寮鄉', lat: 23.7906, lng: 120.2535 },
+  { k: '北港', place: '雲林縣北港鎮', lat: 23.5755, lng: 120.3026 },
+  { k: '西螺', place: '雲林縣西螺鎮', lat: 23.7980, lng: 120.4658 },
+  { k: '斗南', place: '雲林縣斗南鎮', lat: 23.6797, lng: 120.4776 },
+  { k: '土庫', place: '雲林縣土庫鎮', lat: 23.6776, lng: 120.3920 },
+  { k: '古坑', place: '雲林縣古坑鄉', lat: 23.6420, lng: 120.5620 }
 ];
 
 function lightLevelByCount(c, avg){
