@@ -3118,7 +3118,7 @@ async function run(){
         }
       }
       if (byPlatAll) { if (isWeek) d.by_platform_7d = byPlatAll; else d.by_platform = byPlatAll; }
-      if (byPlatLu && !isWeek) d.mention_by_platform_24h = byPlatLu;
+      if (byPlatLu) { if (isWeek) d.mention_by_platform_7d = byPlatLu; else d.mention_by_platform_24h = byPlatLu; }
       if (latestFb)   d.latest_facebook_20 = latestFb;
       if (latestNews) d.latest_news_20 = latestNews;
       // latest_by_platform_24h/7d (dict)
@@ -3294,7 +3294,7 @@ async function run(){
   renderSelfFavorability(d.self_favorability_history_7d || []);
   renderTopicNarrative(d.topic_narrative_arc_7d || {});
 
-  const byPlatform = pick(d, 'by_platform', 'by_platform_7d') || [];
+  const byPlatform = pick(d, 'mention_by_platform_24h', 'mention_by_platform_7d') || [];
   const ul = document.getElementById('platforms'); ul.innerHTML='';
   byPlatform.forEach(x=>{ const li=document.createElement('li'); li.textContent=`${x.platform}: ${x.count}`; ul.appendChild(li); });
 
