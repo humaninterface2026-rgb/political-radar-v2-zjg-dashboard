@@ -430,7 +430,7 @@ function renderWarRoomRanking(voiceBreakdown, mentionArticles){
     });
 
     // 改：不再顯示「戰情分數」— 改顯示總曝光量
-    // 原本 (red+yellow) 越低越好的 framing 有 sampling bias 問題（4 人媒體曝光不對等）
+    // 原本 (red+yellow) 越低越好的 framing 有 sampling bias 問題（2 人媒體曝光不對等）
     const total = document.createElement('div');
     total.className = 'rank-score';
     total.innerHTML = `${e.total}<span class="score-label">則</span>`;
@@ -1319,7 +1319,7 @@ function renderIncidentMap(d){
   }
 
   if (!incidentMap) {
-    incidentMap = L.map('incidentMap', { scrollWheelZoom: false }).setView([24.15, 120.67], 11);
+    incidentMap = L.map('incidentMap', { scrollWheelZoom: false }).setView([23.71, 120.45], 10);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 18,
       attribution: '&copy; OpenStreetMap'
@@ -2102,10 +2102,10 @@ async function renderElectionForecast(){
   container.innerHTML = `
     ${totalCard}
     ${pollsCard}
-    <h3 style="margin-top:18px;color:#d8e2ff;font-size:14px">${isCountry ? '各縣市預測明細（22 個）' : '各都預測明細'}</h3>
+    <h3 style="margin-top:18px;color:#d8e2ff;font-size:14px">${isCountry ? '各鄉鎮市預測明細' : '各鄉鎮市預測明細'}</h3>
     <div class="forecast-city-list">${cityRows}</div>
     <p class="hint" style="margin-top:12px">
-      <strong>模型方法</strong>：每個里計算下屆總統選舉預測（加權近 5 屆得票 + momentum 趨勢延伸 ×0.3），
+      <strong>模型方法</strong>：每個里計算下屆縣長選舉預測（加權近 5 屆得票 + momentum 趨勢延伸 ×0.3），
       再以該里 2024 投票數作權重加總到縣市 / 6 都。${polls ? '另出一份「民調校正後」版本：對基本面預測套上 uniform swing。' : ''}<br>
       <strong>模型局限</strong>：${polls ? '即便有民調 swing，仍' : '純基本面，'}沒考慮現任效應、新政黨崛起、候選人組合差異、突發事件。<br>
       <strong>backtest（用 2008-2020 預測 2024）</strong>：村里級勝者準確率 85.5%，
@@ -2772,7 +2772,7 @@ function openMentionModal(name){
         const chip = document.createElement('span');
         chip.className = 'co-chip';
         chip.textContent = `🔗 共現：${co.join('、')}`;
-        chip.title = '此篇同時提及多位市長';
+        chip.title = '此篇同時提及多位候選人';
         li.appendChild(chip);
         li.appendChild(document.createTextNode(' '));
       }
@@ -3744,7 +3744,7 @@ async function run(){
         // 真實平台 total (byPlatform[idx].count 是圓餅圖那一塊的實際數字)
         const realTotal = byPlatform[idx]?.count || items.length;
         openArticlesModal(`平台分佈 — ${plat}（${modeLabel}）`,
-                          `命中 4 位市長關鍵字，平台 = ${plat}`,
+                          `命中 2 位候選人與雲林關鍵字，平台 = ${plat}`,
                           items, null,
                           {
                             newsFetchFn: (newLimit) =>

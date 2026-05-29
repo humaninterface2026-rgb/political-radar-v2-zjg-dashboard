@@ -184,10 +184,10 @@
   </section>
 
   <section class="panel" id="warRoomRankPanel">
-    <h2 data-window-label>📊 媒體曝光熱度（24h，4 人對比）</h2>
+    <h2 data-window-label>📊 媒體曝光熱度（24h，2 人對比）</h2>
     <p class="hint" id="warRoomRule">
-      4 人 24h 內<strong>媒體曝光量 + 紅黃綠分布</strong>。
-      ⚠️ <strong>不算分、不排好感度</strong> — 4 人媒體曝光不對等（首都市長 vs 立委），跨人比有 sampling bias。
+      2 人 24h 內<strong>媒體曝光量 + 紅黃綠分布</strong>。
+      ⚠️ <strong>不算分、不排好感度</strong> — 張嘉郡 vs 劉建國 媒體曝光量不一定對等、跨人比僅供參考。
       看自己縱向趨勢請看上面兩塊。
     </p>
     <div id="warRoomRankBoard" class="rank-board"></div>
@@ -284,7 +284,7 @@
   </section>
 
   <section class="panel" id="electionForecastPanel">
-    <h2>🔮 下屆總統選舉預測（基本面模型）</h2>
+    <h2>🔮 下屆縣長選舉預測（基本面模型）</h2>
     <p class="hint">把全國 7,738 個里級預測（5 屆歷史加權 + momentum 趨勢）×2024 投票數加總到縣市 / 全國 22 縣市。<strong>純歷史基本盤</strong>，沒民調沒全國風向。</p>
     <div id="forecastBody"></div>
   </section>
@@ -640,7 +640,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <!-- config.js 已提早到 <head> 載入、不需要再載一次 -->
   <script defer src="./lib/db.js?v=2026-05-19-feedback-loop"></script>
-  <script defer src="./app.js?v=2026-05-29-rpc-charts"></script>
+  <script defer src="./app.js?v=2026-05-29-zjg-labels"></script>
   <script>
     // Service Worker — 2nd-visit speed-up + offline fallback.
     // Registered after page load so it doesn't compete with critical resources.
