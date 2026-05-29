@@ -1,0 +1,77 @@
+{
+  "_doc": [
+    "民調整合設定檔 — 給 build_priority_map.py 讀，用來調整總統選舉預測。",
+    "",
+    "邏輯：",
+    "  swing[party] = vote_intention_now[party] - actual_2024[party]",
+    "  predicted_with_polls[v][party] = predicted_baseline[v][party] + swing[party]",
+    "  （之後再標準化成 sum=100）",
+    "",
+    "假設：「整體向某黨偏移 X pt」會均勻平移到所有里。這是 simplification — 真實",
+    "情境是各 demographic / 縣市 swing 不同，但 uniform swing 是常見的快速基準。",
+    "",
+    "更新方式：手動編輯本檔。建議來源 — 美麗島電子報、TVBS、政大選研中心、",
+    "台灣指標 等公開民調的『最近一次政黨支持度』或『2028 投票意向』(若候選人已定)。",
+    "",
+    "actual_2024 是中選會官方數字，固定不變。"
+  ],
+  "as_of": "2026-05-05",
+  "enabled": true,
+  "vote_intention_2028": {
+    "kmt": 28.4,
+    "dpp": 32.3,
+    "tpp": 18.3,
+    "_note": "自動取 RECENT_POLLS（5 個民調）平均；最後更新 2026-05-05"
+  },
+  "actual_2024": {
+    "kmt": 33.49,
+    "dpp": 40.05,
+    "tpp": 26.46,
+    "_note": "中選會 2024 總統選舉全國 22 縣市加權實際得票率"
+  },
+  "sources": [
+    {
+      "pollster": "美麗島電子報國政",
+      "date": "2026-04",
+      "url": "https://www.facebook.com/myFormosa/",
+      "n": 1075,
+      "note": "KMT 28.3 / DPP 32.1 / TPP 17.8"
+    },
+    {
+      "pollster": "台灣民意基金會",
+      "date": "2026-04",
+      "url": "https://www.tpof.org/",
+      "n": 1080,
+      "note": "KMT 26.5 / DPP 33.2 / TPP 19.4"
+    },
+    {
+      "pollster": "TVBS 民調中心",
+      "date": "2026-04",
+      "url": "https://news.tvbs.com.tw/poll-center",
+      "n": 1217,
+      "note": "KMT 30.5 / DPP 31.2 / TPP 17.2"
+    },
+    {
+      "pollster": "美麗島電子報國政",
+      "date": "2026-03",
+      "url": "https://www.facebook.com/myFormosa/",
+      "n": 1078,
+      "note": "KMT 27.8 / DPP 33.4 / TPP 18.2"
+    },
+    {
+      "pollster": "菱傳媒",
+      "date": "2026-03",
+      "url": "https://rwnews.tw/",
+      "n": 1024,
+      "note": "KMT 29.1 / DPP 31.8 / TPP 19.0"
+    }
+  ],
+  "limitations": [
+    "1. uniform swing：假設全國每個里都按同樣幅度偏移，無法捕捉地域 / 人口差異",
+    "2. 民調誤差：政黨支持度 != 投票意向，且民調本身有抽樣誤差 (±3%)",
+    "3. 2028 候選人未定：候選人個人魅力、配對效應未計入",
+    "4. 全國風向 / 突發事件：民調反映「今天」，2028 投票時可能很不同",
+    "5. 新政黨：若 2028 出現新政黨（類似 2024 的 TPP）— 模型完全無法捕捉"
+  ],
+  "auto_updated_at": "2026-05-05T22:50:50.196893+00:00"
+}

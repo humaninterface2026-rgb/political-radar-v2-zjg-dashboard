@@ -1,0 +1,8 @@
+*.bak
+*.bak.*
+.DS_Store
+*.swp
+*.dark-backup
+*.light-attempt
+*.dark-3015u-now
+*.3015u-new

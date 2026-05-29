@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cookie 政策｜政治戰情儀表板</title>
+  <link rel="stylesheet" href="./style.css?v=2026-05-20-legal" />
+</head>
+<body class="legal-page">
+  <header class="legal-header">
+    <a class="legal-back" href="./index.html">← 回儀表板</a>
+    <h1>Cookie 政策</h1>
+    <p class="legal-meta">最後更新：2026-05-20｜營運方：真人股份有限公司</p>
+  </header>
+
+  <main class="legal-body">
+    <section>
+      <h2>一、簡述</h2>
+      <p>
+        本儀表板（以下稱「本服務」）<strong>不使用追蹤型 Cookie</strong>。
+        我們僅在登入功能下使用瀏覽器內建的 <code>localStorage</code> 儲存登入會話（session token）、
+        不蒐集、不追蹤您在本服務以外的瀏覽行為。
+      </p>
+    </section>
+
+    <section>
+      <h2>二、什麼是 Cookie / localStorage</h2>
+      <p>
+        <strong>Cookie</strong> 是網站存放在您瀏覽器的小型文字檔、
+        通常用於記住登入狀態、語言偏好或追蹤使用行為。
+      </p>
+      <p>
+        <strong>localStorage</strong> 是現代瀏覽器提供的本地儲存機制、
+        資料只留在您的裝置內、不會自動隨每次連線傳送到伺服器（這跟 Cookie 不同）。
+      </p>
+    </section>
+
+    <section>
+      <h2>三、本服務使用哪些</h2>
+
+      <h3>3.1 必要技術項目（不可關閉、否則無法使用對應功能）</h3>
+      <table class="cookie-table">
+        <thead>
+          <tr>
+            <th>名稱</th><th>類型</th><th>用途</th><th>保存期限</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>lxy-auth</code></td>
+            <td>localStorage</td>
+            <td>儲存 Supabase 登入會話 token、讓您重新整理頁面後仍維持登入</td>
+            <td>登出時清除 / 一週自動失效</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="hint" style="color:#7a83a6">
+        ※ 僅在您於本服務點選「登入 / 註冊」並登入後產生。
+        未登入訪客的瀏覽器內、本項目不存在。
+      </p>
+
+      <h3>3.2 我們<strong>不</strong>使用的項目</h3>
+      <ul>
+        <li><strong>Google Analytics / GA4</strong> — 完全沒有</li>
+        <li><strong>Meta Pixel（Facebook 廣告追蹤）</strong> — 完全沒有</li>
+        <li><strong>第三方廣告 cookie</strong> — 完全沒有（本服務不投放廣告）</li>
+        <li><strong>跨網站追蹤 cookie</strong> — 完全沒有</li>
+        <li><strong>使用者行為熱圖（Hotjar / Microsoft Clarity）</strong> — 完全沒有</li>
+        <li><strong>Affiliate / 聯盟行銷 cookie</strong> — 完全沒有</li>
+      </ul>
+
+      <h3>3.3 第三方服務 cookie</h3>
+      <p>
+        本服務透過 CDN 載入以下第三方資源、彼等可能設定自家 cookie、不在本公司控管範圍：
+      </p>
+      <ul>
+        <li><strong>jsdelivr.net</strong>（CDN）— 載入 Chart.js / Supabase JS、純技術 cookie</li>
+        <li><strong>unpkg.com</strong>（CDN）— 載入 Leaflet 地圖元件</li>
+        <li><strong>OpenStreetMap tile server</strong> — 載入地圖磚、無 cookie</li>
+        <li><strong>Google News（新聞連結點擊後）</strong> — 點選新聞時導向 Google News 的 redirect URL、之後依 Google 自家 cookie 政策</li>
+      </ul>
+      <p>
+        若您對 CDN 提供的內容有疑慮、可在瀏覽器封鎖第三方 cookie、本服務功能不受影響。
+      </p>
+    </section>
+
+    <section>
+      <h2>四、如何管理 / 清除</h2>
+
+      <h3>4.1 清除本服務的 localStorage（等同登出）</h3>
+      <ol>
+        <li>登入後、點 header 右上「登出」按鈕、立即清除</li>
+        <li>或瀏覽器設定 → 隱私 → 清除瀏覽資料 → 勾選「網站資料」→ 套用至本服務網域</li>
+      </ol>
+
+      <h3>4.2 一般瀏覽器 Cookie 管理</h3>
+      <ul>
+        <li><strong>Chrome</strong>：設定 → 隱私和安全性 → Cookie 和其他網站資料</li>
+        <li><strong>Safari</strong>：偏好設定 → 隱私 → 管理網站資料</li>
+        <li><strong>Firefox</strong>：選項 → 隱私與安全 → Cookie 及網站資料</li>
+        <li><strong>Edge</strong>：設定 → Cookies 和網站權限</li>
+      </ul>
+
+      <h3>4.3 跨站追蹤封鎖</h3>
+      <p>
+        建議啟用瀏覽器「<strong>防止跨網站追蹤</strong>」設定（Safari / Firefox / Brave 內建）、
+        對保護您隱私有實質幫助、本服務功能不受影響。
+      </p>
+    </section>
+
+    <section>
+      <h2>五、Do Not Track（DNT）</h2>
+      <p>
+        本服務尊重您瀏覽器的「Do Not Track」設定。
+        但因本服務本身不追蹤、無論您是否啟用 DNT、效果相同。
+      </p>
+    </section>
+
+    <section>
+      <h2>六、變更通知</h2>
+      <p>
+        若本服務未來加入追蹤性或行銷性 cookie、會於本頁面公告變更內容、
+        並透過 dashboard 通知所有已登入用戶。
+        在您明示同意前、不會啟用任何追蹤性 cookie。
+      </p>
+    </section>
+
+    <section>
+      <h2>七、聯絡資訊</h2>
+      <p>
+        有 Cookie 使用疑問、請來信：
+        <a href="mailto:humaninterface2026@gmail.com">humaninterface2026@gmail.com</a>
+        <br>營運方：真人股份有限公司
+      </p>
+    </section>
+  </main>
+
+  <footer class="legal-footer">
+    <a href="./about.html">關於我們</a>
+    <span class="sep">·</span>
+    <a href="./contact.html">聯絡我們</a>
+    <span class="sep">·</span>
+    <a href="./terms.html">服務條款</a>
+    <span class="sep">·</span>
+    <a href="./privacy.html">隱私權政策</a>
+    <span class="sep">·</span>
+    <a href="./cookies.html">Cookie 政策</a>
+    <span class="sep">·</span>
+    <a href="./copyright.html">著作權聲明</a>
+    <span class="sep">·</span>
+    <a href="./disclaimer.html">免責聲明</a>
+    <span class="sep">·</span>
+    <span>© 2026 真人股份有限公司</span>
+  </footer>
+</body>
+</html>

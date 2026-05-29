@@ -1,0 +1,19 @@
+{
+  "site_name": "雲林政治戰情儀表板（張嘉郡）",
+  "generated_at": "2026-05-29T12:33:21.918708+00:00",
+  "metrics": {
+    "total": 0,
+    "news": 0,
+    "prev": 0,
+    "growth_pct": 0,
+    "window_hours": 24
+  },
+  "metrics_7d": {
+    "total": 0,
+    "news": 0,
+    "prev": 0,
+    "growth_pct": 0,
+    "window_hours": 168
+  },
+  "_note": "auth-gated dashboard：真實資料由登入後的 Supabase RPC 提供、不 bundle 在靜態檔"
+}

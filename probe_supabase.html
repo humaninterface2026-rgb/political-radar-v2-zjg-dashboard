@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>LxyDB Probe — Supabase 連線測試</title>
+  <style>
+    body { font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+           background: #1a1a1a; color: #ddd; padding: 24px;
+           max-width: 1100px; margin: 0 auto; line-height: 1.6; }
+    h1 { color: #6bd; margin: 0 0 8px; }
+    h2 { color: #fc6; margin-top: 32px; border-bottom: 1px solid #333;
+         padding-bottom: 4px; }
+    .box { background: #222; padding: 12px 16px; border-radius: 6px;
+           margin: 8px 0; border-left: 3px solid #444; }
+    .ok { border-left-color: #6c6; }
+    .fail { border-left-color: #c66; }
+    .pending { border-left-color: #cc6; }
+    button { background: #345; color: white; border: 0; padding: 6px 14px;
+             border-radius: 4px; cursor: pointer; font-family: inherit;
+             margin: 4px 4px 4px 0; }
+    button:hover { background: #456; }
+    pre { background: #111; padding: 12px; border-radius: 4px;
+          overflow-x: auto; max-height: 320px; font-size: 12px; }
+    .meta { color: #888; font-size: 12px; }
+    .key { color: #6c6; }
+    .err { color: #f66; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    th, td { border: 1px solid #333; padding: 6px 10px; text-align: left; }
+    th { background: #2a2a2a; color: #6bd; }
+    .platform-fb { color: #6bd; }
+    .platform-ig { color: #d6b; }
+    .platform-th { color: #cb6; }
+  </style>
+</head>
+<body>
+  <h1>LxyDB Probe</h1>
+  <p class="meta">
+    驗證 dashboard/lib/db.js 從瀏覽器讀 Supabase 是否正常。<br>
+    用 anon key + RLS — 只能讀、不能寫。寫了一個惡意 INSERT 也會被擋。
+  </p>
+
+  <div>
+    <button onclick="runPing()">1. ping</button>
+    <button onclick="runSignals()">2. signalsByPlatform</button>
+    <button onclick="runComments()">3. recentComments × 3</button>
+    <button onclick="runEvents()">4. recentEvents</button>
+    <button onclick="runSources()">5. listSources</button>
+    <button onclick="runRealtime()">6. realtime subscribe</button>
+    <button onclick="runRlsTest()">7. RLS 防護測試 (寫看看)</button>
+    <button onclick="runAll()" style="background:#5a3;">▶ Run all 1-5</button>
+  </div>
+
+  <h2>結果</h2>
+  <div id="out"></div>
+
+  <!-- 依賴順序：supabase-js → config → db -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./lib/config.js"></script>
+  <script src="./lib/db.js"></script>
+  <script>
+  const out = document.getElementById('out');
+
+  function box(label, status, body) {
+    const div = document.createElement('div');
+    div.className = 'box ' + status;
+    const meta = '<div class="key">' + label + '</div>';
+    div.innerHTML = meta + body;
+    out.prepend(div);
+  }
+
+  function pre(obj) {
+    return '<pre>' + JSON.stringify(obj, null, 2)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</pre>';
+  }
+
+  async function runPing() {
+    try {
+      const r = await LxyDB.ping();
+      box('① ping', 'ok',
+        'sources_count=' + r.sources_count + ', elapsed=' + r.elapsed_ms + 'ms');
+    } catch (e) {
+      box('① ping', 'fail', '<span class="err">' + e.message + '</span>');
+    }
+  }
+
+  async function runSignals() {
+    try {
+      const r = await LxyDB.signalsByPlatform();
+      let rows = '<table><tr><th>Platform</th><th>Total</th><th>🔴 red</th><th>🟡 yellow</th><th>🟢 green</th><th>updated_at</th></tr>';
+      for (const p of ['facebook', 'instagram', 'threads']) {
+        const b = r[p];
+        rows += '<tr><td>' + p + '</td><td>' + b.total + '</td>'
+              + '<td>' + b.red + ' (' + b.red_pct + '%)</td>'
+              + '<td>' + b.yellow + ' (' + b.yellow_pct + '%)</td>'
+              + '<td>' + b.green + ' (' + b.green_pct + '%)</td>'
+              + '<td>' + (b.updated_at || '—') + '</td></tr>';
+      }
+      rows += '</table>' + pre(r);
+      box('② signalsByPlatform', 'ok', rows);
+    } catch (e) {
+      box('② signalsByPlatform', 'fail', '<span class="err">' + e.message + '</span>');
+    }
+  }
+
+  async function runComments() {
+    for (const p of ['facebook', 'instagram', 'threads']) {
+      try {
+        const r = await LxyDB.recentComments(p, 5);
+        box('③ recentComments(' + p + ', 5)', 'ok',
+          'got ' + r.length + ' rows. First row:' + pre(r[0] || null));
+      } catch (e) {
+        box('③ recentComments(' + p + ')', 'fail',
+          '<span class="err">' + e.message + '</span>');
+      }
+    }
+  }
+
+  async function runEvents() {
+    try {
+      const r = await LxyDB.recentEvents({ limit: 10, sinceHours: 48 });
+      box('④ recentEvents (last 48h, top 10)', 'ok',
+        'got ' + r.length + ' events. First:' + pre(r[0] || null));
+    } catch (e) {
+      box('④ recentEvents', 'fail', '<span class="err">' + e.message + '</span>');
+    }
+  }
+
+  async function runSources() {
+    try {
+      const r = await LxyDB.listSources(true);
+      box('⑤ listSources(enabledOnly=true)', 'ok',
+        'got ' + r.length + ' enabled sources. By platform: '
+        + JSON.stringify(r.reduce((acc, s) => {
+            acc[s.platform] = (acc[s.platform] || 0) + 1; return acc; }, {})));
+    } catch (e) {
+      box('⑤ listSources', 'fail', '<span class="err">' + e.message + '</span>');
+    }
+  }
+
+  let unsubscribe = null;
+  async function runRealtime() {
+    if (unsubscribe) {
+      unsubscribe();
+      unsubscribe = null;
+      box('⑥ realtime', 'pending', 'unsubscribed');
+      return;
+    }
+    try {
+      unsubscribe = LxyDB.subscribeNewEvents(function (row) {
+        box('⑥ realtime INSERT', 'ok',
+          'platform=' + row.platform + ', title=' + (row.title || row.text || '').slice(0, 80));
+      });
+      box('⑥ realtime', 'pending',
+        '訂閱中 social_events INSERT…(等下一筆 cron 寫入就會跳)。再點一次取消');
+    } catch (e) {
+      box('⑥ realtime', 'fail', '<span class="err">' + e.message + '</span>');
+    }
+  }
+
+  async function runRlsTest() {
+    try {
+      const c = LxyDB.client();
+      const { error } = await c.from('sources').insert({
+        source_id: 'rls-probe-' + Date.now(),
+        platform: 'test', name: 'rls probe', url: 'https://x.test', category: 'test',
+      });
+      if (error) {
+        box('⑦ RLS 防護 — INSERT 被擋 ✓ (這是正常)', 'ok',
+          '<span class="key">' + error.code + '</span>: ' + error.message);
+      } else {
+        box('⑦ RLS 防護', 'fail',
+          '<span class="err">⚠️ INSERT 沒被擋下來！anon 居然能寫，要去檢查 RLS policy！</span>');
+      }
+    } catch (e) {
+      box('⑦ RLS 防護 — 被擋 ✓', 'ok', e.message);
+    }
+  }
+
+  async function runAll() {
+    out.innerHTML = '';
+    await runPing();
+    await runSignals();
+    await runComments();
+    await runEvents();
+    await runSources();
+  }
+  </script>
+</body>
+</html>

@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>雲林政治戰情儀表板（張嘉郡）</title>
+
+  <!-- Performance: preconnect to external hosts so DNS+TLS handshake runs during HTML parse -->
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://ypkhjcbanfizysdnayee.supabase.co" crossorigin>
+
+  <!-- Performance: preload first-paint critical JSON in parallel with vendor JS -->
+  <link rel="preload" href="./data.json" as="fetch" crossorigin>
+  <link rel="preload" href="./social_signals.json" as="fetch" crossorigin>
+  <link rel="preload" href="./topic_heat.json" as="fetch" crossorigin>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <link rel="stylesheet" href="./style.css?v=2026-05-20-legal" />
+  <!-- Customer config 提前到 <head>、確保 body inline script 跟 app.js render 時都已備好 -->
+  <script defer src="./lib/config.js?v=2026-05-18-customer-cfg"></script>
+</head>
+<body>
+  <header>
+    <div class="header-row">
+      <div>
+        <h1 id="dashboardTitle">雲林政治戰情儀表板（張嘉郡）</h1>
+        <p id="updated">更新中...</p>
+      </div>
+      <div id="authBar" class="auth-bar">
+        <span id="authStatus" class="auth-status auth-status-guest">未登入</span>
+        <button id="authLoginBtn" type="button" class="auth-btn">登入 / 註冊</button>
+        <button id="authLogoutBtn" type="button" class="auth-btn auth-btn-logout" style="display:none">登出</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Auth modal (login + signup tabs) -->
+  <div id="authModal" class="lxy-modal hidden" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
+    <div class="lxy-modal-backdrop" data-close-auth></div>
+    <div class="lxy-modal-card">
+      <button class="lxy-modal-close" type="button" data-close-auth aria-label="關閉">✕</button>
+      <h3 id="authModalTitle">登入 / 註冊</h3>
+      <div class="auth-tabs">
+        <button type="button" class="auth-tab active" data-auth-tab="login">登入</button>
+        <button type="button" class="auth-tab" data-auth-tab="signup">註冊</button>
+      </div>
+      <form id="authForm" class="auth-form">
+        <label>Email
+          <input type="email" id="authEmail" required autocomplete="email" />
+        </label>
+        <label>密碼
+          <input type="password" id="authPassword" required minlength="6" autocomplete="current-password" />
+        </label>
+        <div id="authError" class="auth-error" role="alert"></div>
+        <div id="authNotice" class="auth-notice"></div>
+        <button type="submit" id="authSubmit" class="auth-btn auth-btn-primary">登入</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Correction modal (LLM feedback loop) -->
+  <div id="correctionModal" class="lxy-modal hidden" role="dialog" aria-modal="true" aria-labelledby="correctionModalTitle">
+    <div class="lxy-modal-backdrop" data-close-correction></div>
+    <div class="lxy-modal-card">
+      <button class="lxy-modal-close" type="button" data-close-correction aria-label="關閉">✕</button>
+      <h3 id="correctionModalTitle">標錯了？修正燈號</h3>
+      <p id="correctionContext" class="correction-context"></p>
+      <p class="correction-original">LLM 原判：<span id="correctionOriginal">-</span></p>
+      <form id="correctionForm" class="correction-form">
+        <fieldset>
+          <legend>正確燈號</legend>
+          <label class="correction-radio"><input type="radio" name="corr_label" value="red" /> 🔴 紅燈</label>
+          <label class="correction-radio"><input type="radio" name="corr_label" value="yellow" /> 🟡 黃燈</label>
+          <label class="correction-radio"><input type="radio" name="corr_label" value="green" /> 🟢 綠燈</label>
+        </fieldset>
+        <label>原因（選填）
+          <textarea id="correctionReason" rows="3" maxlength="500" placeholder="例：標題是諷刺、實際立場是正面"></textarea>
+        </label>
+        <div id="correctionError" class="auth-error" role="alert"></div>
+        <button type="submit" class="auth-btn auth-btn-primary" id="correctionSubmitBtn">送出修正</button>
+      </form>
+      <!-- Confirm step — 預設 hidden、填完按送出後切過來 -->
+      <div id="correctionConfirm" class="correction-confirm" style="display:none">
+        <p class="correction-confirm-warn">
+          ⚠️ 即將把該則新聞的 LLM 燈號從
+          <span id="correctionFromLabel">-</span> 改為
+          <span id="correctionToLabel">-</span>。
+        </p>
+        <p class="correction-confirm-detail">
+          此修正會：<br>
+          1. 立刻反映在 dashboard 上（議題敘事追蹤的計數、地圖卡片燈號等）<br>
+          2. 進入 LLM few-shot 範例池、影響未來新進新聞的自動判讀<br>
+          3. 此修正會永久記錄、原 LLM 判讀仍保留在 corrections table
+        </p>
+        <div class="correction-confirm-actions">
+          <button type="button" class="auth-btn" id="correctionCancelBtn">返回修改</button>
+          <button type="button" class="auth-btn auth-btn-primary" id="correctionConfirmBtn">確定送出</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Apply customer config to title elements (executed before app.js render) -->
+  <script>
+    (function() {
+      try {
+        var t = (window.LxyConfig && window.LxyConfig.CUSTOMER && window.LxyConfig.CUSTOMER.DASHBOARD_TITLE);
+        if (t) {
+          document.title = t;
+          var h1 = document.getElementById('dashboardTitle');
+          if (h1) h1.textContent = t;
+        }
+      } catch (e) { /* config not loaded yet, skip */ }
+    })();
+  </script>
+
+  <!-- Red-ratio alert banner (shown dynamically by app.js) -->
+  <div id="alertBanner" class="alert-banner hidden" role="status" aria-live="polite"></div>
+
+  <!-- Real-time push toasts (Supabase Realtime → 新紅燈即時推播) -->
+  <div id="rtToasts" class="rt-toasts" aria-live="polite" aria-atomic="false"></div>
+
+  <section class="panel" style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+    <strong>資料視窗：</strong>
+    <button id="mode24" type="button" class="mode-btn">24h</button>
+    <button id="mode7d" type="button" class="mode-btn">近7日</button>
+    <span id="modeHint" style="opacity:.8"></span>
+  </section>
+
+  <section class="cards">
+    <div class="card"><h3 data-window-label>24h 聲量</h3><div id="total24" class="num">-</div></div>
+    <div class="card"><h3 data-window-label-prev>前 24h</h3><div id="prev24" class="num">-</div></div>
+    <div class="card"><h3>成長率</h3><div id="growth" class="num">-</div></div>
+    <div class="card"><h3>綜合燈號</h3><div id="light" class="num">-</div></div>
+    <div class="card"><h3>新聞燈號</h3><div id="lightNews" class="num">-</div></div>
+    <div class="card"><h3>留言燈號</h3><div id="lightComments" class="num">-</div></div>
+    <div class="card"><h3 data-window-label-news>今日新聞量</h3><div id="news24" class="num">-</div></div>
+  </section>
+
+  <section class="panel">
+    <h2 data-window-label>24h 聲量趨勢</h2>
+    <canvas id="hourChart" height="120"></canvas>
+  </section>
+
+  <section class="panel">
+    <h2>燈號狀態與原因</h2>
+    <div id="lightStatus" class="num">-</div>
+    <div id="lightReasons" style="margin-top:8px;color:#b9c3f2"></div>
+    <div id="lightStreams" style="margin-top:8px"></div>
+    <div id="lightTrend" style="margin-top:8px"></div>
+  </section>
+
+  <section class="panel two-col">
+    <div>
+      <h2><span data-window-label>平台分佈（全資料24h）</span>（含張嘉郡、嘉郡、劉建國、建國、雲林等關鍵字）</h2>
+      <canvas id="platformChart" height="170"></canvas>
+      <ul id="platforms"></ul>
+    </div>
+    <div class="mention-col">
+      <h2 data-window-label>人物提及（24h）</h2>
+      <div class="mention-chart-wrap"><canvas id="mentionChart"></canvas></div>
+      <div id="compare"></div>
+    </div>
+  </section>
+
+  <!-- 戰情概覽：3 個視角組合 — 同人縱向追蹤、議題敘事、媒體曝光 -->
+  <section class="panel" id="selfFavorabilityPanel">
+    <h2>📈 張嘉郡好感度趨勢（過去 7 天）</h2>
+    <p class="hint">
+      <strong>公式</strong>：50 + 35×新聞情緒淨值 - 10×黃比 - 15×危機議題比 + 20×留言情緒淨值 - 10×留言紅比。
+      <strong>0-100、越高越佳</strong>。以「同源比較」為前提（自己跟自己比），避免跨人 sampling bias。
+      留言信號（FB+IG+Threads）能反映民眾真實 reaction。點圖任一資料點看當日新聞 + 留言摘要。
+    </p>
+    <canvas id="selfFavorabilityChart" height="100"></canvas>
+    <div id="selfFavorabilityMeta" class="hint" style="margin-top:8px"></div>
+  </section>
+
+  <section class="panel" id="topicNarrativePanel">
+    <h2>🔥 議題敘事追蹤（過去 7 天）</h2>
+    <p class="hint">
+      看哪些議題在「<strong>發燒</strong>」或「<strong>消退</strong>」。每行紅／黃／綠燈日數，紅色 spike 集中代表該議題正熱燒。
+    </p>
+    <div id="topicNarrativeBoard"></div>
+  </section>
+
+  <section class="panel" id="warRoomRankPanel">
+    <h2 data-window-label>📊 媒體曝光熱度（24h，4 人對比）</h2>
+    <p class="hint" id="warRoomRule">
+      4 人 24h 內<strong>媒體曝光量 + 紅黃綠分布</strong>。
+      ⚠️ <strong>不算分、不排好感度</strong> — 4 人媒體曝光不對等（首都市長 vs 立委），跨人比有 sampling bias。
+      看自己縱向趨勢請看上面兩塊。
+    </p>
+    <div id="warRoomRankBoard" class="rank-board"></div>
+    <p class="hint" id="warRoomVerdict" style="margin-top:10px;font-weight:bold"></p>
+  </section>
+
+  <section class="panel" id="socialSignalPanel">
+    <h2>張嘉郡社群留言燈號分佈（FB / IG / Threads）</h2>
+    <p class="hint">點擊卡片查看該平台的實際留言明細；也可以切換上方 [🔴 紅 / 🟡 黃 / 🟢 綠] 篩選。</p>
+    <div class="social-signal-grid" id="socialSignals"></div>
+  </section>
+
+  <section class="panel" id="mapHotspotPanel">
+    <h2>議題地圖熱點（新聞 + 留言）</h2>
+    <p class="hint">以紅色亮點標示高風險事件位置；可點擊查看事件名稱、來源與說明。</p>
+    <div id="incidentMap"></div>
+    <div id="hotspotSuggestions" class="hint" style="margin-top:10px"></div>
+
+    <div class="hotspot-list-header">
+      <h3>目前發生中的事件</h3>
+      <span id="hotspotSummary" class="hotspot-summary"></span>
+    </div>
+
+    <details class="hotspot-legend" id="hotspotLegend" open>
+      <summary>📖 如何判讀燈號（點擊收合）</summary>
+      <div class="legend-body">
+        <div class="legend-section">
+          <h5>事件燈號 = 嚴重度 OR 聲量規模（取較嚴重）</h5>
+          <div class="legend-row">
+            <span class="hc-level-chip red">RED</span>
+            <span><strong>任一新聞為 🔴 紅燈</strong>（攻擊/刑事/重大事故）<strong>OR</strong> 總命中 ≥ 10 則</span>
+          </div>
+          <div class="legend-row">
+            <span class="hc-level-chip yellow">YELLOW</span>
+            <span><strong>任一新聞為 🟡 黃燈</strong>（爭議/批評/治安/政策反彈）<strong>OR</strong> 總命中 ≥ 5 則</span>
+          </div>
+          <div class="legend-row">
+            <span class="hc-level-chip green">GREEN</span>
+            <span>所有新聞皆為 🟢 綠燈（正面/中性/利多）<strong>且</strong> 總命中 < 5 則</span>
+          </div>
+          <p class="legend-tip">每則新聞的 🔴/🟡/🟢 由 <strong>LLM</strong> 判讀（戰情視角），跟戰情報告/3 大燈號同源 — 不再只看「字典命中負面詞」。</p>
+        </div>
+
+        <div class="legend-section">
+          <h5>🎨 紅黃綠各自代表的意思</h5>
+          <ul>
+            <li><strong>🔴 紅 = 負面 / 攻擊</strong>：直接點名批判、刑事弊案、公共安全事故、重大政治攻防、惡意期待</li>
+            <li><strong>🟡 黃 = 爭議 / 質疑</strong>：政策爭議、民意質疑、批評聲浪、治安事件（詐騙/車禍/犯罪）、環境/民生問題</li>
+            <li><strong>🟢 綠 = 正面 / 中性</strong>：純市政成果、活動行程、政策推廣、利多消息、中性報導</li>
+          </ul>
+        </div>
+
+        <div class="legend-section">
+          <h5>🚨 緊急徽章 = 真的需要優先處理</h5>
+          <p>滿足以下任一條件才掛上 🚨：</p>
+          <ul>
+            <li><strong>≥ 50% 新聞含負面詞</strong>（如：抗議、車禍、貪污 …）<strong>且 ≥ 2 篇</strong> — 多家媒體都在報這件壞事</li>
+            <li><strong>≥ 3 則紅燈留言</strong>（用戶集中表達不滿、攻擊性留言）</li>
+          </ul>
+          <p class="legend-tip">看 🚨 才是「執政團隊該動手」的訊號，不要被燈號顏色誤導。</p>
+        </div>
+
+        <div class="legend-section">
+          <h5>X% 負面 / 留言燈號</h5>
+          <ul>
+            <li><strong>事件卡片的「X% 負面」</strong>：該事件下，含負面詞的新聞佔比（紅+黃詞庫，僅供 quick-look）</li>
+            <li><strong>每則新聞的 🔴/🟡/🟢 燈號</strong>：LLM 判讀（戰情視角），與戰情報告/3 大燈號同源</li>
+            <li><strong>留言燈號（modal 內）</strong>：LLM + 規則混合，能理解反諷/陰諷/同義詞（含 24h 新聞 context + 歷史事件 RAG）</li>
+          </ul>
+        </div>
+
+        <div class="legend-section">
+          <h5>排序邏輯</h5>
+          <p>事件先按城市分組，每個城市內依下面順序排：</p>
+          <ol>
+            <li><strong>🚨 緊急</strong>事件優先</li>
+            <li>同緊急狀態下，紅 → 黃 → 綠</li>
+            <li>同燈號下，依 <code>urgency_score = 負面新聞×3 + 紅燈留言×2 + 總量×1</code> 降冪</li>
+          </ol>
+        </div>
+      </div>
+    </details>
+
+    <div id="hotspotList" class="hotspot-list"></div>
+
+    <div class="past-events-wrap collapsed" id="pastEventsWrap">
+      <button class="past-events-toggle" id="pastEventsToggle" type="button" aria-expanded="false">
+        <span class="pe-arrow">▾</span>
+        <span class="pe-label">📅 過往事件紀錄</span>
+        <span class="pe-meta" id="pastEventsMeta"></span>
+      </button>
+      <div class="past-events-content" id="pastEventsList"></div>
+    </div>
+  </section>
+
+  <section class="panel" id="electionForecastPanel">
+    <h2>🔮 下屆總統選舉預測（基本面模型）</h2>
+    <p class="hint">把全國 7,738 個里級預測（5 屆歷史加權 + momentum 趨勢）×2024 投票數加總到縣市 / 全國 22 縣市。<strong>純歷史基本盤</strong>，沒民調沒全國風向。</p>
+    <div id="forecastBody"></div>
+  </section>
+
+  <section class="panel" id="electionMapPanel">
+    <h2>里級地理視覺化（priority 綜合分數 / 策略 / 政治屬性）</h2>
+    <p class="hint">用顏色直接看出哪些區塊是主戰場、哪些是鎖定區。點任一里 → 完整明細。</p>
+    <div class="em-controls">
+      <label>縣市：
+        <select id="emCitySelect">
+          <optgroup label="6 都（priority 基於市長選舉）">
+            <option value="tpe">台北市</option>
+            <option value="ntpc">新北市</option>
+            <option value="tyc">桃園市</option>
+            <option value="txg">台中市</option>
+            <option value="tnn">台南市</option>
+            <option value="khh">高雄市</option>
+          </optgroup>
+          <optgroup label="16 縣市（priority 基於縣市長選舉）">
+            <option value="kee">基隆市</option>
+            <option value="hsz">新竹市</option>
+            <option value="cyi">嘉義市</option>
+            <option value="hsq">新竹縣</option>
+            <option value="mil">苗栗縣</option>
+            <option value="cha">彰化縣</option>
+            <option value="nan">南投縣</option>
+            <option value="yun">雲林縣</option>
+            <option value="cyq">嘉義縣</option>
+            <option value="pif">屏東縣</option>
+            <option value="ila">宜蘭縣</option>
+            <option value="hua">花蓮縣</option>
+            <option value="ttt">臺東縣</option>
+            <option value="peh">澎湖縣</option>
+            <option value="kin">金門縣</option>
+            <option value="lja">連江縣</option>
+          </optgroup>
+        </select>
+      </label>
+      <label>顏色依據：
+        <select id="emModeSelect">
+          <option value="priority">Priority 分數（綜合排名）</option>
+          <option value="strategy">策略類型</option>
+          <option value="persistence">政治屬性</option>
+          <option value="presidential_2024">2024 總統得票（實際）</option>
+          <option value="presidential_predict">下屆總統預測（純基本面）</option>
+          <option value="presidential_predict_polls">下屆總統預測（民調校正後）</option>
+        </select>
+      </label>
+      <span id="emStatus" class="hint"></span>
+    </div>
+    <div id="electionMap" style="height:580px;width:100%;border-radius:8px;margin-top:8px"></div>
+    <div id="emLegend" class="em-legend"></div>
+  </section>
+
+  <section class="panel" id="electionPriorityPanel">
+    <h2>里級黃金戰場版圖（全國 22 縣市歷年選舉）</h2>
+    <div class="ep-disclaimer">
+      <strong>用法</strong>：每個里計算了「搖擺度 / 翻轉次數 / 持久屬性 / 說服空間」綜合 priority（戰略優先序分數，0-100）。
+      Priority 高的里 = 過去最容易翻盤、未來投放資源邊際效益（marginal benefit，多花 1 元能多拿到的票數）最大的選區。<strong>用來規劃拜票路線、資源分配、議題客製化</strong>。
+    </div>
+    <details class="ep-glossary">
+      <summary>📖 名詞解釋（GOTV / persuasion / mixed / maintain — 點開閱讀）</summary>
+      <div class="ep-glossary-body">
+        <p><strong>GOTV（Get Out The Vote｜催票）</strong>　把<u>已經支持我方</u>的選民從家裡帶到投票所。<br>
+          做法：簡訊提醒投票日 + 投票所地址、人工電話致電、志工挨家挨戶提醒、提供長者接送。<br>
+          適用：永藍／永綠等基本盤鎖定區（Type A）、低投票率動員區（Type D）— 這些里說服空間小，把同溫層催出來投票才划算。</p>
+
+        <p><strong>persuasion（說服）</strong>　針對<u>中間選民、未表態者、上次投對手者</u>，透過議題與形象改變他們的投票意向。<br>
+          做法：客製化議題傳單、面對面深度對話、家戶拜訪深聊 30 分鐘以上、政策主張電視/網路廣告、KOL（Key Opinion Leader，意見領袖：網紅、社群名人、特定領域權威）背書。<br>
+          適用：純搖擺主戰場（Type B）、曾翻轉里（Type C）— 每張票都有翻盤潛力，1 元投入產出最高。</p>
+
+        <p><strong>mixed（雙軌）</strong>　同一個里同時跑兩條獨立的線，<u>名單必須分開不要重疊</u>：<br>
+          ❶ <strong>對搖擺者 / 上次投對手者</strong>打 persuasion — 由候選人或政策團隊出面，安排面對面深聊 30 分鐘以上、客製化議題傳單（年輕里講住宅、高齡里講長照）、政見訴求量身設計。目標：說服改變立場。<br>
+          ❷ <strong>對基本盤（已支持者）</strong>做 GOTV — 由樁腳 / 志工 / 里長執行，簡訊提醒投票日 + 投票所、人工電話、挨家催票、長者接送。目標：確保已支持者出門投票。<br>
+          資源建議：persuasion 約 60%（翻盤潛力大）、GOTV 約 40%（守住基本盤）。最忌諱兩條線都打同一個人 — 已支持者只需 GOTV，不需要再說服；中間選民被催票反而會反感。<br>
+          適用：曾發生翻轉的里（Type C）— 既有忠誠支持者要保住、也有可被說服的中間選民。</p>
+
+        <p><strong>里長 / 樁腳（地面戰核心）</strong>　台灣選戰最關鍵的「在地端」資源。<br>
+          <u>里長</u>＝該里民選首長（任期 4 年、由全里居民投票選出），熟悉每一戶背景、處理路燈/清潔/補助/糾紛，幾乎家戶皆認識。30-50% 的里民會跟著里長立場走。<br>
+          <u>樁腳</u>＝有組織動員力的地方仕紳（廟宇主委、宗親會理事、社區發展協會理事長、農會代表、老資深里幹事等）。1 個強樁腳能精準動員 50-200 票。<br>
+          搶下里長 / 樁腳的方式：(a) 平常維繫關係（紅白事到場、節慶送禮、里政諮詢），不是選前才出現；(b) 幫他爭取地方建設資源（社區公園預算、長照據點等），讓他「欠你人情」；(c) 把里長拉進客製化政見會當主持人，讓他在里民前公開掛名背書。<br>
+          搞定一位里長 ≈ NT$ 1 萬元以上廣告投放的效果，且持續整個任期。每個里至少要綁定 1-2 條穩定的里長線。</p>
+
+        <p><strong>maintain（維護）</strong>　不投放新資源、用既有人脈關係維繫，避免犯錯流失基本盤。<br>
+          做法：節慶問候、宗親會出席、里長/樁腳保持聯繫，不主動拉票。<br>
+          適用：高齡飽和區（Type E）— 投票意向已經定型多年，主動拉票 ROI（投資報酬率，多投入 1 元能多拿到的票）低，不犯錯比拉票重要。</p>
+
+        <p class="hint" style="margin-top:8px">補充名詞：<strong>persuadability（說服空間，0-100）</strong>＝最近一屆 top1（得票最高那位）得票率距 50% 越近、分數越高（50% = 100 分）。
+          <strong>volatility（搖擺度）</strong>＝歷年 KMT 得票率的標準差（standard deviation，數值越大代表不同年份起伏越劇烈）。
+          <strong>flips（翻轉次數）</strong>＝歷次選舉勝者政黨改變的次數。
+          <strong>priority</strong>＝戰略優先序綜合分數 = persuadability×0.40 + 搖擺度×0.25 + 翻轉次數×0.15 + 人口×0.20。
+          <strong>ROI（Return on Investment，投資報酬率）</strong>＝多投入 1 元資源能多拿到的票數。
+          <strong>marginal benefit（邊際效益）</strong>＝下 1 元資源投入後預期增加的票數，會隨投入累積遞減。</p>
+      </div>
+    </details>
+    <div class="ep-controls">
+      <label>篩選縣市：
+        <select id="epCitySelect">
+          <option value="all">全部 22 縣市</option>
+          <optgroup label="6 都（priority 基於市長選舉）">
+            <option value="tpe">台北市</option>
+            <option value="ntpc">新北市</option>
+            <option value="tyc">桃園市</option>
+            <option value="txg">台中市</option>
+            <option value="tnn">台南市</option>
+            <option value="khh">高雄市</option>
+          </optgroup>
+          <optgroup label="16 縣市（priority 基於縣市長選舉）">
+            <option value="kee">基隆市</option>
+            <option value="hsz">新竹市</option>
+            <option value="cyi">嘉義市</option>
+            <option value="hsq">新竹縣</option>
+            <option value="mil">苗栗縣</option>
+            <option value="cha">彰化縣</option>
+            <option value="nan">南投縣</option>
+            <option value="yun">雲林縣</option>
+            <option value="cyq">嘉義縣</option>
+            <option value="pif">屏東縣</option>
+            <option value="ila">宜蘭縣</option>
+            <option value="hua">花蓮縣</option>
+            <option value="ttt">臺東縣</option>
+            <option value="peh">澎湖縣</option>
+            <option value="kin">金門縣</option>
+            <option value="lja">連江縣</option>
+          </optgroup>
+        </select>
+      </label>
+      <label>顯示前：
+        <select id="epLimitSelect">
+          <option value="50">50 名</option>
+          <option value="100" selected>100 名</option>
+          <option value="200">200 名</option>
+          <option value="500">500 名</option>
+        </select>
+      </label>
+      <span id="epStatus" class="hint"></span>
+    </div>
+    <div id="epTableWrap" class="ep-table-wrap"></div>
+    <div id="epCityStats" class="ep-city-stats"></div>
+  </section>
+
+  <section class="panel" id="mediaFramingPanel">
+    <h2>媒體 framing 矩陣（近 7 日新聞）</h2>
+    <div class="media-framing-disclaimer">
+      <strong>⚠️ 注意</strong>：這不是「縣市民眾對候選人的好感度」。
+      它只反映「過去 7 天全國新聞**標題**對（縣市 × 候選人）話題的負面詞密度」。
+      樣本數小、媒體偏向、話題集中（如某事件爆發）都會影響結果。當作話題溫度看，不要當民調用。
+    </div>
+    <div id="mediaFramingMatrix" class="media-framing-matrix"></div>
+    <div id="mediaFramingMeta" class="hint"></div>
+  </section>
+
+  <section class="panel collapsible" id="panel-red-trend">
+    <button class="panel-toggle" type="button" aria-expanded="true" aria-controls="redTrendWrap">
+      <h2>紅燈比例趨勢</h2>
+      <span class="chev">▾</span>
+    </button>
+    <div class="panel-content" id="redTrendWrap">
+      <p class="hint">各平台歷次快照的紅燈比例 (%)，越高代表該時段負面言論比重越大。</p>
+      <canvas id="redTrendChart" height="140"></canvas>
+    </div>
+  </section>
+
+  <section class="panel collapsible" id="panel-topic-heat">
+    <button class="panel-toggle" type="button" aria-expanded="true" aria-controls="topicHeatWrap">
+      <h2>議題熱度追蹤</h2>
+      <span class="chev">▾</span>
+    </button>
+    <div class="panel-content" id="topicHeatWrap">
+      <div class="topic-controls">
+        <label for="topicSelect">選擇議題：</label>
+        <select id="topicSelect"></select>
+        <span class="topic-info" id="topicInfo"></span>
+      </div>
+
+      <h3 class="topic-section-title">Google Trends（過去 5 年，台灣）</h3>
+      <p class="hint">週頻率相對熱度（0–100，峰值 = 100）。資料透過後端 pytrends 每日一次抓取並快取於 <code>cache/google_trends/</code>；峰值代表該週搜尋量相對最高。</p>
+      <canvas id="topicTrendsChart" height="140"></canvas>
+      <div class="topic-trends-meta" id="topicTrendsMeta"></div>
+      <div class="topic-external-row">
+        <a id="topicTrendsLink" class="topic-external-btn" href="#" target="_blank" rel="noopener">
+          🔎 <span id="topicTrendsLinkLabel">在 Google Trends 查看互動版</span>
+        </a>
+        <span class="topic-external-hint">點此前往官方頁面查看互動式圖表</span>
+      </div>
+
+      <div class="topic-custom-row" id="topicCustomRow">
+        <label for="topicCustomInput">🔧 自訂關鍵字查詢：</label>
+        <input id="topicCustomInput" type="text" placeholder="例：罷免、軍購、愛爾麗" maxlength="40" />
+        <select id="topicCustomGeo" title="地區">
+          <option value="TW" selected>台灣</option>
+          <option value="">全球</option>
+        </select>
+        <select id="topicCustomRange" title="時間區間">
+          <option value="now 1-d">過去 24 小時</option>
+          <option value="now 7-d">過去 7 天</option>
+          <option value="today 1-m">過去 30 天</option>
+          <option value="today 3-m">過去 90 天</option>
+          <option value="today 12-m" selected>過去 1 年</option>
+          <option value="today 5-y">過去 5 年</option>
+        </select>
+        <button id="topicCustomBtn" type="button">🔎 直接顯示在下方</button>
+        <a id="topicCustomExternalBtn" href="#" target="_blank" rel="noopener" class="topic-custom-external" style="display:none">↗ 開新分頁</a>
+        <div id="topicCustomRecent" class="topic-custom-recent" aria-label="近期查詢"></div>
+      </div>
+      <div id="topicCustomEmbed" class="topic-custom-embed" aria-label="Google Trends inline preview"></div>
+
+      <h3 class="topic-section-title">我方爬取之留言提及數（近期 snapshot 覆蓋範圍）</h3>
+      <p class="hint">將各平台 snapshot 中的相對時間（如「4天」「3小時」）換算回絕對日期後，按日彙整的提及筆數。涵蓋日期取決於最近幾次爬取的時間窗。</p>
+      <canvas id="topicOwnChart" height="120"></canvas>
+    </div>
+  </section>
+
+  <section class="panel collapsible" id="panel-red-comments">
+    <button class="panel-toggle" type="button" aria-expanded="true" aria-controls="redCommentsWrap">
+      <h2>紅燈留言清單（最新一輪，所有平台）</h2>
+      <span class="chev">▾</span>
+    </button>
+    <div class="panel-content" id="redCommentsWrap">
+      <p class="hint">依平台分組顯示所有被判為紅燈的留言；有原文連結的會以連結呈現。</p>
+      <div id="redComments"></div>
+    </div>
+  </section>
+
+  <section class="panel collapsible" id="panel-platform-detail">
+    <button class="panel-toggle" type="button" aria-expanded="true" aria-controls="platformDetailWrap">
+      <h2 data-window-label>平台分佈對應明細（24h）</h2>
+      <span class="chev">▾</span>
+    </button>
+    <div class="panel-content" id="platformDetailWrap">
+      <p class="hint">下方每個平台都是「平台分佈」圖中的實際資料清單。</p>
+      <div id="platformDetail"></div>
+    </div>
+  </section>
+
+  <section class="panel collapsible" id="panel-latest-news">
+    <button class="panel-toggle" type="button" aria-expanded="true" aria-controls="latestNewsWrap">
+      <h2 data-window-label>最新新聞（24h）</h2>
+      <span class="chev">▾</span>
+    </button>
+    <div class="panel-content" id="latestNewsWrap">
+      <ol id="news"></ol>
+    </div>
+  </section>
+
+  <section class="panel collapsible" id="panel-lu">
+    <button class="panel-toggle" type="button" aria-expanded="true" aria-controls="luWrap">
+      <h2>人物專區：張嘉郡</h2>
+      <span class="chev">▾</span>
+    </button>
+    <div class="panel-content" id="luWrap">
+      <div class="two-col">
+        <div><h3>張嘉郡 Facebook</h3><ol id="luFb"></ol></div>
+        <div><h3>張嘉郡 News</h3><ol id="luNews"></ol></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel collapsible" id="panel-chiang">
+    <button class="panel-toggle" type="button" aria-expanded="true" aria-controls="chiangWrap">
+      <h2>人物專區：劉建國</h2>
+      <span class="chev">▾</span>
+    </button>
+    <div class="panel-content" id="chiangWrap">
+      <div class="two-col">
+        <div><h3>劉建國 Facebook</h3><ol id="chiangFb"></ol></div>
+        <div><h3>劉建國 News</h3><ol id="chiangNews"></ol></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LLM 修正紀錄 panel (admin 才看得到) -->
+  <section class="panel" id="correctionsFeedPanel" style="display:none">
+    <h2>📝 最近 LLM 燈號修正紀錄</h2>
+    <p class="hint">由 admin 標 🚩 提交的人工修正、按時間倒序。同一則被多次修正只顯示最新一筆。</p>
+    <div class="corrections-feed-actions">
+      <button type="button" class="auth-btn" data-corr-filter="all">全部</button>
+      <button type="button" class="auth-btn" data-corr-filter="event">新聞</button>
+      <button type="button" class="auth-btn" data-corr-filter="comment">留言</button>
+      <span id="correctionsFeedStat" class="hint" style="margin-left:auto"></span>
+    </div>
+    <div id="correctionsFeedBody"></div>
+  </section>
+
+  <!-- Drilldown modal: per-platform comment viewer w/ light filter -->
+  <div id="commentsModal" class="modal hidden" aria-hidden="true">
+    <div class="modal-backdrop" data-close="1"></div>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-header">
+        <h2 id="modalTitle">留言清單</h2>
+        <button id="modalClose" class="modal-close" type="button" aria-label="關閉">✕</button>
+      </div>
+      <div class="modal-filters" id="modalFilters">
+        <button class="filter-btn active" data-filter="all">全部</button>
+        <button class="filter-btn" data-filter="red">🔴 紅</button>
+        <button class="filter-btn" data-filter="yellow">🟡 黃</button>
+        <button class="filter-btn" data-filter="green">🟢 綠</button>
+      </div>
+      <div class="modal-summary" id="modalSummary"></div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Drilldown modal: per-person mention articles -->
+  <div id="mentionModal" class="modal hidden" aria-hidden="true">
+    <div class="modal-backdrop" data-close="mention"></div>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="mentionModalTitle">
+      <div class="modal-header">
+        <h2 id="mentionModalTitle">人物提及明細</h2>
+        <button id="mentionModalClose" class="modal-close" type="button" aria-label="關閉">✕</button>
+      </div>
+      <div class="modal-body" id="mentionModalBody"></div>
+    </div>
+  </div>
+
+  <!-- Drilldown modal: per-hotspot details (matched news + comments) -->
+  <div id="hotspotDetailModal" class="modal hidden" aria-hidden="true">
+    <div class="modal-backdrop" data-close="hotspot"></div>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="hotspotDetailTitle">
+      <div class="modal-header">
+        <h2 id="hotspotDetailTitle">事件明細</h2>
+        <button id="hotspotDetailClose" class="modal-close" type="button" aria-label="關閉">✕</button>
+      </div>
+      <div class="modal-body" id="hotspotDetailBody"></div>
+    </div>
+  </div>
+
+  <!-- Site footer 法律連結 -->
+  <footer class="site-footer">
+    <div class="site-footer-row">
+      <a href="./about.html" class="footer-link">關於我們</a>
+      <span class="sep">·</span>
+      <a href="./contact.html" class="footer-link">聯絡我們</a>
+      <span class="sep">·</span>
+      <a href="./terms.html" class="footer-link">服務條款</a>
+      <span class="sep">·</span>
+      <a href="./privacy.html" class="footer-link">隱私權政策</a>
+      <span class="sep">·</span>
+      <a href="./cookies.html" class="footer-link">Cookie 政策</a>
+      <span class="sep">·</span>
+      <a href="./copyright.html" class="footer-link">著作權聲明</a>
+      <span class="sep">·</span>
+      <a href="./disclaimer.html" class="footer-link">免責聲明</a>
+    </div>
+    <div class="site-footer-row site-footer-meta">
+      © 2026 真人股份有限公司　·　政治戰情儀表板
+    </div>
+  </footer>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <!-- Supabase UMD: 必須在 db.js / app.js 前載入 -->
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- config.js 已提早到 <head> 載入、不需要再載一次 -->
+  <script defer src="./lib/db.js?v=2026-05-19-feedback-loop"></script>
+  <script defer src="./app.js?v=2026-05-29-rpc-charts"></script>
+  <script>
+    // Service Worker — 2nd-visit speed-up + offline fallback.
+    // Registered after page load so it doesn't compete with critical resources.
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(e => console.warn('[sw] register failed', e));
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>隱私權政策｜政治戰情儀表板</title>
+  <link rel="stylesheet" href="./style.css?v=2026-05-20-legal" />
+</head>
+<body class="legal-page">
+  <header class="legal-header">
+    <a class="legal-back" href="./index.html">← 回儀表板</a>
+    <h1>隱私權政策</h1>
+    <p class="legal-meta">最後更新：2026-05-20｜營運方：真人股份有限公司</p>
+  </header>
+
+  <main class="legal-body">
+    <section>
+      <h2>一、總則</h2>
+      <p>
+        <strong>真人股份有限公司</strong>（以下稱「我們」）非常重視您的隱私。
+        本政策說明本儀表板（以下稱「本服務」）如何蒐集、使用、保存與保護使用者資料。
+        使用本服務即表示您同意本政策。
+      </p>
+    </section>
+
+    <section>
+      <h2>二、我們蒐集哪些資料</h2>
+
+      <h3>2.1 您主動提供的資料</h3>
+      <ul>
+        <li><strong>Email 地址</strong>（限登入註冊時）— 用於建立帳號、寄送確認信、找回密碼</li>
+        <li><strong>密碼</strong>（以 bcrypt 加鹽雜湊儲存、我們無法還原為明文）</li>
+        <li><strong>修正紀錄</strong>（您對 LLM 判讀的人工修正內容、修正原因）</li>
+      </ul>
+
+      <h3>2.2 系統自動蒐集的資料</h3>
+      <ul>
+        <li><strong>登入會話</strong>（透過 Supabase Auth 管理、儲存於您瀏覽器 localStorage）</li>
+        <li><strong>瀏覽紀錄</strong>（GitHub Pages 預設 server log、含 IP / User-Agent，不主動讀取）</li>
+        <li><strong>錯誤紀錄</strong>（前端 console error、僅在您瀏覽器內、不上傳）</li>
+      </ul>
+
+      <h3>2.3 我們<strong>不</strong>蒐集的資料</h3>
+      <ul>
+        <li>身分證字號、生日、住址、手機等個人識別資訊</li>
+        <li>瀏覽行為追蹤（無 Google Analytics、無 cookie tracker、無第三方廣告 SDK）</li>
+        <li>非本服務範圍內的網頁瀏覽紀錄</li>
+        <li>付款或金融資訊（本服務不涉及付款）</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>三、我們如何使用您的資料</h2>
+      <ul>
+        <li>Email + 密碼：身分驗證、帳號管理</li>
+        <li>修正紀錄：
+          <ul>
+            <li>立刻顯示於儀表板對應位置（如「已修正 → 紅燈」標誌）</li>
+            <li>提供給 LLM 評分流程作為 few-shot 範例、改善未來自動判讀</li>
+            <li>保留於資料庫中、供後續模型優化或分析</li>
+            <li>包含「修正者 email」欄位、用以審計與權責歸屬</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>四、資料是否分享給第三方</h2>
+      <p>
+        <strong>原則上不分享、不販售。</strong>
+        以下例外情況、我們會在必要範圍內提供資料：
+      </p>
+      <ul>
+        <li>受司法、警政機關依法律程序要求</li>
+        <li>使用者明示同意之分享</li>
+        <li>為了維護網路安全（如反 DDoS）必需揭露</li>
+      </ul>
+      <p>
+        本服務使用以下第三方服務、彼等亦受其自家隱私權政策約束：
+      </p>
+      <ul>
+        <li><strong>Supabase</strong>（資料庫、Auth）— 用於儲存帳號與分析資料</li>
+        <li><strong>Cloudflare R2</strong>（物件儲存）— 用於每日資料備份</li>
+        <li><strong>GitHub Pages</strong>（靜態 hosting）— 用於前端網頁提供</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>五、Cookies 與本地儲存</h2>
+      <p>
+        本服務<strong>不使用 cookies 追蹤您的瀏覽行為</strong>。
+        僅在您登入時、使用瀏覽器 <code>localStorage</code> 儲存登入會話 token、key 為 <code>lxy-auth</code>。
+        該 token 僅供本服務驗證身分使用、不會傳給其他網站。
+      </p>
+      <p>
+        清除方式：瀏覽器設定 → 清除瀏覽資料 → 勾選「網站資料 / localStorage」即可登出並清除。
+      </p>
+    </section>
+
+    <section>
+      <h2>六、資料保存期限</h2>
+      <ul>
+        <li><strong>帳號資料</strong>：自您主動刪除帳號起、立即從生產資料庫移除</li>
+        <li><strong>修正紀錄</strong>：永久保存於資料庫、用於模型訓練；如您要求、可申請匿名化（將 corrected_by email 改為 <code>anonymous</code>）</li>
+        <li><strong>備份檔</strong>：30 天滾動保留（每日新增、超過 30 天自動刪除）</li>
+        <li><strong>Server log</strong>：依 GitHub Pages 預設政策、約 90 天</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>七、您的權利</h2>
+      <p>依個資法、您對本服務蒐集之個人資料享有以下權利：</p>
+      <ul>
+        <li><strong>查詢</strong>：得知我們存有哪些您的資料</li>
+        <li><strong>更正</strong>：要求修正錯誤的個人資料</li>
+        <li><strong>停止處理</strong>：請求停止使用您的修正紀錄作為 LLM 訓練資料</li>
+        <li><strong>刪除</strong>：要求刪除您的帳號與相關紀錄</li>
+        <li><strong>匯出</strong>：取得您留下的所有資料之 JSON 匯出檔</li>
+      </ul>
+      <p>
+        行使權利請來信
+        <a href="mailto:humaninterface2026@gmail.com">humaninterface2026@gmail.com</a>、
+        我們會在 30 天內回覆並處理。
+      </p>
+    </section>
+
+    <section>
+      <h2>八、資料安全</h2>
+      <p>我們採取以下技術與管理措施保護您的資料：</p>
+      <ul>
+        <li>傳輸過程使用 TLS（HTTPS）加密</li>
+        <li>密碼以 bcrypt 雜湊儲存、無法還原</li>
+        <li>資料庫使用 Row-Level Security（RLS）權限控制、僅 admin 帳號可寫入修正</li>
+        <li>每日異地備份至 Cloudflare R2</li>
+        <li>定期審計資料一致性（SQLite vs Supabase 對帳）</li>
+      </ul>
+      <p>
+        即便如此、網路傳輸與儲存仍不可能達到絕對安全。
+        如發現異常活動、請立即更換密碼並通知我們。
+      </p>
+    </section>
+
+    <section>
+      <h2>九、國際傳輸</h2>
+      <p>
+        部分資料（如 Supabase 資料庫）可能儲存於台灣以外之伺服器。
+        我們使用之服務商皆遵循相應之資料保護法規（如 GDPR）。
+      </p>
+    </section>
+
+    <section>
+      <h2>十、未成年人</h2>
+      <p>
+        本服務面向成年研究者與輿情分析人員。
+        未成年人不應於本服務註冊帳號；
+        如發現未經監護人同意之未成年人帳號、我們將立即停用並刪除其資料。
+      </p>
+    </section>
+
+    <section>
+      <h2>十一、政策變更</h2>
+      <p>
+        本公司得隨時修訂本政策、修訂內容將於本頁面公告。
+        重大變更時、會透過 Email 通知所有現有帳號。
+      </p>
+    </section>
+
+    <section>
+      <h2>十二、聯絡我們</h2>
+      <p>
+        對隱私權保護有任何疑問、請聯絡：
+        <br>Email：<a href="mailto:humaninterface2026@gmail.com">humaninterface2026@gmail.com</a>
+        <br>營運方：真人股份有限公司
+      </p>
+    </section>
+  </main>
+
+  <footer class="legal-footer">
+    <a href="./about.html">關於我們</a>
+    <span class="sep">·</span>
+    <a href="./contact.html">聯絡我們</a>
+    <span class="sep">·</span>
+    <a href="./terms.html">服務條款</a>
+    <span class="sep">·</span>
+    <a href="./privacy.html">隱私權政策</a>
+    <span class="sep">·</span>
+    <a href="./cookies.html">Cookie 政策</a>
+    <span class="sep">·</span>
+    <a href="./copyright.html">著作權聲明</a>
+    <span class="sep">·</span>
+    <a href="./disclaimer.html">免責聲明</a>
+    <span class="sep">·</span>
+    <span>© 2026 真人股份有限公司</span>
+  </footer>
+</body>
+</html>
