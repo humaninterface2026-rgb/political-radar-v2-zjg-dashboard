@@ -3227,13 +3227,22 @@ async function run(){
   const totalArticles  = () => isWeekMode ? state.articles7d : state.articles24h;
   const prevArticles   = () => isWeekMode ? state.articlesPrev7d : state.articlesPrev24h;
   const newsArticles   = () => totalArticles().filter(a => a.platform === 'news');
-  bindCardClick('total24', isWeekMode ? '近 7 日聲量明細'  : '24h 聲量明細',
-    isWeekMode ? '近 7 日所有與張嘉郡有關的事件' : '近 24 小時所有與張嘉郡有關的事件', totalArticles);
-  bindCardClick('prev24',  isWeekMode ? '前 7 日聲量明細'  : '前 24h 聲量明細',
-    isWeekMode ? '7-14 天前所有與張嘉郡有關的事件' : '24-48 小時前所有與張嘉郡有關的事件',
+  bindCardClick('total24', isWeekMode ? '雲林近 7 日聲量明細'  : '雲林 24h 聲量明細',
+    isWeekMode ? '近 7 日所有與雲林有關的事件' : '近 24 小時所有與雲林有關的事件', totalArticles);
+  bindCardClick('prev24',  isWeekMode ? '雲林前 7 日聲量明細'  : '雲林前 24h 聲量明細',
+    isWeekMode ? '7-14 天前所有與雲林有關的事件' : '24-48 小時前所有與雲林有關的事件',
     prevArticles);
   bindCardClick('news24',  isWeekMode ? '7 日新聞量明細' : '今日新聞量明細',
-    isWeekMode ? '近 7 日所有與張嘉郡有關的新聞' : '近 24 小時所有與張嘉郡有關的新聞', newsArticles);
+    isWeekMode ? '近 7 日所有與雲林有關的新聞' : '近 24 小時所有與雲林有關的新聞', newsArticles);
+
+  // 張嘉郡 only 卡片點擊 — 篩出「提及張嘉郡/嘉郡」的事件
+  const _isZjgCard = (a) => { const t=(a.title||''); return t.indexOf('張嘉郡')>=0 || t.indexOf('嘉郡')>=0; };
+  const zjgTotalArticles = () => totalArticles().filter(_isZjgCard);
+  const zjgPrevArticles  = () => prevArticles().filter(_isZjgCard);
+  bindCardClick('zjgTotal24', isWeekMode ? '張嘉郡近 7 日聲量明細' : '張嘉郡 24h 聲量明細',
+    isWeekMode ? '近 7 日提及張嘉郡的事件' : '近 24 小時提及張嘉郡的事件', zjgTotalArticles);
+  bindCardClick('zjgPrev24',  isWeekMode ? '張嘉郡前 7 日聲量明細' : '張嘉郡前 24h 聲量明細',
+    isWeekMode ? '7-14 天前提及張嘉郡的事件' : '24-48 小時前提及張嘉郡的事件', zjgPrevArticles);
 
   // 三盞燈：新聞燈號（純內容）/ 留言燈號（社群情緒）/ 綜合燈號（兩者取較嚴重）
   const newsResult = severityLightWithReason(totalArticles());
@@ -3723,26 +3732,55 @@ async function run(){
     }
   });
 
-  // 張嘉郡 only 聲量趨勢（_self_filter、跟雲林版分開、橘色區分）
+  // 張嘉郡 only 聲量趨勢（_self_filter、跟雲林版分開、橘色區分、可點）
   const byHourSelfRaw = pick(d, 'by_hour_self', 'by_hour_self_7d') || [];
+  let byHourSelf;
+  if (isWeek){
+    // 7d：小時聚合成「天」（跟雲林圖一致、補零）
+    const dc = {};
+    byHourSelfRaw.forEach(h => { const day=(h.hour||'').slice(0,10); if(day) dc[day]=(dc[day]||0)+(h.count||0); });
+    const today = new Date(); today.setHours(0,0,0,0);
+    const days = [];
+    for (let i=6;i>=0;i--){ const d2=new Date(today.getTime()-i*86400000); days.push(d2.toLocaleDateString('en-CA',{timeZone:'Asia/Taipei'})); }
+    byHourSelf = days.map(d => ({ hour:d, day:d, count: dc[d]||0 }));
+  } else {
+    byHourSelf = byHourSelfRaw;
+  }
+  // 從雲林文章池篩出「提及張嘉郡/嘉郡」的（給點擊 modal 用）
+  const isZjgArticle = (a) => { const t=(a.title||''); return t.indexOf('張嘉郡')>=0 || t.indexOf('嘉郡')>=0; };
   if (document.getElementById('zjgHourChart')) {
     zjgHourChart = upsertChart(zjgHourChart, document.getElementById('zjgHourChart'), {
       type: isWeek ? 'bar' : 'line',
       data: {
-        labels: isWeek ? byHourSelfRaw.map(x => (x.hour||x.day||'').slice(5,16))
-                       : byHourSelfRaw.map(x => (x.hour||'').slice(5,16)),
+        labels: isWeek ? byHourSelf.map(x => dayWeekdayLabel(x.day))
+                       : byHourSelf.map(x => (x.hour||'').slice(5,16)),
         datasets: [{
-          label: '張嘉郡聲量', data: byHourSelfRaw.map(x => x.count||0),
+          label: '張嘉郡聲量', data: byHourSelf.map(x => x.count||0),
           borderColor:'#ff9f5a', backgroundColor: isWeek ? '#ff9f5a' : 'rgba(255,159,90,0.2)',
-          tension:0.25, fill:!isWeek, pointRadius: isWeek?0:3, pointHoverRadius: isWeek?0:6,
+          tension:0.25, fill:!isWeek, pointRadius: isWeek?0:4, pointHoverRadius: isWeek?0:7,
           borderRadius: isWeek?6:0,
         }],
       },
       options: {
+        interaction: INDEX_HOVER, hover: INDEX_HOVER,
         plugins: { legend:{display:false},
           tooltip: darkTooltip({ mode:'index', displayColors:false,
-            callbacks:{ label:(ctx)=>`張嘉郡聲量：${ctx.parsed.y}` } }) },
+            callbacks:{ label:(ctx)=>`張嘉郡聲量：${ctx.parsed.y}（點擊查看清單）` } }) },
         scales: { x:{ticks:{color:'#b9c3f2'}}, y:{ticks:{color:'#b9c3f2'}, beginAtZero:true} },
+        onHover: (evt, els) => { const t=evt?.native?.target; if(t) t.style.cursor = els.length?'pointer':'default'; },
+        onClick: (evt, els) => {
+          if (!els.length) return;
+          const idx = els[0].index;
+          if (isWeek){
+            const dayKey = byHourSelf[idx]?.day; if (!dayKey) return;
+            const arts = (state.articles7d||[]).filter(a => a.day===dayKey && isZjgArticle(a));
+            openArticlesModal(`${dayWeekdayLabel(dayKey)} 張嘉郡聲量明細`, `當日提及張嘉郡的事件`, arts);
+          } else {
+            const hourFull = byHourSelf[idx]?.hour; if (!hourFull) return;
+            const arts = (state.articles24h||[]).filter(a => a.hour===hourFull && isZjgArticle(a));
+            openArticlesModal(`${hourFull.slice(5,16)} 張嘉郡聲量明細`, `該小時提及張嘉郡的事件`, arts);
+          }
+        },
       },
     });
   }
