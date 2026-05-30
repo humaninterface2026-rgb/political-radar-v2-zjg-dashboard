@@ -1970,6 +1970,12 @@ function presidentialColorByPredictionPolls(v){
   if (!pred) return '#444';
   return PARTY_MAP_COLORS[pred.predicted_winner] || '#444';
 }
+function mayorColorByPrediction(v){
+  // 雲林縣長基本面預測（gen_yunlin_mayor_forecast.py 寫的 local_prediction）
+  const pred = v.local_prediction;
+  if (!pred) return '#444';
+  return PARTY_MAP_COLORS[pred.predicted_winner] || '#444';
+}
 function priorityToColor(p){
   // 0-100 → 淡藍 → 黃 → 紅
   const x = Math.max(0, Math.min(100, p)) / 100;
@@ -1994,162 +2000,92 @@ function priorityToColor(p){
 async function renderElectionForecast(){
   const container = document.getElementById('forecastBody');
   if (!container) return;
-  let data;
+  let city;
   try {
-    // Reuse _epIndexCache via loadEpIndex — avoids re-fetching 4.4MB on mode switch
-    data = await loadEpIndex();
+    // 雲林縣長基本面（gen_yunlin_mayor_forecast.py 產的 mayor_forecast）。
+    // 不再用全國 22 縣市總統 aggregate — 那是總統基本盤、對縣長選舉會誤導。
+    city = await loadEpCity('yun');
   } catch (e) {
     container.innerHTML = '<p class="hint">資料載入失敗。</p>';
     return;
   }
-  // 優先顯示全國 22 縣市加總；6 都加總當作備援（缺 country 才用）。
-  const country = data.country_aggregate;
-  const six = data.six_cities_aggregate;
-  const agg = country || six;
-  if (!agg || !agg.predicted){
-    container.innerHTML = '<p class="hint">沒有預測資料。</p>';
+  const mf = city && city.mayor_forecast;
+  const pred = mf && mf.predicted;
+  if (!mf || !pred){
+    container.innerHTML = '<p class="hint">尚未產生雲林縣長預測（請跑 scripts/gen_yunlin_mayor_forecast.py）。</p>';
     return;
   }
 
-  const fmt = (n) => n.toLocaleString();
-  const pred = agg.predicted;
-  const a24 = agg.actual_2024;
-  const a20 = agg.actual_2020;
-  const isCountry = !!country;
-  const scopeLabel = isCountry ? '全國 22 縣市加總' : '6 都加總';
-  const totalKey = isCountry ? 'total_estimated_votes' : 'total_estimated_votes';
-
-  // Delta vs 2024 (預測 - 2024 實際) — 看模型認為哪一黨會漲跌
-  const deltaKMT = pred.kmt_pct - a24.kmt_pct;
-  const deltaDPP = pred.dpp_pct - a24.dpp_pct;
-  const deltaTPP = pred.tpp_pct - a24.tpp_pct;
-  const fmtDelta = (d) => (d > 0 ? '+' : '') + d.toFixed(1) + 'pt';
-  const arrow = (d) => d > 0.1 ? '▲' : d < -0.1 ? '▼' : '＝';
-
-  // 三黨橫條（一條長條，3 段）
+  const fmt = (n) => (n != null ? Number(n).toLocaleString() : '—');
+  const partyClass = (p) => p === 'KMT' ? 'persist-blue' : p === 'DPP' ? 'persist-green'
+                          : p === 'TPP' ? 'persist-white' : 'persist-other';
+  const confLabel = { high: '高（差距 ≥15pt）', medium: '中（差距 5–15pt）',
+                      low: '低（差距 <5pt 膠著）' }[pred.confidence] || pred.confidence;
   const stackBar = (kmt, dpp, tpp) => `
     <div class="forecast-stack-bar">
       <div class="forecast-seg" style="width:${kmt}%;background:#3b82f6"  title="KMT ${kmt.toFixed(1)}%">${kmt >= 8 ? 'KMT ' + kmt.toFixed(1) + '%' : ''}</div>
       <div class="forecast-seg" style="width:${dpp}%;background:#22c55e"  title="DPP ${dpp.toFixed(1)}%">${dpp >= 8 ? 'DPP ' + dpp.toFixed(1) + '%' : ''}</div>
-      <div class="forecast-seg" style="width:${tpp}%;background:#e5e7eb;color:#d8e2ff" title="TPP ${tpp.toFixed(1)}%">${tpp >= 8 ? 'TPP ' + tpp.toFixed(1) + '%' : ''}</div>
+      <div class="forecast-seg" style="width:${tpp}%;background:#e5e7eb;color:#888" title="TPP ${tpp.toFixed(1)}%">${tpp >= 8 ? 'TPP ' + tpp.toFixed(1) + '%' : ''}</div>
     </div>`;
+  const arrow = (d) => d > 0.1 ? '▲' : d < -0.1 ? '▼' : '＝';
+  const fmtDelta = (d) => (d > 0 ? '+' : '') + d.toFixed(1) + 'pt';
 
-  const partyClass = (p) => p === 'KMT' ? 'persist-blue' : p === 'DPP' ? 'persist-green' : p === 'TPP' ? 'persist-white' : 'persist-other';
+  const est = pred.est_votes || 0;
+  const kmtVotes = Math.round(pred.kmt_pct / 100 * est);
+  const dppVotes = Math.round(pred.dpp_pct / 100 * est);
 
-  // 全國 / 6 都 totals card
-  const villageCount = pred.total_villages || pred.sample_villages || '?';
+  // vs 2022 縣長（張麗善連任那屆）
+  const a22 = mf.actual_2022;
+  let compareHtml = '';
+  if (a22){
+    const dK = pred.kmt_pct - a22.kmt_pct;
+    const dD = pred.dpp_pct - a22.dpp_pct;
+    compareHtml = `
+      <div class="forecast-compare">
+        <div class="forecast-compare-title">vs 2022 縣長實際得票（張麗善 KMT 連任那屆）</div>
+        <div class="forecast-compare-row"><span class="forecast-compare-cell">KMT　${a22.kmt_pct.toFixed(1)}%　→　${pred.kmt_pct.toFixed(1)}%　<span class="forecast-delta ${dK>=0?'pos':'neg'}">${arrow(dK)} ${fmtDelta(dK)}</span></span></div>
+        <div class="forecast-compare-row"><span class="forecast-compare-cell">DPP　${a22.dpp_pct.toFixed(1)}%　→　${pred.dpp_pct.toFixed(1)}%　<span class="forecast-delta ${dD>=0?'pos':'neg'}">${arrow(dD)} ${fmtDelta(dD)}</span></span></div>
+      </div>`;
+  }
+
   const totalCard = `
     <div class="forecast-six-card">
       <div class="forecast-headline">
-        <span class="forecast-label">${scopeLabel}預測勝者</span>
+        <span class="forecast-label">雲林縣長 基本面預測勝者</span>
         <span class="ep-persist-pill ${partyClass(pred.predicted_winner)}" style="font-size:15px">${pred.predicted_winner}</span>
-        <span class="hint">　領先 ${pred.predicted_margin.toFixed(1)} 個百分點　涵蓋 ${villageCount} 里</span>
+        <span class="hint">　領先 ${pred.predicted_margin.toFixed(1)} 個百分點　信心 ${confLabel}　涵蓋 ${pred.sample_villages} 里</span>
       </div>
       ${stackBar(pred.kmt_pct, pred.dpp_pct, pred.tpp_pct)}
       <div class="forecast-vote-grid">
-        <div><span class="forecast-vote-label">KMT</span><span class="forecast-vote-num">${fmt(pred.kmt_votes)} 票</span></div>
-        <div><span class="forecast-vote-label">DPP</span><span class="forecast-vote-num">${fmt(pred.dpp_votes)} 票</span></div>
-        <div><span class="forecast-vote-label">TPP</span><span class="forecast-vote-num">${fmt(pred.tpp_votes)} 票</span></div>
-        <div><span class="forecast-vote-label">推估投票數</span><span class="forecast-vote-num">${fmt(pred.total_estimated_votes)} 票</span></div>
+        <div><span class="forecast-vote-label">KMT</span><span class="forecast-vote-num">${fmt(kmtVotes)} 票</span></div>
+        <div><span class="forecast-vote-label">DPP</span><span class="forecast-vote-num">${fmt(dppVotes)} 票</span></div>
+        <div><span class="forecast-vote-label">推估投票數</span><span class="forecast-vote-num">${fmt(est)} 票</span></div>
       </div>
-
-      <div class="forecast-compare">
-        <div class="forecast-compare-title">vs 2024 實際得票</div>
-        <div class="forecast-compare-row"><span class="forecast-compare-cell">KMT　${a24.kmt_pct.toFixed(1)}%　→　${pred.kmt_pct.toFixed(1)}%　<span class="forecast-delta ${deltaKMT>=0?'pos':'neg'}">${arrow(deltaKMT)} ${fmtDelta(deltaKMT)}</span></span></div>
-        <div class="forecast-compare-row"><span class="forecast-compare-cell">DPP　${a24.dpp_pct.toFixed(1)}%　→　${pred.dpp_pct.toFixed(1)}%　<span class="forecast-delta ${deltaDPP>=0?'pos':'neg'}">${arrow(deltaDPP)} ${fmtDelta(deltaDPP)}</span></span></div>
-        <div class="forecast-compare-row"><span class="forecast-compare-cell">TPP　${a24.tpp_pct.toFixed(1)}%　→　${pred.tpp_pct.toFixed(1)}%　<span class="forecast-delta ${deltaTPP>=0?'pos':'neg'}">${arrow(deltaTPP)} ${fmtDelta(deltaTPP)}</span></span></div>
-      </div>
-      <p class="hint" style="margin-top:8px">
-        2020 對照：KMT ${a20 ? a20.kmt_pct.toFixed(1) : '—'}% / DPP ${a20 ? a20.dpp_pct.toFixed(1) : '—'}%
-        ｜${agg.note || ''}
-      </p>
+      ${compareHtml}
     </div>`;
 
-  // Per-city breakdown
-  const cityRows = (agg.by_city || []).map(c => {
-    const w = c.winner;
-    const confLabel = { high: '高', medium: '中', low: '低' }[c.confidence] || c.confidence;
+  const townRows = (mf.by_town || []).map(t => {
+    const confL = { high: '高', medium: '中', low: '低' }[t.confidence] || t.confidence;
     return `
       <div class="forecast-city-row">
-        <div class="forecast-city-name">${c.name}</div>
-        <div class="forecast-city-bar">${stackBar(c.kmt_pct, c.dpp_pct, c.tpp_pct)}</div>
+        <div class="forecast-city-name">${escapeHtml(t.town)}</div>
+        <div class="forecast-city-bar">${stackBar(t.kmt_pct, t.dpp_pct, t.tpp_pct)}</div>
         <div class="forecast-city-meta">
-          <span class="ep-persist-pill ${partyClass(w)}">${w}</span>
-          <span class="hint">領先 ${c.margin.toFixed(1)}pt　信心 ${confLabel}</span>
+          <span class="ep-persist-pill ${partyClass(t.predicted_winner)}">${t.predicted_winner}</span>
+          <span class="hint">領先 ${t.predicted_margin.toFixed(1)}pt　信心 ${confL}</span>
         </div>
       </div>`;
   }).join('');
 
-  // 民調校正版本
-  const polls = agg.predicted_with_polls;
-  const pollsMeta = agg.polls_meta;
-  let pollsCard = '';
-  if (polls && pollsMeta){
-    const swing = pollsMeta.swing || {};
-    const dKMT = polls.kmt_pct - pred.kmt_pct;
-    const dDPP = polls.dpp_pct - pred.dpp_pct;
-    const dTPP = polls.tpp_pct - pred.tpp_pct;
-    const sourceLine = (pollsMeta.sources || []).map(s =>
-      `${s.pollster}（${s.date}${s.n ? '，n=' + s.n : ''}）`
-    ).join('、') || '（未填入民調來源）';
-
-    // Staleness: 民調超過 30 天視為過期（顯示橘色警告）
-    let staleness = '';
-    const asOfStr = pollsMeta.as_of;
-    if (asOfStr){
-      const asOfTime = new Date(asOfStr).getTime();
-      const ageDays = Math.max(0, Math.floor((Date.now() - asOfTime) / 86400000));
-      if (ageDays > 60){
-        staleness = `<span style="color:#ef4444">⚠️ 民調已 ${ageDays} 天未更新（建議 ≤30 天）— 跑 scripts/fetch_polls.py 自動刷新</span>`;
-      } else if (ageDays > 30){
-        staleness = `<span style="color:#f59e0b">⚠️ 民調已 ${ageDays} 天未更新</span>`;
-      } else {
-        staleness = `<span style="color:#22c55e">✓ 民調 ${ageDays === 0 ? '今天' : ageDays + ' 天前'}更新</span>`;
-      }
-    }
-
-    pollsCard = `
-      <div class="forecast-six-card forecast-polls-card">
-        <div class="forecast-headline">
-          <span class="forecast-label">民調校正後預測勝者</span>
-          <span class="ep-persist-pill ${partyClass(polls.predicted_winner)}" style="font-size:15px">${polls.predicted_winner}</span>
-          <span class="hint">　領先 ${polls.predicted_margin.toFixed(1)} 個百分點　民調日期 ${pollsMeta.as_of || '—'}　${staleness}</span>
-        </div>
-        ${stackBar(polls.kmt_pct, polls.dpp_pct, polls.tpp_pct)}
-        <div class="forecast-vote-grid">
-          <div><span class="forecast-vote-label">KMT</span><span class="forecast-vote-num">${fmt(polls.kmt_votes)} 票</span></div>
-          <div><span class="forecast-vote-label">DPP</span><span class="forecast-vote-num">${fmt(polls.dpp_votes)} 票</span></div>
-          <div><span class="forecast-vote-label">TPP</span><span class="forecast-vote-num">${fmt(polls.tpp_votes)} 票</span></div>
-          <div><span class="forecast-vote-label">推估投票數</span><span class="forecast-vote-num">${fmt(polls.total_estimated_votes)} 票</span></div>
-        </div>
-        <div class="forecast-compare">
-          <div class="forecast-compare-title">vs 純基本面預測（民調 swing 套用後）</div>
-          <div class="forecast-compare-row"><span class="forecast-compare-cell">KMT　${pred.kmt_pct.toFixed(1)}%　→　${polls.kmt_pct.toFixed(1)}%　<span class="forecast-delta ${dKMT>=0?'pos':'neg'}">${arrow(dKMT)} ${fmtDelta(dKMT)}</span>　（民調 swing ${swing.KMT >= 0 ? '+' : ''}${swing.KMT}pt）</span></div>
-          <div class="forecast-compare-row"><span class="forecast-compare-cell">DPP　${pred.dpp_pct.toFixed(1)}%　→　${polls.dpp_pct.toFixed(1)}%　<span class="forecast-delta ${dDPP>=0?'pos':'neg'}">${arrow(dDPP)} ${fmtDelta(dDPP)}</span>　（民調 swing ${swing.DPP >= 0 ? '+' : ''}${swing.DPP}pt）</span></div>
-          <div class="forecast-compare-row"><span class="forecast-compare-cell">TPP　${pred.tpp_pct.toFixed(1)}%　→　${polls.tpp_pct.toFixed(1)}%　<span class="forecast-delta ${dTPP>=0?'pos':'neg'}">${arrow(dTPP)} ${fmtDelta(dTPP)}</span>　（民調 swing ${swing.TPP >= 0 ? '+' : ''}${swing.TPP}pt）</span></div>
-        </div>
-        <p class="hint" style="margin-top:8px">
-          <strong>民調來源</strong>：${sourceLine}<br>
-          <strong>方法</strong>：「政黨支持度 - 2024 實際得票」算 swing，每個里加上同一個 swing 後再正規化（uniform swing）。
-          <strong>限制</strong>：(1) uniform swing 假設全國均勻偏移，沒抓地域差異；
-          (2) 政黨支持度 ≠ 投票意向；(3) 民調抽樣誤差 ±3%；(4) 2028 候選人未定。
-          編輯 <code>dashboard/polls_config.json</code> 更新民調數字後，下次 build 會生效。
-        </p>
-      </div>`;
-  }
-
   container.innerHTML = `
     ${totalCard}
-    ${pollsCard}
-    <h3 style="margin-top:18px;color:#d8e2ff;font-size:14px">${isCountry ? '各鄉鎮市預測明細' : '各鄉鎮市預測明細'}</h3>
-    <div class="forecast-city-list">${cityRows}</div>
+    <h3 style="margin-top:18px;color:#d8e2ff;font-size:14px">各鄉鎮市預測明細（${(mf.by_town || []).length} 鄉鎮市，得票多→少）</h3>
+    <div class="forecast-city-list">${townRows}</div>
     <p class="hint" style="margin-top:12px">
-      <strong>模型方法</strong>：每個里計算下屆縣長選舉預測（加權近 5 屆得票 + momentum 趨勢延伸 ×0.3），
-      再以該里 2024 投票數作權重加總到縣市 / 6 都。${polls ? '另出一份「民調校正後」版本：對基本面預測套上 uniform swing。' : ''}<br>
-      <strong>模型局限</strong>：${polls ? '即便有民調 swing，仍' : '純基本面，'}沒考慮現任效應、新政黨崛起、候選人組合差異、突發事件。<br>
-      <strong>backtest（用 2008-2020 預測 2024）</strong>：村里級勝者準確率 85.5%，
-      但 TPP 系統性低估 26pt（無法預測新政黨）、DPP 高估 20pt（過度延伸近期趨勢）。
-      <em>當作參考，不要當真值用</em>。
+      <strong>模型方法</strong>：${escapeHtml(mf.method || '')}<br>
+      <strong>資料來源</strong>：${escapeHtml(mf.source || '')}<br>
+      <strong>模型局限</strong>：${escapeHtml(mf.limitations || '')}<br>
+      <em>基本面 = 過去 5 屆縣長基本盤的延伸，不是 2026 候選人民調。當參考、不要當真值用。</em>
     </p>
   `;
 }
@@ -2182,7 +2118,7 @@ async function renderElectionMap(){
   }
 
   const renderLayer = async () => {
-    const code = citySelect.value;
+    const code = (citySelect && citySelect.value) || 'yun';   // 鎖定雲林
     const mode = modeSelect.value;
 
     if (status) status.textContent = '載入中…';
@@ -2221,6 +2157,7 @@ async function renderElectionMap(){
         if (activeMode === 'priority') color = priorityToColor(v.priority);
         else if (activeMode === 'strategy') color = STRATEGY_COLORS[v.strategy_type] || '#444';
         else if (activeMode === 'persistence') color = PERSISTENCE_MAP_COLORS[v.persistence] || '#444';
+        else if (activeMode === 'mayor_predict') color = mayorColorByPrediction(v);
         else if (activeMode === 'presidential_2024') color = presidentialColorByYear(v, 2024);
         else if (activeMode === 'presidential_predict') color = presidentialColorByPrediction(v);
         else if (activeMode === 'presidential_predict_polls') color = presidentialColorByPredictionPolls(v);
@@ -2239,6 +2176,13 @@ async function renderElectionMap(){
         let tooltipHtml;
         if (!v){
           tooltipHtml = `<strong>${p.TOWNNAME} ${p.VILLAGENAM}</strong><br>（無資料）`;
+        } else if (activeMode === 'mayor_predict'){
+          const pred = v.local_prediction;
+          tooltipHtml = pred
+            ? `<strong>${p.TOWNNAME} ${p.VILLAGENAM}</strong><br>
+               縣長基本面預測：<strong>${pred.predicted_winner}</strong>（領先 ${pred.predicted_margin}pt，信心 ${pred.confidence}）<br>
+               KMT ${pred.kmt_pct}%　DPP ${pred.dpp_pct}%`
+            : `<strong>${p.TOWNNAME} ${p.VILLAGENAM}</strong><br>（縣長預測資料缺）`;
         } else if (activeMode === 'presidential_2024'){
           const r = (v.presidential_history || []).find(x => x.year === 2024);
           tooltipHtml = r
@@ -2295,6 +2239,12 @@ async function renderElectionMap(){
                             E_AGEING_SATURATED:'E 高齡飽和'};
             return `<span class="em-legend-item"><span class="em-legend-swatch" style="background:${c}"></span>${labels[k]}</span>`;
           }).join('')}`;
+      } else if (activeMode === 'mayor_predict'){
+        html = `<div class="em-legend-title">下屆縣長基本面預測（勝者）</div>
+          ${Object.entries(PARTY_MAP_COLORS).filter(([k]) => ['KMT','DPP'].includes(k)).map(([k, c]) =>
+            `<span class="em-legend-item"><span class="em-legend-swatch" style="background:${c}"></span>${k}</span>`
+          ).join('')}
+          <div class="hint" style="margin-top:6px;font-size:11px">模型：加權近 5 屆<strong>縣長</strong>得票（最近 0.55 / 上屆 0.30）+ momentum ×0.3。反映張家／KMT 現任基本盤、非候選人民調。</div>`;
       } else if (activeMode === 'presidential_2024'){
         html = `<div class="em-legend-title">2024 總統得票（實際勝者）</div>
           ${Object.entries(PARTY_MAP_COLORS).filter(([k]) => ['KMT','DPP','TPP'].includes(k)).map(([k, c]) =>
@@ -2389,7 +2339,7 @@ async function renderElectionPriority(){
   const limitSelect = document.getElementById('epLimitSelect');
 
   const renderTable = async () => {
-    const cityCode = citySelect.value;
+    const cityCode = (citySelect && citySelect.value) || 'yun';   // 鎖定雲林
     const limit = parseInt(limitSelect.value, 10) || 100;
     if (status) status.textContent = '載入中…';
 
@@ -2442,7 +2392,6 @@ async function renderElectionPriority(){
     table.innerHTML = `
       <thead><tr>
         <th>排名</th>
-        <th>縣市</th>
         <th>區 / 里</th>
         <th>人口</th>
         <th>屬性</th>
@@ -2463,7 +2412,6 @@ async function renderElectionPriority(){
       const budgetCls = `budget-${(v.budget_hint || '').toLowerCase()}`;
       tr.innerHTML = `
         <td class="ep-rank">${i + 1}</td>
-        <td class="ep-city">${escapeHtml(v.cityName)}</td>
         <td class="ep-village"><strong>${escapeHtml(v.town)}</strong> ${escapeHtml(v.village)}</td>
         <td class="ep-num">${v.pop.toLocaleString()}</td>
         <td><span class="ep-persist-pill ${persistCls}">${escapeHtml(v.persistence)}</span></td>
@@ -2484,6 +2432,33 @@ async function renderElectionPriority(){
   citySelect?.addEventListener('change', renderTable);
   limitSelect?.addEventListener('change', renderTable);
   await renderTable();
+}
+
+function renderMayorPredictionCard(v){
+  // 里級「縣長」基本面預測（gen_yunlin_mayor_forecast.py 的 local_prediction）
+  const p = v.local_prediction;
+  if (!p) return '';
+  const partyClass = (x) => x === 'KMT' ? 'persist-blue' : x === 'DPP' ? 'persist-green'
+                          : x === 'TPP' ? 'persist-white' : 'persist-other';
+  const confLabel = { high: '高（差距 ≥15pt）', medium: '中（差距 5–15pt）',
+                      low: '低（差距 <5pt 膠著）' }[p.confidence] || p.confidence;
+  return `
+    <div class="ep-prediction-box">
+      <div class="ep-prediction-headline">
+        🔮 下屆縣長基本面預測：
+        <span class="ep-persist-pill ${partyClass(p.predicted_winner)}" style="font-size:14px">${p.predicted_winner}</span>
+        <span class="hint">　領先 ${p.predicted_margin}pt　信心 ${confLabel}</span>
+      </div>
+      <div class="ep-prediction-bars">
+        <div class="ep-bar-row"><span class="ep-bar-label">KMT</span>
+          <div class="ep-bar"><div class="ep-bar-fill" style="width:${p.kmt_pct}%;background:#3b82f6"></div></div>
+          <span class="ep-bar-pct">${p.kmt_pct}%</span></div>
+        <div class="ep-bar-row"><span class="ep-bar-label">DPP</span>
+          <div class="ep-bar"><div class="ep-bar-fill" style="width:${p.dpp_pct}%;background:#22c55e"></div></div>
+          <span class="ep-bar-pct">${p.dpp_pct}%</span></div>
+      </div>
+      <div class="hint" style="margin-top:8px">加權近 5 屆<strong>縣長</strong>得票 + momentum ×0.3、標準化。純基本面、沒抓 2026 候選人（張嘉郡 vs 劉建國）與現任效應。</div>
+    </div>`;
 }
 
 function renderPresidentialBlock(v){
@@ -2721,6 +2696,7 @@ function openVillageDetail(v){
     </table>
     `}
 
+    ${renderMayorPredictionCard(v)}
     ${renderPresidentialBlock(v)}
   `;
 

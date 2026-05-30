@@ -293,7 +293,7 @@
 
   <section class="panel" id="electionForecastPanel">
     <h2>🔮 下屆縣長選舉預測（基本面模型）</h2>
-    <p class="hint">把全國 7,738 個里級預測（5 屆歷史加權 + momentum 趨勢）×2024 投票數加總到縣市 / 全國 22 縣市。<strong>純歷史基本盤</strong>，沒民調沒全國風向。</p>
+    <p class="hint">把雲林 387 個里的「5 屆<strong>縣長</strong>得票（2005–2022）加權 + momentum 趨勢」加總到全縣 / 各鄉鎮市。<strong>純歷史基本盤</strong>，反映張家／KMT 現任優勢，<strong>不是 2026 候選人民調</strong>。</p>
     <div id="forecastBody"></div>
   </section>
 
@@ -303,32 +303,7 @@
     <div class="em-controls">
       <label>縣市：
         <select id="emCitySelect">
-          <optgroup label="6 都（priority 基於市長選舉）">
-            <option value="tpe">台北市</option>
-            <option value="ntpc">新北市</option>
-            <option value="tyc">桃園市</option>
-            <option value="txg">台中市</option>
-            <option value="tnn">台南市</option>
-            <option value="khh">高雄市</option>
-          </optgroup>
-          <optgroup label="16 縣市（priority 基於縣市長選舉）">
-            <option value="kee">基隆市</option>
-            <option value="hsz">新竹市</option>
-            <option value="cyi">嘉義市</option>
-            <option value="hsq">新竹縣</option>
-            <option value="mil">苗栗縣</option>
-            <option value="cha">彰化縣</option>
-            <option value="nan">南投縣</option>
-            <option value="yun">雲林縣</option>
-            <option value="cyq">嘉義縣</option>
-            <option value="pif">屏東縣</option>
-            <option value="ila">宜蘭縣</option>
-            <option value="hua">花蓮縣</option>
-            <option value="ttt">臺東縣</option>
-            <option value="peh">澎湖縣</option>
-            <option value="kin">金門縣</option>
-            <option value="lja">連江縣</option>
-          </optgroup>
+          <option value="yun" selected>雲林縣（鎖定）</option>
         </select>
       </label>
       <label>顏色依據：
@@ -336,9 +311,10 @@
           <option value="priority">Priority 分數（綜合排名）</option>
           <option value="strategy">策略類型</option>
           <option value="persistence">政治屬性</option>
-          <option value="presidential_2024">2024 總統得票（實際）</option>
-          <option value="presidential_predict">下屆總統預測（純基本面）</option>
-          <option value="presidential_predict_polls">下屆總統預測（民調校正後）</option>
+          <option value="mayor_predict">下屆縣長預測（基本面）</option>
+          <option value="presidential_2024">2024 總統得票（參考·大選風向）</option>
+          <option value="presidential_predict">下屆總統預測（參考·大選風向）</option>
+          <option value="presidential_predict_polls">下屆總統預測（民調校正·參考）</option>
         </select>
       </label>
       <span id="emStatus" class="hint"></span>
@@ -348,7 +324,7 @@
   </section>
 
   <section class="panel" id="electionPriorityPanel">
-    <h2>里級黃金戰場版圖（全國 22 縣市歷年選舉）</h2>
+    <h2>里級黃金戰場版圖（雲林縣長歷年選舉）</h2>
     <div class="ep-disclaimer">
       <strong>用法</strong>：每個里計算了「搖擺度 / 翻轉次數 / 持久屬性 / 說服空間」綜合 priority（戰略優先序分數，0-100）。
       Priority 高的里 = 過去最容易翻盤、未來投放資源邊際效益（marginal benefit，多花 1 元能多拿到的票數）最大的選區。<strong>用來規劃拜票路線、資源分配、議題客製化</strong>。
@@ -391,33 +367,7 @@
     <div class="ep-controls">
       <label>篩選縣市：
         <select id="epCitySelect">
-          <option value="all">全部 22 縣市</option>
-          <optgroup label="6 都（priority 基於市長選舉）">
-            <option value="tpe">台北市</option>
-            <option value="ntpc">新北市</option>
-            <option value="tyc">桃園市</option>
-            <option value="txg">台中市</option>
-            <option value="tnn">台南市</option>
-            <option value="khh">高雄市</option>
-          </optgroup>
-          <optgroup label="16 縣市（priority 基於縣市長選舉）">
-            <option value="kee">基隆市</option>
-            <option value="hsz">新竹市</option>
-            <option value="cyi">嘉義市</option>
-            <option value="hsq">新竹縣</option>
-            <option value="mil">苗栗縣</option>
-            <option value="cha">彰化縣</option>
-            <option value="nan">南投縣</option>
-            <option value="yun">雲林縣</option>
-            <option value="cyq">嘉義縣</option>
-            <option value="pif">屏東縣</option>
-            <option value="ila">宜蘭縣</option>
-            <option value="hua">花蓮縣</option>
-            <option value="ttt">臺東縣</option>
-            <option value="peh">澎湖縣</option>
-            <option value="kin">金門縣</option>
-            <option value="lja">連江縣</option>
-          </optgroup>
+          <option value="yun" selected>雲林縣（鎖定）</option>
         </select>
       </label>
       <label>顯示前：
@@ -648,7 +598,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <!-- config.js 已提早到 <head> 載入、不需要再載一次 -->
   <script defer src="./lib/db.js?v=2026-05-29-self"></script>
-  <script defer src="./app.js?v=2026-05-30-map-fanout"></script>
+  <script defer src="./app.js?v=2026-05-30-mayor-forecast"></script>
   <script>
     // Service Worker — 2nd-visit speed-up + offline fallback.
     // Registered after page load so it doesn't compete with critical resources.
