@@ -1348,12 +1348,33 @@ function renderIncidentMap(d){
   const layer = L.featureGroup();
   const markersByTitle = {};
 
-  hotspots.forEach(h => {
-    if (h.lat == null || h.lng == null) return;
+  // 同座標熱點會疊在一起（雲林政治新聞多半只寫「雲林」→ 全擠到斗六預設點）。
+  //   (1) 依燈號排序、紅燈最後畫＝疊最上層、永不被黃/綠蓋掉
+  //   (2) 同座標 >1 個時做扇形散開、每顆各自看得到、各自可點
+  const _SEV_DRAW = { green: 0, yellow: 1, red: 2 };
+  const _coordKey = h => `${(+h.lat).toFixed(4)},${(+h.lng).toFixed(4)}`;
+  const drawList = hotspots
+    .filter(h => h.lat != null && h.lng != null)
+    .slice()
+    .sort((a, b) => (_SEV_DRAW[a.level] ?? 2) - (_SEV_DRAW[b.level] ?? 2));
+  const _coordCount = {};
+  drawList.forEach(h => { const k = _coordKey(h); _coordCount[k] = (_coordCount[k] || 0) + 1; });
+  const _coordSeen = {};
+
+  drawList.forEach(h => {
     const level = h.level || 'red';
     const color = level === 'red' ? '#c43344' : level === 'yellow' ? '#f7c948' : '#1f8a4c';
-    const marker = L.circleMarker([h.lat, h.lng], {
-      radius: 9,
+    // 扇形散開：同座標多顆時、平均分佈在 ~2.4km 半徑的圓周上（lng 除以 cos(lat) 修正成圓形）
+    let lat = +h.lat, lng = +h.lng;
+    const k = _coordKey(h), n = _coordCount[k];
+    if (n > 1) {
+      const idx = (_coordSeen[k] = (_coordSeen[k] || 0) + 1) - 1;
+      const R = 0.022, ang = -Math.PI / 2 + (2 * Math.PI * idx) / n;
+      lat += R * Math.cos(ang);
+      lng += R * Math.sin(ang) / Math.cos((+h.lat) * Math.PI / 180);
+    }
+    const marker = L.circleMarker([lat, lng], {
+      radius: level === 'red' ? 11 : 9,   // 紅燈略大、更顯眼
       color,
       weight: 2,
       fillColor: color,
