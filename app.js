@@ -2616,6 +2616,7 @@ function openVillageDetail(v){
     const tpp = v.tpp_rates?.[i] ?? 0;
     const winner = v.winner_parties?.[i] || '';
     const winnerCls = winner === 'KMT' ? 'persist-blue' : winner === 'DPP' ? 'persist-green' : winner === 'TPP' ? 'persist-white' : 'persist-other';
+    const off = (v.official_by_year || {})[String(y)];
     return `
       <tr>
         <td>${y}</td>
@@ -2623,6 +2624,7 @@ function openVillageDetail(v){
         <td class="ep-num">${kmt}%</td>
         <td class="ep-num">${dpp}%</td>
         <td class="ep-num">${tpp}%</td>
+        <td class="ep-num">${off ? off.turnout + '%' : '—'}</td>
       </tr>`;
   }).join('');
 
@@ -2644,7 +2646,7 @@ function openVillageDetail(v){
         <span class="ep-priority-tag">priority ${v.priority}</span>
         <button class="ep-maps-btn" type="button" data-focus='${escapeHtml(focusBtnPayload)}' title="在上方「里級地理視覺化」地圖上聚焦此里">📍 在地圖上聚焦</button>
       </div>
-      <div class="hint">人口 ${v.pop.toLocaleString()}（合格選舉人 ${v.voters.toLocaleString()}）　投票率 ${v.turnout != null ? v.turnout + '%' : '—'}　中位年齡 ${v.median_age || '—'} 歲</div>
+      <div class="hint">人口 ${v.pop.toLocaleString()}　選舉人數 ${v.voters.toLocaleString()}　投票率 ${v.turnout != null ? v.turnout + '%' : '—'}${v.turnout_source === 'cec_2022' ? '（中選會官方 2022）' : ''}　中位年齡 ${v.median_age || '—'} 歲</div>
       <div class="hint">屬性：<span class="ep-persist-pill ${PERSISTENCE_COLORS[v.persistence] || 'persist-other'}">${escapeHtml(v.persistence)}</span>　搖擺度 ${v.volatility}　翻盤 ${v.flips} 次　最近差距 ${v.latest_margin}%　說服空間 ${v.persuadability}</div>
     </div>
 
@@ -2691,7 +2693,7 @@ function openVillageDetail(v){
     ${v.source === 'presidential' ? '' : `
     <h3>📜 ${v.source === 'local_mayor' ? '歷次縣市長選舉' : '歷次直轄市長選舉'}</h3>
     <table class="ep-history-table">
-      <thead><tr><th>年</th><th>勝者</th><th>KMT</th><th>DPP</th><th>TPP</th></tr></thead>
+      <thead><tr><th>年</th><th>勝者</th><th>KMT</th><th>DPP</th><th>TPP</th><th title="中選會官方投票率（elprof）">投票率</th></tr></thead>
       <tbody>${histRows}</tbody>
     </table>
     `}
