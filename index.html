@@ -128,8 +128,10 @@
   </section>
 
   <section class="cards">
-    <div class="card"><h3 data-window-label>24h 聲量</h3><div id="total24" class="num">-</div></div>
-    <div class="card"><h3 data-window-label-prev>前 24h</h3><div id="prev24" class="num">-</div></div>
+    <div class="card"><h3 data-window-label>雲林24h聲量</h3><div id="total24" class="num">-</div></div>
+    <div class="card"><h3 data-window-label>雲林前24h聲量</h3><div id="prev24" class="num">-</div></div>
+    <div class="card card-self"><h3 data-window-label>張嘉郡24h聲量</h3><div id="zjgTotal24" class="num">-</div></div>
+    <div class="card card-self"><h3 data-window-label>張嘉郡前24h聲量</h3><div id="zjgPrev24" class="num">-</div></div>
     <div class="card"><h3>成長率</h3><div id="growth" class="num">-</div></div>
     <div class="card"><h3>綜合燈號</h3><div id="light" class="num">-</div></div>
     <div class="card"><h3>新聞燈號</h3><div id="lightNews" class="num">-</div></div>
@@ -138,8 +140,14 @@
   </section>
 
   <section class="panel">
-    <h2 data-window-label>24h 聲量趨勢</h2>
+    <h2 data-window-label>雲林24h聲量趨勢</h2>
     <canvas id="hourChart" height="120"></canvas>
+  </section>
+
+  <section class="panel">
+    <h2 data-window-label>張嘉郡24h聲量趨勢</h2>
+    <p class="hint">張嘉郡本人專屬聲量（不含劉建國/雲林）。近期曝光低時此圖會偏平 — 反映主角媒體存在感。</p>
+    <canvas id="zjgHourChart" height="120"></canvas>
   </section>
 
   <section class="panel">
@@ -639,8 +647,8 @@
   <!-- Supabase UMD: 必須在 db.js / app.js 前載入 -->
   <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <!-- config.js 已提早到 <head> 載入、不需要再載一次 -->
-  <script defer src="./lib/db.js?v=2026-05-19-feedback-loop"></script>
-  <script defer src="./app.js?v=2026-05-29-zjg-map-yunlin"></script>
+  <script defer src="./lib/db.js?v=2026-05-29-self"></script>
+  <script defer src="./app.js?v=2026-05-29-zjg-self-split"></script>
   <script>
     // Service Worker — 2nd-visit speed-up + offline fallback.
     // Registered after page load so it doesn't compete with critical resources.

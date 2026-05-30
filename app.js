@@ -1,4 +1,5 @@
 let hourChart, platformChart, mentionChart, redTrendChart, topicOwnChart, topicTrendsChart;
+let zjgHourChart;
 let incidentMap;
 let mode = '24h';
 // First-run JSON cache — mode switch (24h ↔ 7d) re-renders without re-fetching the
@@ -3068,7 +3069,8 @@ async function run(){
     try {
       const [signals, metrics, byHour, topNews, articles, articlesPrev,
              personsSum, byPlatAll, byPlatLu, latestFb, latestNews,
-             favHistory, topicArc, mediaFraming, commentsByDate, personSections]
+             favHistory, topicArc, mediaFraming, commentsByDate, personSections,
+             metricsSelf, byHourSelf]
         = await Promise.all([
           LxyDB.signalsByPlatform(hours).catch(() => null),
           LxyDB.dashboardMetrics(hours).catch(() => null),
@@ -3086,6 +3088,8 @@ async function run(){
           LxyDB.dashboardMediaFraming(168).catch(() => null),
           LxyDB.dashboardCommentsByDate(7).catch(() => null),
           LxyDB.dashboardPersonSections(20, 20).catch(() => null),
+          LxyDB.dashboardMetricsSelf(hours).catch(() => null),
+          LxyDB.dashboardByHourSelf(hours).catch(() => null),
         ]);
 
       // 把 RPC 結果覆寫進 d (data.json 對應 key)；null = RPC 失敗、保留 data.json 原值
@@ -3106,6 +3110,8 @@ async function run(){
       } catch (e) { /* keep JSON fallback */ }
       if (metrics)      { if (isWeek) d.metrics_7d = metrics; else d.metrics = metrics; }
       if (byHour)       { if (isWeek) d.by_hour_7d = byHour; else d.by_hour = byHour; }
+      if (metricsSelf)  { if (isWeek) d.metrics_self_7d = metricsSelf; else d.metrics_self = metricsSelf; }
+      if (byHourSelf)   { if (isWeek) d.by_hour_self_7d = byHourSelf; else d.by_hour_self = byHourSelf; }
       if (topNews)      { if (isWeek) d.top_news_7d = topNews; else d.top_news = topNews; }
       if (articles)     { if (isWeek) d.articles_7d = articles; else d.articles_24h = articles; }
       if (articlesPrev) { if (isWeek) d.articles_prev_7d = articlesPrev; else d.articles_prev_24h = articlesPrev; }
@@ -3206,6 +3212,11 @@ async function run(){
   document.getElementById('prev24').textContent = m.prev ?? m.prev_24h ?? '-';
   document.getElementById('growth').textContent = m.growth_pct==null ? '-' : `${m.growth_pct}%`;
   document.getElementById('news24').textContent = m.news ?? m.news_24h ?? '-';
+
+  // 張嘉郡 only 聲量卡片（_self_filter）— 跟雲林版並排、一眼看出曝光落差
+  const mSelf = pick(d, 'metrics_self', 'metrics_self_7d') || {};
+  { const e = document.getElementById('zjgTotal24'); if (e) e.textContent = mSelf.total ?? '-'; }
+  { const e = document.getElementById('zjgPrev24');  if (e) e.textContent = mSelf.prev  ?? '-'; }
 
   // 卡片點擊 → 開 modal 顯示對應的新聞清單
   state.articles24h = d.articles_24h || [];
@@ -3711,6 +3722,30 @@ async function run(){
       },
     }
   });
+
+  // 張嘉郡 only 聲量趨勢（_self_filter、跟雲林版分開、橘色區分）
+  const byHourSelfRaw = pick(d, 'by_hour_self', 'by_hour_self_7d') || [];
+  if (document.getElementById('zjgHourChart')) {
+    zjgHourChart = upsertChart(zjgHourChart, document.getElementById('zjgHourChart'), {
+      type: isWeek ? 'bar' : 'line',
+      data: {
+        labels: isWeek ? byHourSelfRaw.map(x => (x.hour||x.day||'').slice(5,16))
+                       : byHourSelfRaw.map(x => (x.hour||'').slice(5,16)),
+        datasets: [{
+          label: '張嘉郡聲量', data: byHourSelfRaw.map(x => x.count||0),
+          borderColor:'#ff9f5a', backgroundColor: isWeek ? '#ff9f5a' : 'rgba(255,159,90,0.2)',
+          tension:0.25, fill:!isWeek, pointRadius: isWeek?0:3, pointHoverRadius: isWeek?0:6,
+          borderRadius: isWeek?6:0,
+        }],
+      },
+      options: {
+        plugins: { legend:{display:false},
+          tooltip: darkTooltip({ mode:'index', displayColors:false,
+            callbacks:{ label:(ctx)=>`張嘉郡聲量：${ctx.parsed.y}` } }) },
+        scales: { x:{ticks:{color:'#b9c3f2'}}, y:{ticks:{color:'#b9c3f2'}, beginAtZero:true} },
+      },
+    });
+  }
 
   platformChart = upsertChart(platformChart, document.getElementById('platformChart'), {
     type:'doughnut',
