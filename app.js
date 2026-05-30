@@ -3084,7 +3084,7 @@ async function run(){
       const [signals, metrics, byHour, topNews, articles, articlesPrev,
              personsSum, byPlatAll, byPlatLu, latestFb, latestNews,
              favHistory, topicArc, mediaFraming, commentsByDate, personSections,
-             metricsSelf, byHourSelf]
+             metricsSelf, byHourSelf, hotspotsRpc]
         = await Promise.all([
           LxyDB.signalsByPlatform(hours).catch(() => null),
           LxyDB.dashboardMetrics(hours).catch(() => null),
@@ -3104,6 +3104,7 @@ async function run(){
           LxyDB.dashboardPersonSections(20, 20).catch(() => null),
           LxyDB.dashboardMetricsSelf(hours).catch(() => null),
           LxyDB.dashboardByHourSelf(hours).catch(() => null),
+          LxyDB.dashboardHotspots(14, 50).catch(() => null),
         ]);
 
       // 把 RPC 結果覆寫進 d (data.json 對應 key)；null = RPC 失敗、保留 data.json 原值
@@ -3126,6 +3127,13 @@ async function run(){
       if (byHour)       { if (isWeek) d.by_hour_7d = byHour; else d.by_hour = byHour; }
       if (metricsSelf)  { if (isWeek) d.metrics_self_7d = metricsSelf; else d.metrics_self = metricsSelf; }
       if (byHourSelf)   { if (isWeek) d.by_hour_self_7d = byHourSelf; else d.by_hour_self = byHourSelf; }
+      // hotspots（RPC 版）：把 metadata 攤平到 top-level，前端讀 h.lat/h.level/h.news_articles/h.title
+      if (Array.isArray(hotspotsRpc) && hotspotsRpc.length) {
+        d.hotspots = hotspotsRpc.map(h => ({
+          ...h, ...(h.metadata || {}),
+          title: (h.metadata && h.metadata.title) || h.topic,
+        }));
+      }
       if (topNews)      { if (isWeek) d.top_news_7d = topNews; else d.top_news = topNews; }
       if (articles)     { if (isWeek) d.articles_7d = articles; else d.articles_24h = articles; }
       if (articlesPrev) { if (isWeek) d.articles_prev_7d = articlesPrev; else d.articles_prev_24h = articlesPrev; }
