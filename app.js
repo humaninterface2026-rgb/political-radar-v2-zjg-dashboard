@@ -1290,31 +1290,45 @@ function formatLifetimeHint(h){
   return '';
 }
 
+// 雲林議題熱點：用 DEFAULT_HOTSPOTS + COMMENT_EVENT_RULES 的關鍵字配對真實 24h 新聞，
+// 掛上 news_articles / level / 計數 → 地圖標得出來、卡片點開有新聞。
+function buildZjgHotspots(d){
+  const articles = (Array.isArray(d.articles_24h) && d.articles_24h.length)
+    ? d.articles_24h
+    : ((typeof state !== 'undefined' && state.articles24h) || []);
+  const rules = [...DEFAULT_HOTSPOTS, ...COMMENT_EVENT_RULES];
+  const seen = new Set();
+  const out = [];
+  rules.forEach(rule => {
+    if (seen.has(rule.title)) return;
+    const kws = (rule.keywords && rule.keywords.length) ? rule.keywords : [rule.title];
+    const matched = articles.filter(a => { const t = (a.title || ''); return kws.some(k => t.indexOf(k) >= 0); });
+    if (!matched.length) return;  // 沒配對到新聞就不出卡
+    seen.add(rule.title);
+    let red = 0, yellow = 0, green = 0;
+    matched.forEach(a => { const s = a.severity; if (s === 'red') red++; else if (s === 'yellow') yellow++; else green++; });
+    const level = red > 0 ? 'red' : (yellow > 0 ? 'yellow' : 'green');
+    out.push({
+      title: rule.title, place: rule.place, lat: rule.lat, lng: rule.lng,
+      level, city: '雲林', source: 'news', platform: '新聞',
+      news_count: matched.length, comment_count: 0,
+      negativity_pct: Math.round((red + yellow) / matched.length * 100),
+      news_articles: matched.map(a => ({ title: a.title, url: a.url, severity: a.severity, time: a.time || a.hour })),
+    });
+  });
+  return out;
+}
+
 function renderIncidentMap(d){
   const mapEl = document.getElementById('incidentMap');
   if (!mapEl || typeof window.L === 'undefined') return;
 
-  let hotspots = (Array.isArray(d.hotspots) && d.hotspots.length) ? d.hotspots : [];
-  if (!hotspots.length) {
-    const autoCommentHotspots = deriveCommentHotspots();
-    hotspots = [...DEFAULT_HOTSPOTS, ...(autoCommentHotspots.length ? autoCommentHotspots : COMMENT_EVENT_RULES.map(r => ({
-      title: r.title,
-      place: r.place,
-      lat: r.lat,
-      lng: r.lng,
-      level: r.level,
-      source: 'comment',
-      platform: '留言（暫無偵測到平台）',
-      note: '等待留言資料觸發'
-    })))];
-
+  let hotspots = (Array.isArray(d.hotspots) && d.hotspots.length) ? d.hotspots : buildZjgHotspots(d);
+  {
     const suggestEl = document.getElementById('hotspotSuggestions');
-    if (suggestEl) {
-      const pending = COMMENT_EVENT_RULES.filter(r => !autoCommentHotspots.some(h => h.title === r.title));
-      suggestEl.innerHTML = pending.length
-        ? `半自動建議：以下事件目前尚未在最新留言中達到觸發條件 → ${pending.map(x => `<span class="chip">${escapeHtml(x.title)}</span>`).join('')}`
-        : '半自動建議：目前規則事件皆已觸發。';
-    }
+    if (suggestEl) suggestEl.textContent = hotspots.length
+      ? '雲林議題熱點（自動配對 24h 新聞）'
+      : '24h 內未配對到雲林議題新聞。';
   }
 
   if (hotspots.length && Array.isArray(d.hotspots) && d.hotspots.length) {
