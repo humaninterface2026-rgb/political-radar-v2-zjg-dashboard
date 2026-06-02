@@ -495,7 +495,7 @@ function renderSelfFavorability(history){
       interaction: INDEX_HOVER,
       hover: INDEX_HOVER,
       // 點擊任一資料點 → 開該日全部新聞 modal
-      onClick: (evt, elements) => {
+      onClick: async (evt, elements) => {
         if (!elements || !elements.length) return;
         const idx = elements[0].index;
         const h = history[idx];
@@ -528,8 +528,13 @@ function renderSelfFavorability(history){
         };
         // 真實 total = 當日新聞 + 當日留言 (full count、不是 sample count)
         const realTotal = (h.total || 0) + ((h.comments && h.comments.total) || 0);
+        // 好感度 RPC 只回計數、不含當日新聞/留言內容 → modal 一開會空白。
+        // 先用 day-drilldown 預抓（makeDayFetcher 有快取、兩個共用一次 RPC）再開。
+        let initNews = h.articles || [], initCmts = samples;
+        try { initNews = await makeDayFetcher('news')(50); } catch (e) { /* keep */ }
+        try { initCmts = await makeDayFetcher('cmt')(100); } catch (e) { /* keep */ }
         openArticlesModal(`📰 ${h.date} 張嘉郡新聞 + 留言`, note,
-                          h.articles || [], samples,
+                          initNews, initCmts,
                           {
                             newsFetchFn: makeDayFetcher('news'),
                             cmtFetchFn:  makeDayFetcher('cmt'),
