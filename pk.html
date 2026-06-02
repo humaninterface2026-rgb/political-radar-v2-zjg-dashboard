@@ -124,7 +124,7 @@
   <div id="app" class="wrap" style="display:none">
     <div class="hd">
       <div class="t">⚔️ 即時聲量 PK 擂台</div>
-      <div class="u">張嘉郡 <span style="opacity:.6">vs</span> 劉建國　·　更新時間：<span id="upd">—</span>　·　聲量＝留言數（即時）</div>
+      <div class="u">張嘉郡 <span style="opacity:.6">vs</span> 劉建國　·　更新時間：<span id="upd">—</span>　·　聲量＝最新貼文讚/愛心數</div>
     </div>
 
     <div class="vs">
@@ -158,7 +158,7 @@
 
     <div class="ov" id="ov"></div>
 
-    <div class="foot">聲量數據為即時統計（目前以「留言數」計，讚數版本建置中）；正/中立/負評為 AI 情緒分析結果，僅供參考。</div>
+    <div class="foot">聲量＝各候選人「最新貼文」的讚/愛心數（pk_voice.json，可手動更新）；正/中立/負評與評價總數為留言 AI 情緒分析結果，僅供參考。</div>
   </div>
 
   <script defer src="./lib/config.js?v=2026-05-18-customer-cfg"></script>
@@ -182,25 +182,28 @@
     var bg='conic-gradient(var(--green) 0% '+g+'%, var(--yellow) '+g+'% '+s2+'%, var(--red) '+s2+'% 100%)';
     return '<div class="donut" style="background:'+bg+'"><div class="c">'+t.total+'</div></div>';
   }
-  function bars(t,side){
+  function bars(t){
     function b(lbl,cls,p){ return '<div class="bar"><span class="lbl">'+lbl+'</span><span class="track"><span class="fill '+cls+'" style="width:'+p+'%"></span></span><span class="pct">'+p+'%</span></div>'; }
-    return '<div class="bars">'+b('正評','fg',t.gp)+b('中立','fy',t.yp)+b('負評','fr',t.rp)+'</div>';
+    return '<div class="bars">'+b('正評','fg',t.gp)+b('中立','fy',t.yp)+b('負評','fr',t.rp)
+      +'<div style="font-size:11px;color:var(--muted);margin-top:4px">評價總數 <b style="color:var(--txt)">'+t.total+'</b> 則</div></div>';
   }
 
   async function boot(){
     try{
       if(typeof LxyDB==='undefined') throw new Error('LxyDB 未載入');
-      // 抓每位候選人 × 每平台的留言（全時間），算燈號分佈
+      // 聲量＝最新貼文讚/愛心數（pk_voice.json）；情緒/評價數＝留言燈號（Supabase）
+      var voice=await fetch('./pk_voice.json?n='+Date.now()).then(function(r){return r.json();}).catch(function(){return {voice:{}};});
+      var V=(voice&&voice.voice)||{};
       var data={A:{},B:{}};
       for(var s in SUBS){
         for(var i=0;i<PLATS.length;i++){
           var p=PLATS[i][0];
           var rows=await LxyDB.recentComments(p,5000,null,SUBS[s]).catch(function(){return null;});
           if(rows===null) throw new Error('rpc_fail');
-          data[s][p]=tally(rows);
+          var t=tally(rows); t.likes=((V[SUBS[s]]||{})[p])||0; data[s][p]=t;
         }
       }
-      render(data);
+      render(data, voice.updated);
       document.getElementById('app').style.display='';
     }catch(e){
       document.getElementById('gate').style.display='';
@@ -211,53 +214,53 @@
   }
 
   function agg(side,data){
-    var a={total:0,green:0,yellow:0,red:0};
-    PLATS.forEach(function(p){ var t=data[side][p[0]]; a.total+=t.total;a.green+=t.green;a.yellow+=t.yellow;a.red+=t.red; });
+    var a={total:0,green:0,yellow:0,red:0,likes:0};
+    PLATS.forEach(function(p){ var t=data[side][p[0]]; a.total+=t.total;a.green+=t.green;a.yellow+=t.yellow;a.red+=t.red;a.likes+=(t.likes||0); });
     a.gp=pct(a.green,a.total);a.yp=pct(a.yellow,a.total);a.rp=pct(a.red,a.total);
     return a;
   }
 
-  function render(data){
-    document.getElementById('upd').textContent=new Date().toLocaleString('zh-TW',{hour12:false});
+  function render(data, updated){
+    document.getElementById('upd').textContent=updated||new Date().toLocaleString('zh-TW',{hour12:false});
     var A=agg('A',data), B=agg('B',data);
     document.getElementById('aPos').textContent=A.gp; document.getElementById('aNeg').textContent=A.rp;
     document.getElementById('bPos').textContent=B.gp; document.getElementById('bNeg').textContent=B.rp;
-    document.getElementById('aVol').textContent=A.total.toLocaleString();
-    document.getElementById('bVol').textContent=B.total.toLocaleString();
-    var tot=A.total+B.total||1;
-    document.getElementById('vbA').style.width=(A.total/tot*100)+'%';
-    document.getElementById('vbB').style.width=(B.total/tot*100)+'%';
-    var lead=A.total-B.total;
+    document.getElementById('aVol').textContent=A.likes.toLocaleString();
+    document.getElementById('bVol').textContent=B.likes.toLocaleString();
+    var tot=A.likes+B.likes||1;
+    document.getElementById('vbA').style.width=(A.likes/tot*100)+'%';
+    document.getElementById('vbB').style.width=(B.likes/tot*100)+'%';
+    var lead=A.likes-B.likes;
     document.getElementById('vsLead').innerHTML = lead===0 ? '聲量平手'
       : (lead>0?'🔵 張嘉郡':'🟢 劉建國')+' 聲量領先 <b>'+Math.abs(lead).toLocaleString()+'</b>';
 
     // platform rows
     var html='';
     PLATS.forEach(function(p){
-      var ta=data.A[p[0]], tb=data.B[p[0]], t=ta.total+tb.total||1;
-      var aw=Math.round(ta.total/t*100);
-      var ld=ta.total-tb.total;
+      var ta=data.A[p[0]], tb=data.B[p[0]], t=ta.likes+tb.likes||1;
+      var aw=Math.round(ta.likes/t*100);
+      var ld=ta.likes-tb.likes;
       var ldtxt = ld===0 ? '兩邊聲量相當'
-        : '<b>'+(ld>0?'張嘉郡':'劉建國')+'</b> '+p[1]+' 聲量領先 <b>'+Math.abs(ld)+'</b>'+(Math.max(ta.total,tb.total)?'（約 '+Math.round(Math.abs(ld)/Math.max(ta.total,tb.total)*100)+'%）':'');
+        : '<b>'+(ld>0?'張嘉郡':'劉建國')+'</b> '+p[1]+' 聲量領先 <b>'+Math.abs(ld).toLocaleString()+'</b>'+(Math.max(ta.likes,tb.likes)?'（約 '+Math.round(Math.abs(ld)/Math.max(ta.likes,tb.likes)*100)+'%）':'');
       html+='<div class="prow">'
-        +'<div class="side a"><div class="num">'+ta.total+'<small>留言聲量</small></div>'+bars(ta,'a')+donut(ta)+'</div>'
+        +'<div class="side a"><div class="num">'+ta.likes.toLocaleString()+'<small>聲量·讚/愛心</small></div>'+bars(ta)+donut(ta)+'</div>'
         +'<div class="mid"><div class="picon">'+p[1]+'</div>'
-          +'<div class="mnums"><span class="a">'+ta.total+'</span><span class="b">'+tb.total+'</span></div>'
+          +'<div class="mnums"><span class="a">'+ta.likes.toLocaleString()+'</span><span class="b">'+tb.likes.toLocaleString()+'</span></div>'
           +'<div class="mslider"><span class="ka" style="width:'+aw+'%"></span><span class="dot" style="left:'+aw+'%"></span></div>'
           +'<div class="lead">'+ldtxt+'</div></div>'
-        +'<div class="side b"><div class="num">'+tb.total+'<small>留言聲量</small></div>'+bars(tb,'b')+donut(tb)+'</div>'
+        +'<div class="side b"><div class="num">'+tb.likes.toLocaleString()+'<small>聲量·讚/愛心</small></div>'+bars(tb)+donut(tb)+'</div>'
       +'</div>';
     });
     document.getElementById('rows').innerHTML=html;
 
     // overview
     function orow(lbl,cls,p,side){ return '<div class="row">'+(side==='a'?'<span style="width:42px">'+lbl+'</span>':'')+'<span class="track"><span class="fill '+cls+'" style="width:'+p+'%;display:block;height:100%"></span></span><span style="width:34px;color:var(--txt);font-weight:700">'+p+'%</span>'+(side==='b'?'<span style="width:42px">'+lbl+'</span>':'')+'</div>'; }
-    var olead=A.total-B.total;
+    var olead=A.likes-B.likes;
     document.getElementById('ov').innerHTML=
-      '<div class="col a"><div class="big">'+A.total.toLocaleString()+'</div><div style="font-size:12px;color:var(--muted);margin-bottom:6px">總聲量</div>'
+      '<div class="col a"><div class="big">'+A.likes.toLocaleString()+'</div><div style="font-size:12px;color:var(--muted);margin-bottom:6px">總聲量（讚/愛心）· 評價 '+A.total+' 則</div>'
         +orow('正評','fg',A.gp,'a')+orow('中立','fy',A.yp,'a')+orow('負評','fr',A.rp,'a')+'</div>'
       +'<div class="mid2"><div class="vt">VS</div><div class="ld">目前領先<b>'+(olead>=0?'張嘉郡':'劉建國')+'</b>'+Math.abs(olead).toLocaleString()+'</div></div>'
-      +'<div class="col b"><div class="big">'+B.total.toLocaleString()+'</div><div style="font-size:12px;color:var(--muted);margin-bottom:6px">總聲量</div>'
+      +'<div class="col b"><div class="big">'+B.likes.toLocaleString()+'</div><div style="font-size:12px;color:var(--muted);margin-bottom:6px">總聲量（讚/愛心）· 評價 '+B.total+' 則</div>'
         +orow('正評','fg',B.gp,'b')+orow('中立','fy',B.yp,'b')+orow('負評','fr',B.rp,'b')+'</div>';
   }
   </script>

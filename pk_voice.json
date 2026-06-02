@@ -1,0 +1,8 @@
+{
+  "updated": "2026/06/03",
+  "_note": "各候選人『最新貼文』的讚/愛心數，當作 PK 擂台的『聲量』。手動更新即可；之後可由爬蟲自動寫入。",
+  "voice": {
+    "張嘉郡": { "facebook": 789, "instagram": 230, "threads": 0 },
+    "劉建國": { "facebook": 359, "instagram": 47, "threads": 516 }
+  }
+}
