@@ -1,0 +1,27 @@
+{
+  "facebook": [
+    {
+      "ts": "2026-06-03T04:09:27",
+      "total": 17,
+      "red": 0,
+      "yellow": 10,
+      "green": 7,
+      "red_pct": 0.0,
+      "yellow_pct": 58.82,
+      "green_pct": 41.18
+    }
+  ],
+  "instagram": [
+    {
+      "ts": "2026-06-03T04:09:27",
+      "total": 2,
+      "red": 0,
+      "yellow": 0,
+      "green": 2,
+      "red_pct": 0.0,
+      "yellow_pct": 0.0,
+      "green_pct": 100.0
+    }
+  ],
+  "threads": []
+}
