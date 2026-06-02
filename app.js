@@ -390,15 +390,16 @@ function renderWarRoomRanking(voiceBreakdown, mentionArticles){
       row.classList.add('rank-clickable');
       row.title = `點擊查看 ${e.name} 24h 內 ${e.articles.length} 則新聞`;
       row.addEventListener('click', () => {
-        // 我方（張嘉郡）才有留言可看；對手沒爬留言、留 empty
-        const todayComments = e.isSelf ? [
-          ...(state.comments.facebook || []).map(c => ({...c, platform: 'facebook'})),
-          ...(state.comments.instagram || []).map(c => ({...c, platform: 'instagram'})),
-          ...(state.comments.threads || []).map(c => ({...c, platform: 'threads'})),
+        // 每個候選人看「自己的」留言（subject 分流）— 張嘉郡 / 劉建國 各自獨立
+        const subjCmt = (state.commentsBySubject || {})[e.name] || null;
+        const todayComments = subjCmt ? [
+          ...(subjCmt.facebook  || []).map(c => ({...c, platform: 'facebook'})),
+          ...(subjCmt.instagram || []).map(c => ({...c, platform: 'instagram'})),
+          ...(subjCmt.threads   || []).map(c => ({...c, platform: 'threads'})),
         ] : [];
-        const cmtNote = e.isSelf ? '' : '（對手無爬留言、僅有新聞）';
+        const cmtNote = todayComments.length ? `｜ 💬 ${todayComments.length} 則留言` : '（尚無爬到留言）';
         const note = `共 ${e.total} 則新聞 ｜ 🔴 ${e.red} ／ 🟡 ${e.yellow} ／ 🟢 ${e.green} ${cmtNote}`;
-        const titlePrefix = e.isSelf ? '張嘉郡（我方） 24h 新聞 + 留言' : `${e.name} 24h 新聞`;
+        const titlePrefix = `${e.name}${e.isSelf ? '（我方）' : ''} 24h 新聞 + 留言`;
         openArticlesModal(titlePrefix, note, e.articles, todayComments);
       });
     }
@@ -3113,14 +3114,21 @@ async function run(){
       // first_seen_at > NOW() - hours window). Uses outer `hours` already
       // declared above (24 / 168 by mode). JSON fallback stays for offline.
       try {
-        const [fbCmt, igCmt, threadsCmt] = await Promise.all([
-          LxyDB.recentComments('facebook',  5000, hours).catch(() => null),
-          LxyDB.recentComments('instagram', 5000, hours).catch(() => null),
-          LxyDB.recentComments('threads',   5000, hours).catch(() => null),
-        ]);
-        if (fbCmt)      state.comments.facebook  = fbCmt;
-        if (igCmt)      state.comments.instagram = igCmt;
-        if (threadsCmt) state.comments.threads   = threadsCmt;
+        // 按政治人物分開抓留言（張嘉郡 vs 劉建國）— subject 篩選，互不混
+        const SUBJECTS = ['張嘉郡', '劉建國'];
+        state.commentsBySubject = state.commentsBySubject || {};
+        for (const subj of SUBJECTS) {
+          const [fbCmt, igCmt, threadsCmt] = await Promise.all([
+            LxyDB.recentComments('facebook',  5000, hours, subj).catch(() => null),
+            LxyDB.recentComments('instagram', 5000, hours, subj).catch(() => null),
+            LxyDB.recentComments('threads',   5000, hours, subj).catch(() => null),
+          ]);
+          state.commentsBySubject[subj] = {
+            facebook:  fbCmt || [], instagram: igCmt || [], threads: threadsCmt || [],
+          };
+        }
+        // 主角張嘉郡的留言 → state.comments（既有燈號卡/圓餅/modal 沿用）
+        if (state.commentsBySubject['張嘉郡']) state.comments = state.commentsBySubject['張嘉郡'];
       } catch (e) { /* keep JSON fallback */ }
       if (metrics)      { if (isWeek) d.metrics_7d = metrics; else d.metrics = metrics; }
       if (byHour)       { if (isWeek) d.by_hour_7d = byHour; else d.by_hour = byHour; }
