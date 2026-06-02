@@ -208,6 +208,12 @@
     <div class="social-signal-grid" id="socialSignals"></div>
   </section>
 
+  <section class="panel" id="socialSignalPanelLiu">
+    <h2>劉建國社群留言燈號分佈（FB / IG / Threads）</h2>
+    <p class="hint">對手劉建國的社群留言燈號（subject 分流，與張嘉郡互不混）。點擊卡片查看該平台的實際留言明細。</p>
+    <div class="social-signal-grid" id="socialSignalsLiu"></div>
+  </section>
+
   <section class="panel" id="mapHotspotPanel">
     <h2>議題地圖熱點（新聞 + 留言）</h2>
     <p class="hint">以紅色亮點標示高風險事件位置；可點擊查看事件名稱、來源與說明。</p>
@@ -598,7 +604,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <!-- config.js 已提早到 <head> 載入、不需要再載一次 -->
   <script defer src="./lib/db.js?v=2026-06-02-comments-subject"></script>
-  <script defer src="./app.js?v=2026-06-02-comments-subject"></script>
+  <script defer src="./app.js?v=2026-06-02-liu-signal-panel"></script>
   <script>
     // Service Worker — 2nd-visit speed-up + offline fallback.
     // Registered after page load so it doesn't compete with critical resources.

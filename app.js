@@ -658,11 +658,36 @@ function renderTopicNarrative(arcs){
 
 
 // --------- Social signal cards (clickable) ---------
-function renderSocialCards(){
-  const wrap = document.getElementById('socialSignals');
+// 按 subject 從已抓的 commentsBySubject 直接聚合每平台燈號（張/劉 各自一份、互不混）。
+// 不靠 subject-blind 的 signals_by_platform RPC，避免把對手留言算進主角面板。
+// updatedFrom: 借用 state.socialSignals[platform].updated_at 當「最後抓取時間」（兩人同批爬、時間一致）。
+function signalsFromComments(set, updatedFrom){
+  const out = {};
+  ['facebook', 'instagram', 'threads'].forEach(p => {
+    const arr = (set && set[p]) || [];
+    let red = 0, yellow = 0, green = 0;
+    arr.forEach(c => {
+      if (c.signal === 'red') red++;
+      else if (c.signal === 'yellow') yellow++;
+      else if (c.signal === 'green') green++;
+    });
+    const total = arr.length;
+    out[p] = {
+      total: total, red: red, yellow: yellow, green: green,
+      red_pct:    total ? red / total : 0,
+      yellow_pct: total ? yellow / total : 0,
+      green_pct:  total ? green / total : 0,
+      updated_at: (updatedFrom && updatedFrom[p] && updatedFrom[p].updated_at) || null,
+    };
+  });
+  return out;
+}
+
+function renderSocialCards(containerId, signals, subject){
+  const wrap = document.getElementById(containerId || 'socialSignals');
   if (!wrap) return;
   wrap.innerHTML = '';
-  const ss = state.socialSignals || {};
+  const ss = signals || state.socialSignals || {};
   ['facebook', 'instagram', 'threads'].forEach(p => {
     const s = ss[p] || { total: 0, red: 0, yellow: 0, green: 0, updated_at: '-' };
     const btn = document.createElement('button');
@@ -677,7 +702,7 @@ function renderSocialCards(){
       <div class="social-row" style="opacity:.75;font-size:12px"><span>更新</span><span>${escapeHtml(formatUpdatedAt(s.updated_at))}</span></div>
       <div class="drill-hint">▸ 點擊查看完整留言</div>
     `;
-    btn.addEventListener('click', () => openModal(p, 'all'));
+    btn.addEventListener('click', () => openModal(p, 'all', subject));
     wrap.appendChild(btn);
   });
 }
@@ -1151,17 +1176,19 @@ function initCustomTrendQuery(){
 }
 
 // --------- Drilldown modal ---------
-const modalState = { platform: 'facebook', filter: 'all' };
+const modalState = { platform: 'facebook', filter: 'all', subject: null };
 
-function openModal(platform, filter){
+function openModal(platform, filter, subject){
   modalState.platform = platform;
   modalState.filter = filter || 'all';
+  modalState.subject = subject || null;   // null = 主角 state.comments；指定則讀 commentsBySubject[subject]
   const modal = document.getElementById('commentsModal');
   if (!modal) return;
   modal.classList.remove('hidden');
   modal.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
-  document.getElementById('modalTitle').textContent = `${PLATFORM_LABEL[platform]} 留言明細`;
+  const who = modalState.subject ? `${modalState.subject}・` : '';
+  document.getElementById('modalTitle').textContent = `${who}${PLATFORM_LABEL[platform]} 留言明細`;
   // sync filter buttons
   document.querySelectorAll('#modalFilters .filter-btn').forEach(b => {
     b.classList.toggle('active', b.dataset.filter === modalState.filter);
@@ -1181,7 +1208,11 @@ function renderModalBody(){
   const body = document.getElementById('modalBody');
   const summary = document.getElementById('modalSummary');
   if (!body) return;
-  const list = (state.comments[modalState.platform] || []);
+  // subject 指定 → 讀該政治人物的留言（張/劉 分流）；否則沿用主角 state.comments。
+  const src = (modalState.subject && state.commentsBySubject && state.commentsBySubject[modalState.subject])
+    ? state.commentsBySubject[modalState.subject]
+    : state.comments;
+  const list = (src[modalState.platform] || []);
   const filtered = modalState.filter === 'all'
     ? list
     : list.filter(c => c.signal === modalState.filter);
@@ -3350,8 +3381,14 @@ async function run(){
   const ul = document.getElementById('platforms'); ul.innerHTML='';
   byPlatform.forEach(x=>{ const li=document.createElement('li'); li.textContent=`${x.platform}: ${x.count}`; ul.appendChild(li); });
 
-  // Clickable social cards + alert + trend chart + red panel — all read from state
-  renderSocialCards();
+  // Clickable social cards — 張/劉 各自 subject-derived（從 commentsBySubject 聚合，互不混）。
+  // 主角面板：有 subject 留言就用 subject-derived，離線/JSON fallback 才退回 subject-blind socialSignals。
+  const _cbs = state.commentsBySubject || {};
+  const _selfSig = signalsFromComments(_cbs['張嘉郡'], state.socialSignals);
+  const _liuSig  = signalsFromComments(_cbs['劉建國'], state.socialSignals);
+  const _selfHas = ['facebook', 'instagram', 'threads'].some(p => (_selfSig[p] || {}).total);
+  renderSocialCards('socialSignals',    _selfHas ? _selfSig : state.socialSignals, '張嘉郡');
+  renderSocialCards('socialSignalsLiu', _liuSig, '劉建國');
   updateAlertBanner();
   renderRedTrendChart();
   renderRedCommentsPanel();
