@@ -1237,7 +1237,8 @@ function renderModalBody(){
     div.className = 'comment-item';
     const lightClass = c.signal || 'green';
     const lightLabel = { red:'🔴 紅', yellow:'🟡 黃', green:'🟢 綠' }[lightClass] || lightClass;
-    const url = c.url
+    // FB 的留言 url 只是「留言者個人頁」（沒用）→ FB 不顯示原文連結，只留留言內容。
+    const url = (c.url && modalState.platform !== 'facebook')
       ? `<div class="linkrow"><a href="${escapeHtml(c.url)}" target="_blank" rel="noopener">原文連結 ↗</a></div>`
       : '';
     div.innerHTML = `
