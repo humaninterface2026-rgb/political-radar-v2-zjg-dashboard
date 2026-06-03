@@ -158,7 +158,7 @@
 
     <div class="ov" id="ov"></div>
 
-    <div class="foot">聲量＝各候選人「最新貼文」的讚/愛心數（pk_voice.json，可手動更新）；正/中立/負評與評價總數為留言 AI 情緒分析結果，僅供參考。</div>
+    <div class="foot">聲量＝各候選人「最新貼文」的讚/愛心數（FB 由爬蟲每日自動更新，IG／Threads 暫為人工）；正/中立/負評與評價總數為留言 AI 情緒分析結果，僅供參考。</div>
   </div>
 
   <script defer src="./lib/config.js?v=2026-05-18-customer-cfg"></script>
@@ -191,8 +191,10 @@
   async function boot(){
     try{
       if(typeof LxyDB==='undefined') throw new Error('LxyDB 未載入');
-      // 聲量＝最新貼文讚/愛心數（pk_voice.json）；情緒/評價數＝留言燈號（Supabase）
-      var voice=await fetch('./pk_voice.json?n='+Date.now()).then(function(r){return r.json();}).catch(function(){return {voice:{}};});
+      // 聲量＝最新貼文讚/愛心數（Supabase pk_voice，受權限保護、FB 由爬蟲自動更新）；情緒＝留言燈號（Supabase）
+      var voiceResp=await LxyDB.client().rpc('get_pk_voice');
+      if(voiceResp&&voiceResp.error) throw new Error('rpc_fail');
+      var voice=(voiceResp&&voiceResp.data)||{voice:{}};
       var V=(voice&&voice.voice)||{};
       var data={A:{},B:{}};
       for(var s in SUBS){
