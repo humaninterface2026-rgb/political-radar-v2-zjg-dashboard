@@ -4126,6 +4126,7 @@ function initRealtimeToasts() {
 const _auth = {
   user:    null,
   isAdmin: false,
+  approved: false,   // 是否在觀看允許清單（approved_viewers ∪ admin_emails）
   /** Map<"target_type|target_id", correction row> 給 UI render 「已修正」 badge 用 */
   corrections: new Map(),
 };
@@ -4240,16 +4241,35 @@ async function refreshAuthBar() {
   const logoutBtn = document.getElementById('authLogoutBtn');
   if (!status) return;
   const user = _auth.user;
+  const banner = document.getElementById('unauthorizedBanner');
   if (user) {
     _auth.isAdmin = await LxyDB.isAdmin();
+    // 在觀看允許清單嗎？（admin 也算）。am_i_approved() 回 boolean，未獲授權者資料 RPC 會被擋。
+    _auth.approved = _auth.isAdmin || await LxyDB.client().rpc('am_i_approved')
+      .then(function (r) { return r && r.data === true; }).catch(function () { return false; });
     status.classList.remove('auth-status-guest');
-    status.classList.toggle('auth-status-admin', _auth.isAdmin);
-    status.classList.toggle('auth-status-user', !_auth.isAdmin);
-    status.textContent = (_auth.isAdmin ? '✓ admin · ' : '已登入 · ') + user.email;
+    if (_auth.approved) {
+      status.classList.toggle('auth-status-admin', _auth.isAdmin);
+      status.classList.toggle('auth-status-user', !_auth.isAdmin);
+      status.textContent = (_auth.isAdmin ? '✓ admin · ' : '已登入 · ') + user.email;
+      if (banner) banner.style.display = 'none';
+    } else {
+      // 有登入但不在名單 → 明確提示，而不是讓他看空白圖表以為壞了
+      status.classList.remove('auth-status-admin', 'auth-status-user');
+      status.classList.add('auth-status-guest');
+      status.textContent = '⚠️ 未獲授權 · ' + user.email;
+      if (banner) {
+        var em = document.getElementById('unauthEmail');
+        if (em) em.textContent = user.email;
+        banner.style.display = '';
+      }
+    }
     loginBtn.style.display = 'none';
     logoutBtn.style.display = '';
   } else {
     _auth.isAdmin = false;
+    _auth.approved = false;
+    if (banner) banner.style.display = 'none';
     status.classList.add('auth-status-guest');
     status.classList.remove('auth-status-user', 'auth-status-admin');
     status.textContent = '未登入';
