@@ -19,8 +19,11 @@
   <link rel="stylesheet" href="./style.css?v=2026-05-20-legal" />
   <!-- Customer config 提前到 <head>、確保 body inline script 跟 app.js render 時都已備好 -->
   <script defer src="./lib/config.js?v=2026-05-18-customer-cfg"></script>
+  <!-- 未獲授權（含未登入）鎖：隱藏所有資料區塊，只留 header + 登入/未授權提示。
+       預設就鎖（body 帶 dash-locked），app.js 確認是核准帳號後才解鎖 → 不會閃資料。 -->
+  <style>body.dash-locked .panel,body.dash-locked .cards{display:none!important}</style>
 </head>
-<body>
+<body class="dash-locked">
   <header>
     <div class="header-row">
       <div>
@@ -611,7 +614,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <!-- config.js 已提早到 <head> 載入、不需要再載一次 -->
   <script defer src="./lib/db.js?v=2026-06-02-comments-subject"></script>
-  <script defer src="./app.js?v=2026-06-03-unauth-banner-pk-link"></script>
+  <script defer src="./app.js?v=2026-06-03-lock-unapproved"></script>
   <script>
     // Service Worker — 2nd-visit speed-up + offline fallback.
     // Registered after page load so it doesn't compete with critical resources.

@@ -4276,6 +4276,9 @@ async function refreshAuthBar() {
     loginBtn.style.display = '';
     logoutBtn.style.display = 'none';
   }
+  // 未獲授權（含未登入）→ 鎖住所有資料區塊（只留 header + 登入/未授權提示）。
+  // 同時擋掉「靜態檔」那幾區（過往事件/議題熱度/選舉預測/里級圖）對未授權者的顯示。
+  document.body.classList.toggle('dash-locked', !_auth.approved);
 }
 
 // --- Correction modal ---
