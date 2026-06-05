@@ -2,7 +2,7 @@
   "days": [
     {
       "date": "2026-05-22",
-      "snapshot_at": "2026-06-04T13:36:50.358874+08:00",
+      "snapshot_at": "2026-06-05T12:57:43.027865+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -24,7 +24,7 @@
     },
     {
       "date": "2026-05-23",
-      "snapshot_at": "2026-06-04T13:36:50.358874+08:00",
+      "snapshot_at": "2026-06-05T12:57:43.027865+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -44,7 +44,7 @@
     },
     {
       "date": "2026-05-25",
-      "snapshot_at": "2026-06-04T13:36:50.358874+08:00",
+      "snapshot_at": "2026-06-05T12:57:43.027865+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -94,7 +94,7 @@
     },
     {
       "date": "2026-05-26",
-      "snapshot_at": "2026-06-04T13:36:50.358874+08:00",
+      "snapshot_at": "2026-06-05T12:57:43.027865+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -129,7 +129,7 @@
     },
     {
       "date": "2026-05-27",
-      "snapshot_at": "2026-06-04T13:36:50.358874+08:00",
+      "snapshot_at": "2026-06-05T12:57:43.027865+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -165,7 +165,7 @@
     },
     {
       "date": "2026-05-28",
-      "snapshot_at": "2026-06-04T13:36:50.358874+08:00",
+      "snapshot_at": "2026-06-05T12:57:43.027865+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -231,7 +231,7 @@
     },
     {
       "date": "2026-05-29",
-      "snapshot_at": "2026-06-04T13:36:50.358874+08:00",
+      "snapshot_at": "2026-06-05T12:57:43.027865+08:00",
       "hotspots": [
         {
           "title": "消防超勤爭議",
@@ -333,7 +333,7 @@
     },
     {
       "date": "2026-05-30",
-      "snapshot_at": "2026-06-04T13:36:50.358874+08:00",
+      "snapshot_at": "2026-06-05T12:57:43.027865+08:00",
       "hotspots": [
         {
           "title": "議員衝突",
@@ -431,7 +431,7 @@
     },
     {
       "date": "2026-05-31",
-      "snapshot_at": "2026-06-04T13:36:50.358874+08:00",
+      "snapshot_at": "2026-06-05T12:57:43.027865+08:00",
       "hotspots": [
         {
           "title": "六輕／空污",
@@ -483,7 +483,7 @@
     },
     {
       "date": "2026-06-01",
-      "snapshot_at": "2026-06-04T13:36:50.358874+08:00",
+      "snapshot_at": "2026-06-05T12:57:43.027865+08:00",
       "hotspots": [
         {
           "title": "六輕／空污",
@@ -598,7 +598,7 @@
     },
     {
       "date": "2026-06-02",
-      "snapshot_at": "2026-06-04T13:36:50.358874+08:00",
+      "snapshot_at": "2026-06-05T12:57:43.027865+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -680,18 +680,18 @@
     },
     {
       "date": "2026-06-03",
-      "snapshot_at": "2026-06-04T13:36:50.358874+08:00",
+      "snapshot_at": "2026-06-05T12:57:43.027865+08:00",
       "hotspots": [
         {
           "title": "六輕／空污",
           "city": "雲林",
           "place": "雲林麥寮",
           "level": "red",
-          "news_count": 9,
+          "news_count": 10,
           "comment_count": 0,
           "negativity_pct": 100,
           "is_urgent": true,
-          "urgency_score": 27.0,
+          "urgency_score": 30.0,
           "sample_titles": [
             "麥寮風機火災 卓揆：指示經濟部全面清查已超過15年的風機",
             "雲林麥寮風機起火 經濟部：同類型1個月內完成巡檢",
@@ -703,11 +703,11 @@
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "yellow",
-          "news_count": 17,
+          "news_count": 18,
           "comment_count": 0,
-          "negativity_pct": 88,
+          "negativity_pct": 89,
           "is_urgent": false,
-          "urgency_score": 24.5,
+          "urgency_score": 26.0,
           "sample_titles": [
             "「毒駕」零容忍 雲林警方公布毒酒駕累犯姓名相片",
             "毒駕零容忍 雲林公布1名毒駕累犯照片示警",
@@ -748,20 +748,103 @@
     },
     {
       "date": "2026-06-04",
-      "snapshot_at": "2026-06-04T13:36:50.358874+08:00",
+      "snapshot_at": "2026-06-05T12:57:43.027865+08:00",
       "hotspots": [
+        {
+          "title": "消防超勤爭議",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "yellow",
+          "news_count": 10,
+          "comment_count": 0,
+          "negativity_pct": 30,
+          "is_urgent": false,
+          "urgency_score": 11.5,
+          "sample_titles": [
+            "雲林縣跨黨派議員關切消防人員超勤加班費 張麗善承諾籌編經費補足",
+            "雲林縣跨黨派議員關切消防人員超勤加班費 張麗善承諾籌編經費補足 | 中華日報",
+            "雲林縣長張麗善承諾補足消防人員超勤加班費跨黨派議員肯定張縣長任內投入超過7.5億大幅改善救災裝備及消防員福利"
+          ]
+        },
         {
           "title": "治安／詐騙",
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "yellow",
-          "news_count": 1,
+          "news_count": 5,
           "comment_count": 0,
           "negativity_pct": 100,
           "is_urgent": false,
-          "urgency_score": 1.5,
+          "urgency_score": 7.5,
           "sample_titles": [
-            "毒駕零容忍 雲林首公布累犯姓名照片"
+            "毒駕零容忍 雲林首公布累犯姓名照片",
+            "嚴懲毒駕累犯！ 雲林公布23人姓名照片 | 台灣生活新聞",
+            "嚴懲毒駕累犯！ 雲林公布23人姓名照片"
+          ]
+        },
+        {
+          "title": "農業議題",
+          "city": "雲林",
+          "place": "雲林虎尾",
+          "level": "yellow",
+          "news_count": 4,
+          "comment_count": 0,
+          "negativity_pct": 75,
+          "is_urgent": false,
+          "urgency_score": 5.5,
+          "sample_titles": [
+            "花生採收季防竊又防詐！虎尾警啟動護農勤務 守護農民辛勞成果",
+            "議員關切農地課稅查核 雲林稅務局：審慎認定、維護農民權益",
+            "雲林花生採收季防竊 虎尾警啟動護農勤務"
+          ]
+        },
+        {
+          "title": "社福醫療",
+          "city": "雲林",
+          "place": "雲林北港",
+          "level": "green",
+          "news_count": 2,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 2.0,
+          "sample_titles": [
+            "劉建國領軍拚建設醫療 吳雅雯蔡岳儒攜手布局北港未來",
+            "免費配鏡送進校園 點亮雲林攜手醫療公益守護弱勢學童"
+          ]
+        },
+        {
+          "title": "建設交通",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 1.0,
+          "sample_titles": [
+            "石全石美-雲林縣美石研究協會會員聯展 即日起至6月11日文化觀光處展覽館展出"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-06-05",
+      "snapshot_at": "2026-06-05T12:57:43.027865+08:00",
+      "hotspots": [
+        {
+          "title": "治安／詐騙",
+          "city": "雲林",
+          "place": "雲林臺西",
+          "level": "green",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 1.0,
+          "sample_titles": [
+            "創新聞 剛剛 臺西警辦社區治安座談會 打詐婦幼交通三大議題一次掌握"
           ]
         }
       ]
