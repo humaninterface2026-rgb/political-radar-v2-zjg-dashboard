@@ -402,18 +402,18 @@
     },
     {
       "date": "2026-05-31",
-      "snapshot_at": "2026-06-13T12:39:07.131594+08:00",
+      "snapshot_at": "2026-06-14T12:44:26.851757+08:00",
       "hotspots": [
         {
           "title": "六輕／空污",
           "city": "雲林",
           "place": "雲林麥寮",
           "level": "red",
-          "news_count": 53,
+          "news_count": 51,
           "comment_count": 0,
-          "negativity_pct": 79,
+          "negativity_pct": 78,
           "is_urgent": true,
-          "urgency_score": 134.0,
+          "urgency_score": 128.0,
           "sample_titles": [
             "「藝術宅急便」最終場壓軸登場！ 國際級踢踏震撼麥寮 陪鄉親嗨翻五月最後週末",
             "快訊／雲林麥寮「風力發電機」竄火！扇葉焦黑冒煙 警消現場警戒",
@@ -454,7 +454,7 @@
     },
     {
       "date": "2026-06-01",
-      "snapshot_at": "2026-06-13T12:39:07.131594+08:00",
+      "snapshot_at": "2026-06-14T12:44:26.851757+08:00",
       "hotspots": [
         {
           "title": "六輕／空污",
@@ -569,7 +569,7 @@
     },
     {
       "date": "2026-06-02",
-      "snapshot_at": "2026-06-13T12:39:07.131594+08:00",
+      "snapshot_at": "2026-06-14T12:44:26.851757+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -651,7 +651,7 @@
     },
     {
       "date": "2026-06-03",
-      "snapshot_at": "2026-06-13T12:39:07.131594+08:00",
+      "snapshot_at": "2026-06-14T12:44:26.851757+08:00",
       "hotspots": [
         {
           "title": "六輕／空污",
@@ -719,7 +719,7 @@
     },
     {
       "date": "2026-06-04",
-      "snapshot_at": "2026-06-13T12:39:07.131594+08:00",
+      "snapshot_at": "2026-06-14T12:44:26.851757+08:00",
       "hotspots": [
         {
           "title": "消防超勤爭議",
@@ -802,7 +802,7 @@
     },
     {
       "date": "2026-06-05",
-      "snapshot_at": "2026-06-13T12:39:07.131594+08:00",
+      "snapshot_at": "2026-06-14T12:44:26.851757+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -883,7 +883,7 @@
     },
     {
       "date": "2026-06-06",
-      "snapshot_at": "2026-06-13T12:39:07.131594+08:00",
+      "snapshot_at": "2026-06-14T12:44:26.851757+08:00",
       "hotspots": [
         {
           "title": "建設交通",
@@ -953,7 +953,7 @@
     },
     {
       "date": "2026-06-07",
-      "snapshot_at": "2026-06-13T12:39:07.131594+08:00",
+      "snapshot_at": "2026-06-14T12:44:26.851757+08:00",
       "hotspots": [
         {
           "title": "建設交通",
@@ -989,7 +989,7 @@
     },
     {
       "date": "2026-06-08",
-      "snapshot_at": "2026-06-13T12:39:07.131594+08:00",
+      "snapshot_at": "2026-06-14T12:44:26.851757+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -1074,7 +1074,7 @@
     },
     {
       "date": "2026-06-09",
-      "snapshot_at": "2026-06-13T12:39:07.131594+08:00",
+      "snapshot_at": "2026-06-14T12:44:26.851757+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -1154,7 +1154,7 @@
     },
     {
       "date": "2026-06-10",
-      "snapshot_at": "2026-06-13T12:39:07.131594+08:00",
+      "snapshot_at": "2026-06-14T12:44:26.851757+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -1208,18 +1208,18 @@
     },
     {
       "date": "2026-06-11",
-      "snapshot_at": "2026-06-13T12:39:07.131594+08:00",
+      "snapshot_at": "2026-06-14T12:44:26.851757+08:00",
       "hotspots": [
         {
           "title": "農業議題",
           "city": "雲林",
           "place": "雲林褒忠",
           "level": "yellow",
-          "news_count": 17,
+          "news_count": 18,
           "comment_count": 0,
           "negativity_pct": 94,
           "is_urgent": false,
-          "urgency_score": 25.0,
+          "urgency_score": 26.5,
           "sample_titles": [
             "討論牆 | 花生價格創十年新低 張嘉郡籲農業部這樣做",
             "雲林褒忠產業園區環評 農民北上陳情（2） (圖)",
@@ -1261,18 +1261,18 @@
     },
     {
       "date": "2026-06-12",
-      "snapshot_at": "2026-06-13T12:39:07.131594+08:00",
+      "snapshot_at": "2026-06-14T12:44:26.851757+08:00",
       "hotspots": [
         {
           "title": "農業議題",
           "city": "雲林",
           "place": "雲林土庫",
           "level": "yellow",
-          "news_count": 8,
+          "news_count": 10,
           "comment_count": 0,
-          "negativity_pct": 12,
+          "negativity_pct": 10,
           "is_urgent": false,
-          "urgency_score": 8.5,
+          "urgency_score": 10.5,
           "sample_titles": [
             "抗梅雨護收成 雲林建置200處曬場啟動花生保衛戰",
             "七千顆愛心粽送暖弱勢 土庫攜手挺花生農傳遞希望",
@@ -1307,15 +1307,9 @@
           "sample_titles": [
             "從台灣糧倉到科技新城 張麗善揭雲林「不缺水電」三大優勢 | 熱門亮點 | 商情"
           ]
-        }
-      ]
-    },
-    {
-      "date": "2026-06-13",
-      "snapshot_at": "2026-06-13T12:39:07.131594+08:00",
-      "hotspots": [
+        },
         {
-          "title": "農業議題",
+          "title": "治安／詐騙",
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "green",
@@ -1325,7 +1319,64 @@
           "is_urgent": false,
           "urgency_score": 1.0,
           "sample_titles": [
-            "另類的季節限定風景！ 雲林提供200處花生曬場"
+            "強化執法安全與效能 雲林縣警察局辦理毒駕攔檢實戰演練展現「零容忍」決心"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-06-13",
+      "snapshot_at": "2026-06-14T12:44:26.851757+08:00",
+      "hotspots": [
+        {
+          "title": "社福醫療",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 11,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 11.0,
+          "sample_titles": [
+            "培育毛孩守護尖兵 雲林打造動物醫療新生力軍",
+            "培育毛孩守護尖兵 雲林打造動物醫療新生力軍 - 社會新聞 - PChome Online 新聞",
+            "關心健保政策！劉建國承諾：讓老幼照顧更完整、醫療資源更到位"
+          ]
+        },
+        {
+          "title": "農業議題",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 2,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 2.0,
+          "sample_titles": [
+            "另類的季節限定風景！ 雲林提供200處花生曬場",
+            "農業首都拚外銷 雲林良品館前進國際食品展"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "snapshot_at": "2026-06-14T12:44:26.851757+08:00",
+      "hotspots": [
+        {
+          "title": "建設交通",
+          "city": "雲林",
+          "place": "雲林虎尾",
+          "level": "green",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 1.0,
+          "sample_titles": [
+            "虎尾西市美食廣場改建啟動 打造舊城區美食觀光新地標"
           ]
         }
       ]
