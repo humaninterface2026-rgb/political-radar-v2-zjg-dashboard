@@ -454,24 +454,8 @@
     },
     {
       "date": "2026-06-01",
-      "snapshot_at": "2026-06-14T12:44:26.851757+08:00",
+      "snapshot_at": "2026-06-15T13:49:46.101678+08:00",
       "hotspots": [
-        {
-          "title": "六輕／空污",
-          "city": "雲林",
-          "place": "雲林麥寮",
-          "level": "red",
-          "news_count": 6,
-          "comment_count": 0,
-          "negativity_pct": 100,
-          "is_urgent": true,
-          "urgency_score": 18.0,
-          "sample_titles": [
-            "零件過熱 麥寮風機燒成風火輪",
-            "台電麥寮風機疑過熱燃燒地方盼重視問題 龔明鑫：要求全面清查",
-            "台電麥寮風機起火 經濟部下令加強高齡機組巡檢"
-          ]
-        },
         {
           "title": "農業議題",
           "city": "雲林",
@@ -486,6 +470,22 @@
             "端午前最暖禮！ 虎尾鎮農會豪送2500顆履歷花生肉粽給雲林家扶",
             "縣府拚中科虎尾園區二期開發案！若農業部同意變更農地 龔明鑫：會協助招商",
             "立院考察褒忠產業園區開發進度 龔明鑫：盼扮演帶動農業加值角色"
+          ]
+        },
+        {
+          "title": "六輕／空污",
+          "city": "雲林",
+          "place": "雲林麥寮",
+          "level": "red",
+          "news_count": 5,
+          "comment_count": 0,
+          "negativity_pct": 100,
+          "is_urgent": true,
+          "urgency_score": 15.0,
+          "sample_titles": [
+            "台電麥寮風機疑過熱燃燒地方盼重視問題 龔明鑫：要求全面清查",
+            "台電麥寮風機起火 經濟部下令加強高齡機組巡檢",
+            "台電麥寮17號風力發電機起火 巨大火燒葉片纖維飛落像墜機"
           ]
         },
         {
@@ -549,27 +549,12 @@
           "sample_titles": [
             "幕後／後院著火？雲林美女議員「遭賞巴掌」事件未歇 恐衝擊劉建國選情"
           ]
-        },
-        {
-          "title": "社福醫療",
-          "city": "雲林",
-          "place": "雲林（斗六）",
-          "level": "green",
-          "news_count": 2,
-          "comment_count": 0,
-          "negativity_pct": 0,
-          "is_urgent": false,
-          "urgency_score": 2.0,
-          "sample_titles": [
-            "終結無牙醫村 雲林啟動偏鄉巡迴醫療",
-            "終結無牙醫村 雲林啟動偏鄉巡迴醫療"
-          ]
         }
       ]
     },
     {
       "date": "2026-06-02",
-      "snapshot_at": "2026-06-14T12:44:26.851757+08:00",
+      "snapshot_at": "2026-06-15T13:49:46.101678+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -651,7 +636,7 @@
     },
     {
       "date": "2026-06-03",
-      "snapshot_at": "2026-06-14T12:44:26.851757+08:00",
+      "snapshot_at": "2026-06-15T13:49:46.101678+08:00",
       "hotspots": [
         {
           "title": "六輕／空污",
@@ -719,7 +704,7 @@
     },
     {
       "date": "2026-06-04",
-      "snapshot_at": "2026-06-14T12:44:26.851757+08:00",
+      "snapshot_at": "2026-06-15T13:49:46.101678+08:00",
       "hotspots": [
         {
           "title": "消防超勤爭議",
@@ -802,7 +787,7 @@
     },
     {
       "date": "2026-06-05",
-      "snapshot_at": "2026-06-14T12:44:26.851757+08:00",
+      "snapshot_at": "2026-06-15T13:49:46.101678+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -883,7 +868,7 @@
     },
     {
       "date": "2026-06-06",
-      "snapshot_at": "2026-06-14T12:44:26.851757+08:00",
+      "snapshot_at": "2026-06-15T13:49:46.101678+08:00",
       "hotspots": [
         {
           "title": "建設交通",
@@ -953,7 +938,7 @@
     },
     {
       "date": "2026-06-07",
-      "snapshot_at": "2026-06-14T12:44:26.851757+08:00",
+      "snapshot_at": "2026-06-15T13:49:46.101678+08:00",
       "hotspots": [
         {
           "title": "建設交通",
@@ -989,7 +974,7 @@
     },
     {
       "date": "2026-06-08",
-      "snapshot_at": "2026-06-14T12:44:26.851757+08:00",
+      "snapshot_at": "2026-06-15T13:49:46.101678+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -1074,7 +1059,7 @@
     },
     {
       "date": "2026-06-09",
-      "snapshot_at": "2026-06-14T12:44:26.851757+08:00",
+      "snapshot_at": "2026-06-15T13:49:46.101678+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -1154,7 +1139,7 @@
     },
     {
       "date": "2026-06-10",
-      "snapshot_at": "2026-06-14T12:44:26.851757+08:00",
+      "snapshot_at": "2026-06-15T13:49:46.101678+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -1208,7 +1193,7 @@
     },
     {
       "date": "2026-06-11",
-      "snapshot_at": "2026-06-14T12:44:26.851757+08:00",
+      "snapshot_at": "2026-06-15T13:49:46.101678+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -1261,7 +1246,7 @@
     },
     {
       "date": "2026-06-12",
-      "snapshot_at": "2026-06-14T12:44:26.851757+08:00",
+      "snapshot_at": "2026-06-15T13:49:46.101678+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -1326,18 +1311,18 @@
     },
     {
       "date": "2026-06-13",
-      "snapshot_at": "2026-06-14T12:44:26.851757+08:00",
+      "snapshot_at": "2026-06-15T13:49:46.101678+08:00",
       "hotspots": [
         {
           "title": "社福醫療",
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "green",
-          "news_count": 11,
+          "news_count": 12,
           "comment_count": 0,
           "negativity_pct": 0,
           "is_urgent": false,
-          "urgency_score": 11.0,
+          "urgency_score": 12.0,
           "sample_titles": [
             "培育毛孩守護尖兵 雲林打造動物醫療新生力軍",
             "培育毛孩守護尖兵 雲林打造動物醫療新生力軍 - 社會新聞 - PChome Online 新聞",
@@ -1349,22 +1334,70 @@
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "green",
-          "news_count": 2,
+          "news_count": 3,
           "comment_count": 0,
           "negativity_pct": 0,
           "is_urgent": false,
-          "urgency_score": 2.0,
+          "urgency_score": 3.0,
           "sample_titles": [
             "另類的季節限定風景！ 雲林提供200處花生曬場",
-            "農業首都拚外銷 雲林良品館前進國際食品展"
+            "農業首都拚外銷 雲林良品館前進國際食品展",
+            "另類的季節限定風景！ 雲林提供200處花生曬場"
           ]
         }
       ]
     },
     {
       "date": "2026-06-14",
-      "snapshot_at": "2026-06-14T12:44:26.851757+08:00",
+      "snapshot_at": "2026-06-15T13:49:46.101678+08:00",
       "hotspots": [
+        {
+          "title": "治安／詐騙",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "red",
+          "news_count": 9,
+          "comment_count": 0,
+          "negativity_pct": 100,
+          "is_urgent": true,
+          "urgency_score": 18.0,
+          "sample_titles": [
+            "雲林男疑毒駕「撞貨車、衝電桿」命危！乘客重傷- 社會",
+            "快訊／雲林小貨車駕駛「疑毒駕自撞」救出已無呼吸 乘客重傷搶救中",
+            "快訊／雲林小貨車駕駛「疑毒駕」自撞！救出已死亡 乘客重傷搶救中"
+          ]
+        },
+        {
+          "title": "農業議題",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "yellow",
+          "news_count": 3,
+          "comment_count": 0,
+          "negativity_pct": 100,
+          "is_urgent": false,
+          "urgency_score": 4.5,
+          "sample_titles": [
+            "雲林連日大雨花生泡水腐爛 農業處規劃200處曬場",
+            "雲林連日大雨花生泡水發芽腐爛 農業處規劃200處曬場",
+            "【LIVE主播+立委線上聊】 雲林花生價崩 張嘉郡:一個多月前示警還被說危言聳聽"
+          ]
+        },
+        {
+          "title": "水利",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "yellow",
+          "news_count": 2,
+          "comment_count": 0,
+          "negativity_pct": 100,
+          "is_urgent": false,
+          "urgency_score": 3.0,
+          "sample_titles": [
+            "氣象署大雷雨警戒／雲林、嘉義、台南注意！嚴防淹水、強陣風 | 天氣預報 | 生活",
+            "氣象署大雷雨警戒／雲林、嘉義、台南注意！嚴防淹水、強陣風"
+          ]
+        },
         {
           "title": "建設交通",
           "city": "雲林",
@@ -1377,6 +1410,54 @@
           "urgency_score": 1.0,
           "sample_titles": [
             "虎尾西市美食廣場改建啟動 打造舊城區美食觀光新地標"
+          ]
+        },
+        {
+          "title": "社福醫療",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 1.0,
+          "sample_titles": [
+            "衛福部健保守護全民健康 雲林立委劉建國期許讓老幼照顧更完整、醫療資源更到位！"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-06-15",
+      "snapshot_at": "2026-06-15T13:49:46.101678+08:00",
+      "hotspots": [
+        {
+          "title": "農業議題",
+          "city": "雲林",
+          "place": "雲林褒忠",
+          "level": "yellow",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 100,
+          "is_urgent": false,
+          "urgency_score": 1.5,
+          "sample_titles": [
+            "雲林褒忠產業園區環評初審 居民帶在地蒜頭北上抗議開發"
+          ]
+        },
+        {
+          "title": "建設交通",
+          "city": "雲林",
+          "place": "雲林北港",
+          "level": "green",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 1.0,
+          "sample_titles": [
+            "雲縣府斥資千萬改善北港新街里道路工程 提升鄉親行的安全與舒適"
           ]
         }
       ]
