@@ -688,7 +688,7 @@
     },
     {
       "date": "2026-06-04",
-      "snapshot_at": "2026-06-16T12:40:37.449604+08:00",
+      "snapshot_at": "2026-06-18T13:33:52.768970+08:00",
       "hotspots": [
         {
           "title": "消防超勤爭議",
@@ -711,15 +711,15 @@
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "yellow",
-          "news_count": 6,
+          "news_count": 5,
           "comment_count": 0,
           "negativity_pct": 100,
           "is_urgent": false,
-          "urgency_score": 9.0,
+          "urgency_score": 7.5,
           "sample_titles": [
-            "毒駕零容忍 雲林首公布累犯姓名照片",
             "嚴懲毒駕累犯！ 雲林公布23人姓名照片 | 台灣生活新聞",
-            "嚴懲毒駕累犯！ 雲林公布23人姓名照片"
+            "嚴懲毒駕累犯！ 雲林公布23人姓名照片",
+            "今年到5月底毒駕210件 雲林縣警公布毒酒駕累犯姓名相片"
           ]
         },
         {
@@ -727,11 +727,11 @@
           "city": "雲林",
           "place": "雲林虎尾",
           "level": "yellow",
-          "news_count": 6,
+          "news_count": 5,
           "comment_count": 0,
-          "negativity_pct": 67,
+          "negativity_pct": 80,
           "is_urgent": false,
-          "urgency_score": 8.0,
+          "urgency_score": 7.0,
           "sample_titles": [
             "花生採收季防竊又防詐！虎尾警啟動護農勤務 守護農民辛勞成果",
             "議員關切農地課稅查核 雲林稅務局：審慎認定、維護農民權益",
@@ -771,7 +771,7 @@
     },
     {
       "date": "2026-06-05",
-      "snapshot_at": "2026-06-16T12:40:37.449604+08:00",
+      "snapshot_at": "2026-06-18T13:33:52.768970+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -852,7 +852,7 @@
     },
     {
       "date": "2026-06-06",
-      "snapshot_at": "2026-06-16T12:40:37.449604+08:00",
+      "snapshot_at": "2026-06-18T13:33:52.768970+08:00",
       "hotspots": [
         {
           "title": "建設交通",
@@ -922,7 +922,7 @@
     },
     {
       "date": "2026-06-07",
-      "snapshot_at": "2026-06-16T12:40:37.449604+08:00",
+      "snapshot_at": "2026-06-18T13:33:52.768970+08:00",
       "hotspots": [
         {
           "title": "建設交通",
@@ -958,7 +958,7 @@
     },
     {
       "date": "2026-06-08",
-      "snapshot_at": "2026-06-16T12:40:37.449604+08:00",
+      "snapshot_at": "2026-06-18T13:33:52.768970+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -1043,7 +1043,7 @@
     },
     {
       "date": "2026-06-09",
-      "snapshot_at": "2026-06-16T12:40:37.449604+08:00",
+      "snapshot_at": "2026-06-18T13:33:52.768970+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -1123,7 +1123,7 @@
     },
     {
       "date": "2026-06-10",
-      "snapshot_at": "2026-06-16T12:40:37.449604+08:00",
+      "snapshot_at": "2026-06-18T13:33:52.768970+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -1177,7 +1177,7 @@
     },
     {
       "date": "2026-06-11",
-      "snapshot_at": "2026-06-16T12:40:37.449604+08:00",
+      "snapshot_at": "2026-06-18T13:33:52.768970+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -1230,7 +1230,7 @@
     },
     {
       "date": "2026-06-12",
-      "snapshot_at": "2026-06-16T12:40:37.449604+08:00",
+      "snapshot_at": "2026-06-18T13:33:52.768970+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -1295,7 +1295,7 @@
     },
     {
       "date": "2026-06-13",
-      "snapshot_at": "2026-06-16T12:40:37.449604+08:00",
+      "snapshot_at": "2026-06-18T13:33:52.768970+08:00",
       "hotspots": [
         {
           "title": "社福醫療",
@@ -1333,18 +1333,18 @@
     },
     {
       "date": "2026-06-14",
-      "snapshot_at": "2026-06-16T12:40:37.449604+08:00",
+      "snapshot_at": "2026-06-18T13:33:52.768970+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "red",
-          "news_count": 8,
+          "news_count": 9,
           "comment_count": 0,
           "negativity_pct": 100,
           "is_urgent": true,
-          "urgency_score": 16.5,
+          "urgency_score": 19.5,
           "sample_titles": [
             "快訊／雲林小貨車駕駛「疑毒駕」自撞！救出已死亡 乘客重傷搶救中",
             "快訊／雲林小貨車駕駛「疑毒駕」自撞！救出已死亡 乘客重傷搶救中",
@@ -1356,11 +1356,11 @@
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "yellow",
-          "news_count": 3,
+          "news_count": 4,
           "comment_count": 0,
           "negativity_pct": 100,
           "is_urgent": false,
-          "urgency_score": 4.5,
+          "urgency_score": 6.0,
           "sample_titles": [
             "雲林連日大雨花生泡水腐爛 農業處規劃200處曬場",
             "雲林連日大雨花生泡水發芽腐爛 農業處規劃200處曬場",
@@ -1414,18 +1414,18 @@
     },
     {
       "date": "2026-06-15",
-      "snapshot_at": "2026-06-16T12:40:37.449604+08:00",
+      "snapshot_at": "2026-06-18T13:33:52.768970+08:00",
       "hotspots": [
         {
           "title": "農業議題",
           "city": "雲林",
           "place": "雲林斗六",
           "level": "yellow",
-          "news_count": 9,
+          "news_count": 12,
           "comment_count": 0,
           "negativity_pct": 33,
           "is_urgent": false,
-          "urgency_score": 10.5,
+          "urgency_score": 14.0,
           "sample_titles": [
             "雲林褒忠產業園區環評初審 居民帶在地蒜頭北上抗議開發",
             "海峽論壇日前在廈門舉行，並舉辦涉台10項措施「對接簽約會」，陸委會今年擴大禁令，禁止中央與地方政府人員出席，台東縣長饒慶",
@@ -1482,21 +1482,22 @@
     },
     {
       "date": "2026-06-16",
-      "snapshot_at": "2026-06-16T12:40:37.449604+08:00",
+      "snapshot_at": "2026-06-18T13:33:52.768970+08:00",
       "hotspots": [
         {
           "title": "農業議題",
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "yellow",
-          "news_count": 2,
+          "news_count": 72,
           "comment_count": 0,
-          "negativity_pct": 100,
+          "negativity_pct": 68,
           "is_urgent": false,
-          "urgency_score": 3.0,
+          "urgency_score": 96.5,
           "sample_titles": [
             "採收期遇雨劫！雲林花生發芽腐爛 農民苦嘆「今年慘了」",
-            "雲林花生泡水發芽 農損通報卻掛零 青農憂血本無歸"
+            "雲林花生泡水發芽 農損通報卻掛零 青農憂血本無歸",
+            "雲林花生泡水發芽農損通報卻掛零青農憂血本無歸- 生活"
           ]
         },
         {
@@ -1504,13 +1505,119 @@
           "city": "雲林",
           "place": "雲林褒忠",
           "level": "yellow",
-          "news_count": 1,
+          "news_count": 3,
           "comment_count": 0,
           "negativity_pct": 100,
           "is_urgent": false,
-          "urgency_score": 1.5,
+          "urgency_score": 4.5,
           "sample_titles": [
-            "朱淑娟專欄：褒忠園區蓋在淹水區，辛苦治水白忙一場"
+            "朱淑娟專欄：褒忠園區蓋在淹水區，辛苦治水白忙一場",
+            "氣象署大雷雨警戒／雲林、嘉義、台南轟炸1小時！嚴防淹水、強風 | 天氣預報 | 生活",
+            "氣象署大雷雨警戒／雲林、嘉義、台南轟炸1小時！嚴防淹水、強風"
+          ]
+        },
+        {
+          "title": "六輕／空污",
+          "city": "雲林",
+          "place": "雲林麥寮",
+          "level": "green",
+          "news_count": 3,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 3.0,
+          "sample_titles": [
+            "台塑麥寮表揚節能尖兵 2.8萬件節水節能改善案創78億元減碳效益",
+            "台塑麥寮表揚節能績優廠處 投入30億創造78億減碳效益",
+            "台塑企業雲林麥寮六輕園區「節能減排、循環經濟」績優部門表揚大會副縣長陳璧君肯定台塑企業長期與雲林縣政府攜手落實循環經濟！"
+          ]
+        },
+        {
+          "title": "建設交通",
+          "city": "雲林",
+          "place": "雲林斗六",
+          "level": "green",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 1.0,
+          "sample_titles": [
+            "雲林警政建設新里程碑！斗六分局全新辦公廳舍正式啟用 - 旅遊新聞 - PChome Online 新聞"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-06-17",
+      "snapshot_at": "2026-06-18T13:33:52.768970+08:00",
+      "hotspots": [
+        {
+          "title": "農業議題",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "yellow",
+          "news_count": 27,
+          "comment_count": 0,
+          "negativity_pct": 56,
+          "is_urgent": false,
+          "urgency_score": 34.5,
+          "sample_titles": [
+            "雲林花生納災損補助 養殖戶搶救文蛤…屏東26項農損近3000萬",
+            "豪雨來襲、花生受創 從示警到救助，劉建國如何替農民搶回一線生機？",
+            "雲林花生雨災 每公頃救助3.6萬"
+          ]
+        },
+        {
+          "title": "建設交通",
+          "city": "雲林",
+          "place": "雲林西螺",
+          "level": "yellow",
+          "news_count": 8,
+          "comment_count": 0,
+          "negativity_pct": 25,
+          "is_urgent": false,
+          "urgency_score": 9.0,
+          "sample_titles": [
+            "立委劉建國爭取中央補助4,768萬元 改善西螺、褒忠人行環境提升交通安全",
+            "守護鄉親回家的路！劉建國向交通部爭取4768萬元 改善雲林人行環境",
+            "守護鄉親回家的路！劉建國向交通部爭取4768萬元 改善雲林人行環境 | 民視新聞網"
+          ]
+        },
+        {
+          "title": "社福醫療",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 1.0,
+          "sample_titles": [
+            "牙口不好也能吃 雲林縣老人長照協會研發「質地調整肉粽」"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-06-18",
+      "snapshot_at": "2026-06-18T13:33:52.768970+08:00",
+      "hotspots": [
+        {
+          "title": "農業議題",
+          "city": "雲林",
+          "place": "雲林褒忠",
+          "level": "yellow",
+          "news_count": 3,
+          "comment_count": 0,
+          "negativity_pct": 33,
+          "is_urgent": false,
+          "urgency_score": 3.5,
+          "sample_titles": [
+            "雲林智慧農業大學第六屆結業！ 張麗善頒證36位新農並表揚10位優秀學員及1組共好團隊",
+            "雲林 花生藤餵牛 農廢去化一舉兩得",
+            "褒忠產業園區蓋在淹水區，周邊農民卻要承擔洪水後果？十年「在地滯洪」成果恐被逆轉"
           ]
         }
       ]
