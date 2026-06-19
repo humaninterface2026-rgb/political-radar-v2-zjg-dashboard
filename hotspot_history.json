@@ -771,7 +771,7 @@
     },
     {
       "date": "2026-06-05",
-      "snapshot_at": "2026-06-18T13:33:52.768970+08:00",
+      "snapshot_at": "2026-06-19T13:05:57.781014+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -852,7 +852,7 @@
     },
     {
       "date": "2026-06-06",
-      "snapshot_at": "2026-06-18T13:33:52.768970+08:00",
+      "snapshot_at": "2026-06-19T13:05:57.781014+08:00",
       "hotspots": [
         {
           "title": "建設交通",
@@ -922,7 +922,7 @@
     },
     {
       "date": "2026-06-07",
-      "snapshot_at": "2026-06-18T13:33:52.768970+08:00",
+      "snapshot_at": "2026-06-19T13:05:57.781014+08:00",
       "hotspots": [
         {
           "title": "建設交通",
@@ -958,7 +958,7 @@
     },
     {
       "date": "2026-06-08",
-      "snapshot_at": "2026-06-18T13:33:52.768970+08:00",
+      "snapshot_at": "2026-06-19T13:05:57.781014+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -1043,7 +1043,7 @@
     },
     {
       "date": "2026-06-09",
-      "snapshot_at": "2026-06-18T13:33:52.768970+08:00",
+      "snapshot_at": "2026-06-19T13:05:57.781014+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -1123,7 +1123,7 @@
     },
     {
       "date": "2026-06-10",
-      "snapshot_at": "2026-06-18T13:33:52.768970+08:00",
+      "snapshot_at": "2026-06-19T13:05:57.781014+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -1177,7 +1177,7 @@
     },
     {
       "date": "2026-06-11",
-      "snapshot_at": "2026-06-18T13:33:52.768970+08:00",
+      "snapshot_at": "2026-06-19T13:05:57.781014+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -1230,7 +1230,7 @@
     },
     {
       "date": "2026-06-12",
-      "snapshot_at": "2026-06-18T13:33:52.768970+08:00",
+      "snapshot_at": "2026-06-19T13:05:57.781014+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -1295,7 +1295,7 @@
     },
     {
       "date": "2026-06-13",
-      "snapshot_at": "2026-06-18T13:33:52.768970+08:00",
+      "snapshot_at": "2026-06-19T13:05:57.781014+08:00",
       "hotspots": [
         {
           "title": "社福醫療",
@@ -1333,7 +1333,7 @@
     },
     {
       "date": "2026-06-14",
-      "snapshot_at": "2026-06-18T13:33:52.768970+08:00",
+      "snapshot_at": "2026-06-19T13:05:57.781014+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -1414,7 +1414,7 @@
     },
     {
       "date": "2026-06-15",
-      "snapshot_at": "2026-06-18T13:33:52.768970+08:00",
+      "snapshot_at": "2026-06-19T13:05:57.781014+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -1482,18 +1482,18 @@
     },
     {
       "date": "2026-06-16",
-      "snapshot_at": "2026-06-18T13:33:52.768970+08:00",
+      "snapshot_at": "2026-06-19T13:05:57.781014+08:00",
       "hotspots": [
         {
           "title": "農業議題",
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "yellow",
-          "news_count": 72,
+          "news_count": 75,
           "comment_count": 0,
-          "negativity_pct": 68,
+          "negativity_pct": 67,
           "is_urgent": false,
-          "urgency_score": 96.5,
+          "urgency_score": 100.0,
           "sample_titles": [
             "採收期遇雨劫！雲林花生發芽腐爛 農民苦嘆「今年慘了」",
             "雲林花生泡水發芽 農損通報卻掛零 青農憂血本無歸",
@@ -1550,18 +1550,18 @@
     },
     {
       "date": "2026-06-17",
-      "snapshot_at": "2026-06-18T13:33:52.768970+08:00",
+      "snapshot_at": "2026-06-19T13:05:57.781014+08:00",
       "hotspots": [
         {
           "title": "農業議題",
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "yellow",
-          "news_count": 27,
+          "news_count": 29,
           "comment_count": 0,
-          "negativity_pct": 56,
+          "negativity_pct": 55,
           "is_urgent": false,
-          "urgency_score": 34.5,
+          "urgency_score": 37.0,
           "sample_titles": [
             "雲林花生納災損補助 養殖戶搶救文蛤…屏東26項農損近3000萬",
             "豪雨來襲、花生受創 從示警到救助，劉建國如何替農民搶回一線生機？",
@@ -1602,22 +1602,102 @@
     },
     {
       "date": "2026-06-18",
-      "snapshot_at": "2026-06-18T13:33:52.768970+08:00",
+      "snapshot_at": "2026-06-19T13:05:57.781014+08:00",
       "hotspots": [
+        {
+          "title": "治安／詐騙",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "red",
+          "news_count": 18,
+          "comment_count": 0,
+          "negativity_pct": 39,
+          "is_urgent": true,
+          "urgency_score": 29.0,
+          "sample_titles": [
+            "防堵腸病毒擴散 雲林力推洗手七字訣",
+            "雲林結合布袋戲演出 生動方式推廣防治腸病毒觀念",
+            "防堵腸病毒擴散 雲林力推洗手七字訣 - 健康新聞 - PChome Online 新聞"
+          ]
+        },
         {
           "title": "農業議題",
           "city": "雲林",
           "place": "雲林褒忠",
           "level": "yellow",
-          "news_count": 3,
+          "news_count": 17,
           "comment_count": 0,
-          "negativity_pct": 33,
+          "negativity_pct": 65,
           "is_urgent": false,
-          "urgency_score": 3.5,
+          "urgency_score": 22.5,
           "sample_titles": [
             "雲林智慧農業大學第六屆結業！ 張麗善頒證36位新農並表揚10位優秀學員及1組共好團隊",
             "雲林 花生藤餵牛 農廢去化一舉兩得",
             "褒忠產業園區蓋在淹水區，周邊農民卻要承擔洪水後果？十年「在地滯洪」成果恐被逆轉"
+          ]
+        },
+        {
+          "title": "水利",
+          "city": "雲林",
+          "place": "雲林元長",
+          "level": "yellow",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 100,
+          "is_urgent": false,
+          "urgency_score": 1.5,
+          "sample_titles": [
+            "解決元長內寮村積淹水問題 縣府籌措860萬修繕老舊排水溝"
+          ]
+        },
+        {
+          "title": "社福醫療",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 1.0,
+          "sample_titles": [
+            "高雄市雲林同鄉會返鄉見證雲林蛻變 捐款支持社福服務"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-06-19",
+      "snapshot_at": "2026-06-19T13:05:57.781014+08:00",
+      "hotspots": [
+        {
+          "title": "農業議題",
+          "city": "雲林",
+          "place": "雲林土庫",
+          "level": "yellow",
+          "news_count": 4,
+          "comment_count": 0,
+          "negativity_pct": 100,
+          "is_urgent": false,
+          "urgency_score": 6.0,
+          "sample_titles": [
+            "雲林玉米受雨災嚴重！ 立委張嘉郡籲農民儘速通報 以利啟動天災救助",
+            "雨災搶收花生卻發芽 土庫爭納救助",
+            "豪雨狂襲雲林玉米倒伏發霉 張嘉郡籲農民儘速通報以利啟動天災救助"
+          ]
+        },
+        {
+          "title": "社福醫療",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 1.0,
+          "sample_titles": [
+            "民進黨雲林縣黨部攜手立委劉建國服務處捐贈社福團體近5000顆肉粽為弱勢家庭傳遞節慶溫暖與社會關懷"
           ]
         }
       ]
