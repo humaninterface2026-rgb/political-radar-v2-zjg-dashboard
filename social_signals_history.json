@@ -179,6 +179,16 @@
       "red_pct": 7.19,
       "yellow_pct": 66.19,
       "green_pct": 26.62
+    },
+    {
+      "ts": "2026-06-22T13:11:16",
+      "total": 193,
+      "red": 20,
+      "yellow": 136,
+      "green": 37,
+      "red_pct": 10.36,
+      "yellow_pct": 70.47,
+      "green_pct": 19.17
     }
   ],
   "instagram": [
@@ -361,6 +371,16 @@
       "red_pct": 0.0,
       "yellow_pct": 30.77,
       "green_pct": 69.23
+    },
+    {
+      "ts": "2026-06-22T13:11:16",
+      "total": 57,
+      "red": 0,
+      "yellow": 18,
+      "green": 39,
+      "red_pct": 0.0,
+      "yellow_pct": 31.58,
+      "green_pct": 68.42
     }
   ],
   "threads": []
