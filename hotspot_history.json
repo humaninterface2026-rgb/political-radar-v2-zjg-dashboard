@@ -1094,18 +1094,18 @@
     },
     {
       "date": "2026-06-10",
-      "snapshot_at": "2026-06-23T13:33:06.302896+08:00",
+      "snapshot_at": "2026-06-24T13:28:57.963520+08:00",
       "hotspots": [
         {
           "title": "農業議題",
           "city": "雲林",
           "place": "雲林虎尾",
           "level": "yellow",
-          "news_count": 59,
+          "news_count": 56,
           "comment_count": 0,
-          "negativity_pct": 69,
+          "negativity_pct": 71,
           "is_urgent": false,
-          "urgency_score": 79.5,
+          "urgency_score": 76.0,
           "sample_titles": [
             "張嘉郡稱美國會毀滅性衝擊國產花生 同黨立委楊瓊瓔警告：太嚴重字眼反讓價格更崩",
             "張嘉郡要求花生轉作金發10萬5 農業部反應曝",
@@ -1117,15 +1117,15 @@
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "yellow",
-          "news_count": 6,
+          "news_count": 5,
           "comment_count": 0,
-          "negativity_pct": 50,
+          "negativity_pct": 60,
           "is_urgent": false,
-          "urgency_score": 7.5,
+          "urgency_score": 6.5,
           "sample_titles": [
             "誤入詐騙集團還能唱跳？《我在詐騙公司上班》襲捲雲林",
             "AI天眼全天蒐證抓違規！ 雲林重拳護環境防車禍防詐騙",
-            "《我在詐騙公司上班》9月5日雲林登場青年席最低300元起開賣果陀劇場改編人氣漫畫作品演前講座邀楊奇煜分享創作幕後秘辛"
+            "AI天眼全天蒐證抓違規！ 雲林重拳護環境防車禍防詐騙 - 生活新聞 - PChome Online 新聞"
           ]
         },
         {
@@ -1148,7 +1148,7 @@
     },
     {
       "date": "2026-06-11",
-      "snapshot_at": "2026-06-23T13:33:06.302896+08:00",
+      "snapshot_at": "2026-06-24T13:28:57.963520+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -1201,7 +1201,7 @@
     },
     {
       "date": "2026-06-12",
-      "snapshot_at": "2026-06-23T13:33:06.302896+08:00",
+      "snapshot_at": "2026-06-24T13:28:57.963520+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -1266,7 +1266,7 @@
     },
     {
       "date": "2026-06-13",
-      "snapshot_at": "2026-06-23T13:33:06.302896+08:00",
+      "snapshot_at": "2026-06-24T13:28:57.963520+08:00",
       "hotspots": [
         {
           "title": "社福醫療",
@@ -1304,7 +1304,7 @@
     },
     {
       "date": "2026-06-14",
-      "snapshot_at": "2026-06-23T13:33:06.302896+08:00",
+      "snapshot_at": "2026-06-24T13:28:57.963520+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -1385,7 +1385,7 @@
     },
     {
       "date": "2026-06-15",
-      "snapshot_at": "2026-06-23T13:33:06.302896+08:00",
+      "snapshot_at": "2026-06-24T13:28:57.963520+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -1453,7 +1453,7 @@
     },
     {
       "date": "2026-06-16",
-      "snapshot_at": "2026-06-23T13:33:06.302896+08:00",
+      "snapshot_at": "2026-06-24T13:28:57.963520+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -1521,7 +1521,7 @@
     },
     {
       "date": "2026-06-17",
-      "snapshot_at": "2026-06-23T13:33:06.302896+08:00",
+      "snapshot_at": "2026-06-24T13:28:57.963520+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -1573,7 +1573,7 @@
     },
     {
       "date": "2026-06-18",
-      "snapshot_at": "2026-06-23T13:33:06.302896+08:00",
+      "snapshot_at": "2026-06-24T13:28:57.963520+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -1639,7 +1639,7 @@
     },
     {
       "date": "2026-06-19",
-      "snapshot_at": "2026-06-23T13:33:06.302896+08:00",
+      "snapshot_at": "2026-06-24T13:28:57.963520+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -1675,7 +1675,7 @@
     },
     {
       "date": "2026-06-20",
-      "snapshot_at": "2026-06-23T13:33:06.302896+08:00",
+      "snapshot_at": "2026-06-24T13:28:57.963520+08:00",
       "hotspots": [
         {
           "title": "民怨抗議",
@@ -1740,7 +1740,7 @@
     },
     {
       "date": "2026-06-21",
-      "snapshot_at": "2026-06-23T13:33:06.302896+08:00",
+      "snapshot_at": "2026-06-24T13:28:57.963520+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -1776,38 +1776,151 @@
     },
     {
       "date": "2026-06-22",
-      "snapshot_at": "2026-06-23T13:33:06.302896+08:00",
+      "snapshot_at": "2026-06-24T13:28:57.963520+08:00",
       "hotspots": [
+        {
+          "title": "建設交通",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "yellow",
+          "news_count": 9,
+          "comment_count": 0,
+          "negativity_pct": 22,
+          "is_urgent": false,
+          "urgency_score": 10.0,
+          "sample_titles": [
+            "雲林推動「友善交通」安全宣導計劃啟動 深化交通安全意識 打造安心用路環境",
+            "「115年雲林縣走入地方交通安全宣導計畫」開跑 友善交通讓雲林行得通",
+            "雲林推友善交通宣導升級 攜手民團強化酒駕防制"
+          ]
+        },
         {
           "title": "農業議題",
           "city": "雲林",
           "place": "雲林大埤",
           "level": "yellow",
-          "news_count": 6,
+          "news_count": 7,
           "comment_count": 0,
-          "negativity_pct": 67,
+          "negativity_pct": 71,
           "is_urgent": false,
-          "urgency_score": 8.0,
+          "urgency_score": 9.5,
           "sample_titles": [
             "大埤鴨間稻友善農法 收成供長青食堂",
             "「2兆農業帝國」驚人關係圖！黃子一：果菜太貴、賣不掉找雲林張家",
             "1張圖秒懂「雲林張家農業帝國」 黃子一：全台果菜價格已被他們卡死"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-06-23",
+      "snapshot_at": "2026-06-24T13:28:57.963520+08:00",
+      "hotspots": [
+        {
+          "title": "農業議題",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "yellow",
+          "news_count": 9,
+          "comment_count": 0,
+          "negativity_pct": 67,
+          "is_urgent": false,
+          "urgency_score": 12.0,
+          "sample_titles": [
+            "美國花生0關稅叩關！雲林「土豆鳥花生」原價收購守護生態",
+            "雲林花生「災害莢」補助遲未公告 農民：再不收購就來不及了",
+            "「雲林張家農業帝國」1圖秒懂！黃子一開轟：還要綁架台灣農產多久 | 民視新聞網"
+          ]
+        },
+        {
+          "title": "議員衝突",
+          "city": "雲林",
+          "place": "雲林褒忠",
+          "level": "red",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 100,
+          "is_urgent": true,
+          "urgency_score": 3.0,
+          "sample_titles": [
+            "調去公墓洗廁所！不滿下屬捅他「霸凌全餐」嚗光 前褒忠鄉長陳建名判罰50萬"
           ]
         },
         {
           "title": "建設交通",
           "city": "雲林",
           "place": "雲林（斗六）",
-          "level": "yellow",
-          "news_count": 7,
+          "level": "green",
+          "news_count": 1,
           "comment_count": 0,
-          "negativity_pct": 14,
+          "negativity_pct": 0,
           "is_urgent": false,
-          "urgency_score": 7.5,
+          "urgency_score": 1.0,
           "sample_titles": [
-            "雲林推動「友善交通」安全宣導計劃啟動 深化交通安全意識 打造安心用路環境",
-            "「115年雲林縣走入地方交通安全宣導計畫」開跑 友善交通讓雲林行得通",
-            "雲林推友善交通宣導升級 攜手民團強化酒駕防制"
+            "友善交通 雲林走入地方交安宣導計畫 開跑"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-06-24",
+      "snapshot_at": "2026-06-24T13:28:57.963520+08:00",
+      "hotspots": [
+        {
+          "title": "議員衝突",
+          "city": "雲林",
+          "place": "雲林褒忠",
+          "level": "red",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 100,
+          "is_urgent": true,
+          "urgency_score": 3.0,
+          "sample_titles": [
+            "調去公墓洗廁所、35度沒電扇！不爽下屬狂搞霸凌 前褒忠鄉長陳建名判罰50萬"
+          ]
+        },
+        {
+          "title": "治安／詐騙",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "red",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 100,
+          "is_urgent": true,
+          "urgency_score": 3.0,
+          "sample_titles": [
+            "腸病毒緩升雲林83班停課 提醒暑假東南亞旅遊要小心"
+          ]
+        },
+        {
+          "title": "農業議題",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 2,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 2.0,
+          "sample_titles": [
+            "雲林土豆鳥花生 維持去年原價採購",
+            "雲林花生「災害莢」收購 近日公告辦法"
+          ]
+        },
+        {
+          "title": "建設交通",
+          "city": "雲林",
+          "place": "雲林土庫",
+          "level": "green",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 1.0,
+          "sample_titles": [
+            "神祕國度土庫曼逐漸解封 迎觀光客探索「地獄之門」"
           ]
         }
       ]
