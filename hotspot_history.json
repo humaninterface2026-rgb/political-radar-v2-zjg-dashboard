@@ -1425,18 +1425,18 @@
     },
     {
       "date": "2026-06-16",
-      "snapshot_at": "2026-06-29T13:02:01.668182+08:00",
+      "snapshot_at": "2026-06-30T13:50:35.076845+08:00",
       "hotspots": [
         {
           "title": "農業議題",
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "yellow",
-          "news_count": 75,
+          "news_count": 73,
           "comment_count": 0,
-          "negativity_pct": 67,
+          "negativity_pct": 66,
           "is_urgent": false,
-          "urgency_score": 100.0,
+          "urgency_score": 97.0,
           "sample_titles": [
             "採收期遇雨劫！雲林花生發芽腐爛 農民苦嘆「今年慘了」",
             "雲林花生泡水發芽 農損通報卻掛零 青農憂血本無歸",
@@ -1446,15 +1446,14 @@
         {
           "title": "水利",
           "city": "雲林",
-          "place": "雲林褒忠",
+          "place": "雲林（斗六）",
           "level": "yellow",
-          "news_count": 3,
+          "news_count": 2,
           "comment_count": 0,
           "negativity_pct": 100,
           "is_urgent": false,
-          "urgency_score": 4.5,
+          "urgency_score": 3.0,
           "sample_titles": [
-            "朱淑娟專欄：褒忠園區蓋在淹水區，辛苦治水白忙一場",
             "氣象署大雷雨警戒／雲林、嘉義、台南轟炸1小時！嚴防淹水、強風 | 天氣預報 | 生活",
             "氣象署大雷雨警戒／雲林、嘉義、台南轟炸1小時！嚴防淹水、強風"
           ]
@@ -1493,7 +1492,7 @@
     },
     {
       "date": "2026-06-17",
-      "snapshot_at": "2026-06-29T13:02:01.668182+08:00",
+      "snapshot_at": "2026-06-30T13:50:35.076845+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -1545,7 +1544,7 @@
     },
     {
       "date": "2026-06-18",
-      "snapshot_at": "2026-06-29T13:02:01.668182+08:00",
+      "snapshot_at": "2026-06-30T13:50:35.076845+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -1611,7 +1610,7 @@
     },
     {
       "date": "2026-06-19",
-      "snapshot_at": "2026-06-29T13:02:01.668182+08:00",
+      "snapshot_at": "2026-06-30T13:50:35.076845+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -1647,7 +1646,7 @@
     },
     {
       "date": "2026-06-20",
-      "snapshot_at": "2026-06-29T13:02:01.668182+08:00",
+      "snapshot_at": "2026-06-30T13:50:35.076845+08:00",
       "hotspots": [
         {
           "title": "民怨抗議",
@@ -1712,7 +1711,7 @@
     },
     {
       "date": "2026-06-21",
-      "snapshot_at": "2026-06-29T13:02:01.668182+08:00",
+      "snapshot_at": "2026-06-30T13:50:35.076845+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -1748,7 +1747,7 @@
     },
     {
       "date": "2026-06-22",
-      "snapshot_at": "2026-06-29T13:02:01.668182+08:00",
+      "snapshot_at": "2026-06-30T13:50:35.076845+08:00",
       "hotspots": [
         {
           "title": "建設交通",
@@ -1786,7 +1785,7 @@
     },
     {
       "date": "2026-06-23",
-      "snapshot_at": "2026-06-29T13:02:01.668182+08:00",
+      "snapshot_at": "2026-06-30T13:50:35.076845+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -1850,7 +1849,7 @@
     },
     {
       "date": "2026-06-24",
-      "snapshot_at": "2026-06-29T13:02:01.668182+08:00",
+      "snapshot_at": "2026-06-30T13:50:35.076845+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -1916,7 +1915,7 @@
     },
     {
       "date": "2026-06-25",
-      "snapshot_at": "2026-06-29T13:02:01.668182+08:00",
+      "snapshot_at": "2026-06-30T13:50:35.076845+08:00",
       "hotspots": [
         {
           "title": "建設交通",
@@ -1954,7 +1953,7 @@
     },
     {
       "date": "2026-06-26",
-      "snapshot_at": "2026-06-29T13:02:01.668182+08:00",
+      "snapshot_at": "2026-06-30T13:50:35.076845+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -2033,7 +2032,7 @@
     },
     {
       "date": "2026-06-27",
-      "snapshot_at": "2026-06-29T13:02:01.668182+08:00",
+      "snapshot_at": "2026-06-30T13:50:35.076845+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -2131,18 +2130,18 @@
     },
     {
       "date": "2026-06-28",
-      "snapshot_at": "2026-06-29T13:02:01.668182+08:00",
+      "snapshot_at": "2026-06-30T13:50:35.076845+08:00",
       "hotspots": [
         {
           "title": "農業議題",
           "city": "雲林",
           "place": "雲林口湖",
           "level": "yellow",
-          "news_count": 11,
+          "news_count": 15,
           "comment_count": 0,
-          "negativity_pct": 64,
+          "negativity_pct": 73,
           "is_urgent": false,
-          "urgency_score": 14.5,
+          "urgency_score": 20.5,
           "sample_titles": [
             "米克拉豪雨重創雲林農業！劉建國急會勘 爭取蔬菜全品項災損救助",
             "米克拉豪雨重創雲林農業！劉建國急會勘爭取蔬菜全品項災損救助- 政府消息新聞- PChome Online 新聞",
@@ -2154,15 +2153,31 @@
           "city": "雲林",
           "place": "雲林土庫",
           "level": "green",
+          "news_count": 5,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 5.0,
+          "sample_titles": [
+            "土庫舊消防分隊 變身宮北里集會所",
+            "奉獻45年獲最高榮耀！雲林表揚118位資深義消 強化裝備守護消防英雄",
+            "奉獻45年獲最高榮耀！雲林表揚118位資深義消強化裝備守護消防英雄- 政府消息新聞- PChome Online 新聞"
+          ]
+        },
+        {
+          "title": "治安／詐騙",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
           "news_count": 4,
           "comment_count": 0,
           "negativity_pct": 0,
           "is_urgent": false,
           "urgency_score": 4.0,
           "sample_titles": [
-            "土庫舊消防分隊 變身宮北里集會所",
-            "奉獻45年獲最高榮耀！雲林表揚118位資深義消 強化裝備守護消防英雄",
-            "奉獻45年獲最高榮耀！雲林表揚118位資深義消強化裝備守護消防英雄- 政府消息新聞- PChome Online 新聞"
+            "寓教於樂學防災！劉建國推毒化防災教育 打造更安全、更具韌性的家園",
+            "寓教於樂學防災！劉建國推毒化防災教育 打造更安全、更具韌性的家園 | 觀傳媒",
+            "寓教於樂學防災！劉建國推毒化防災教育 打造更安全、更具韌性的家園"
           ]
         },
         {
@@ -2179,22 +2194,6 @@
             "虎尾「毛巾節故事館」開幕 推廣地方觀光特色",
             "全國唯一獲獎副縣長！陳璧君副縣長榮獲永續觀光傑出人物獎 雲林布袋戲教育同步摘下全國銀獎 文化治理成果獲全國肯定 打造雲林",
             "全國唯一獲獎副縣長！陳璧君副縣長榮獲永續觀光傑出人物獎雲林布袋戲教育同步摘下全國銀獎文化治理成果獲全國肯定打造雲林永續觀"
-          ]
-        },
-        {
-          "title": "治安／詐騙",
-          "city": "雲林",
-          "place": "雲林（斗六）",
-          "level": "green",
-          "news_count": 3,
-          "comment_count": 0,
-          "negativity_pct": 0,
-          "is_urgent": false,
-          "urgency_score": 3.0,
-          "sample_titles": [
-            "寓教於樂學防災！劉建國推毒化防災教育 打造更安全、更具韌性的家園",
-            "寓教於樂學防災！劉建國推毒化防災教育 打造更安全、更具韌性的家園 | 觀傳媒",
-            "寓教於樂學防災！劉建國推毒化防災教育 打造更安全、更具韌性的家園"
           ]
         },
         {
@@ -2215,20 +2214,38 @@
     },
     {
       "date": "2026-06-29",
-      "snapshot_at": "2026-06-29T13:02:01.668182+08:00",
+      "snapshot_at": "2026-06-30T13:50:35.076845+08:00",
       "hotspots": [
+        {
+          "title": "治安／詐騙",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 5,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 5.0,
+          "sample_titles": [
+            "打造完整戒癮照護網 臺大醫院雲林分院獲115年反毒有功團體獎",
+            "深耕戒癮醫療近20年 臺大雲林分院獲反毒有功團體獎肯定",
+            "深耕戒癮醫療近20年 臺大醫院雲林分院獲115年反毒有功團體獎"
+          ]
+        },
         {
           "title": "農業議題",
           "city": "雲林",
           "place": "雲林口湖",
           "level": "yellow",
-          "news_count": 1,
+          "news_count": 3,
           "comment_count": 0,
-          "negativity_pct": 100,
+          "negativity_pct": 67,
           "is_urgent": false,
-          "urgency_score": 1.5,
+          "urgency_score": 4.0,
           "sample_titles": [
-            "雲林立委劉建國等人會勘口湖、水林蕃薯與硬質玉米雨災 籲請農業部盡快公告天然災害救助！"
+            "雲林立委劉建國等人會勘口湖、水林蕃薯與硬質玉米雨災 籲請農業部盡快公告天然災害救助！",
+            "馬不停蹄！劉建國實地勘查口湖、水林蕃薯與硬質玉米 籲農業部盡快公告天然災害救助",
+            "賴清德總統今天接見第50屆全國十大傑出農業專家時致詞表示，中國將農產品武器化，企圖以農逼政，不是藉題禁止輸入就是提高關稅"
           ]
         },
         {
@@ -2243,6 +2260,102 @@
           "urgency_score": 1.5,
           "sample_titles": [
             "藍白陣營擬推動「移轉投票」、「交通罰鍰專用」、「反廢死」、「鞭刑入法」及「重啟核電」等5項公投案，並規劃與年底地方大選合"
+          ]
+        },
+        {
+          "title": "消防超勤爭議",
+          "city": "雲林",
+          "place": "雲林土庫",
+          "level": "green",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 1.0,
+          "sample_titles": [
+            "雲林土庫宮北里集會所啟用！保留消防瞭望塔串聯文化廊帶 - 旅遊新聞 - PChome Online 新聞"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-06-30",
+      "snapshot_at": "2026-06-30T13:50:35.076845+08:00",
+      "hotspots": [
+        {
+          "title": "治安／詐騙",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 3,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 3.0,
+          "sample_titles": [
+            "反毒典範醫院出線！臺大雲林分院深耕戒癮醫療獲法務部肯定",
+            "從醫療到社區防毒一條龍！台大雲林分院反毒成效受國家肯定 | 觀傳媒",
+            "從醫療到社區防毒一條龍！台大雲林分院反毒成效受國家肯定"
+          ]
+        },
+        {
+          "title": "建設交通",
+          "city": "雲林",
+          "place": "雲林斗南",
+          "level": "green",
+          "news_count": 3,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 3.0,
+          "sample_titles": [
+            "雲72線拓寬正式啟動！張麗善拍板一期工程 改善林內交通瓶頸 | 觀傳媒",
+            "智慧治理帶動雲林轉型 張麗善細數施政成果 斗南建設展現發展新動能",
+            "雲72線拓寬正式啟動！張麗善拍板一期工程 改善林內交通瓶頸"
+          ]
+        },
+        {
+          "title": "六輕／空污",
+          "city": "雲林",
+          "place": "雲林麥寮",
+          "level": "green",
+          "news_count": 2,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 2.0,
+          "sample_titles": [
+            "麥寮重大建設齊發打造廉能工程 公共工程拚效率更重風險控管",
+            "麥寮拚公共建設零風險！60名公務員精進採購履約管理 強化行政透明"
+          ]
+        },
+        {
+          "title": "社福醫療",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 2,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 2.0,
+          "sample_titles": [
+            "從治療到復歸社會！臺大雲林分院打造完整戒癮醫療體系",
+            "從治療到復歸社會！臺大雲林分院打造完整戒癮醫療體系- 政府消息新聞- PChome Online 新聞"
+          ]
+        },
+        {
+          "title": "農業議題",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 1.0,
+          "sample_titles": [
+            "從花生到文蛤，從蔬菜到玉米─看見劉建國的行動力，也看見雲林需要一位真正會做事的縣長"
           ]
         }
       ]
