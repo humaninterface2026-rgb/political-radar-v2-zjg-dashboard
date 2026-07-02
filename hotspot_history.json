@@ -1544,38 +1544,38 @@
     },
     {
       "date": "2026-06-18",
-      "snapshot_at": "2026-07-01T13:07:58.802954+08:00",
+      "snapshot_at": "2026-07-02T12:50:48.265178+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "red",
-          "news_count": 18,
+          "news_count": 17,
           "comment_count": 0,
-          "negativity_pct": 39,
+          "negativity_pct": 41,
           "is_urgent": true,
-          "urgency_score": 29.0,
+          "urgency_score": 28.0,
           "sample_titles": [
             "防堵腸病毒擴散 雲林力推洗手七字訣",
-            "雲林結合布袋戲演出 生動方式推廣防治腸病毒觀念",
-            "防堵腸病毒擴散 雲林力推洗手七字訣 - 健康新聞 - PChome Online 新聞"
+            "防堵腸病毒擴散 雲林力推洗手七字訣 - 健康新聞 - PChome Online 新聞",
+            "雲林結合布袋戲演出生動方式推廣防治腸病毒觀念| 地方"
           ]
         },
         {
           "title": "農業議題",
           "city": "雲林",
-          "place": "雲林褒忠",
+          "place": "雲林（斗六）",
           "level": "yellow",
-          "news_count": 22,
+          "news_count": 17,
           "comment_count": 0,
-          "negativity_pct": 59,
+          "negativity_pct": 65,
           "is_urgent": false,
-          "urgency_score": 28.5,
+          "urgency_score": 22.5,
           "sample_titles": [
-            "雲林智慧農業大學第六屆結業！ 張麗善頒證36位新農並表揚10位優秀學員及1組共好團隊",
-            "雲林 花生藤餵牛 農廢去化一舉兩得",
-            "褒忠產業園區蓋在淹水區，周邊農民卻要承擔洪水後果？十年「在地滯洪」成果恐被逆轉"
+            "馬路能種花生？ 雲林搶收發嫩芽卻未列天災救助 農民欲哭無淚",
+            "馬路種花生？雲林放晴再傳災情農民哭哭：搶收比不收更慘| 雲嘉南| 地方",
+            "自農業大縣走向科技！雲林再獲ICF全球Top 7智慧城市肯定"
           ]
         },
         {
@@ -1610,7 +1610,7 @@
     },
     {
       "date": "2026-06-19",
-      "snapshot_at": "2026-07-01T13:07:58.802954+08:00",
+      "snapshot_at": "2026-07-02T12:50:48.265178+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -1646,7 +1646,7 @@
     },
     {
       "date": "2026-06-20",
-      "snapshot_at": "2026-07-01T13:07:58.802954+08:00",
+      "snapshot_at": "2026-07-02T12:50:48.265178+08:00",
       "hotspots": [
         {
           "title": "民怨抗議",
@@ -1711,7 +1711,7 @@
     },
     {
       "date": "2026-06-21",
-      "snapshot_at": "2026-07-01T13:07:58.802954+08:00",
+      "snapshot_at": "2026-07-02T12:50:48.265178+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -1747,7 +1747,7 @@
     },
     {
       "date": "2026-06-22",
-      "snapshot_at": "2026-07-01T13:07:58.802954+08:00",
+      "snapshot_at": "2026-07-02T12:50:48.265178+08:00",
       "hotspots": [
         {
           "title": "建設交通",
@@ -1785,7 +1785,7 @@
     },
     {
       "date": "2026-06-23",
-      "snapshot_at": "2026-07-01T13:07:58.802954+08:00",
+      "snapshot_at": "2026-07-02T12:50:48.265178+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -1849,7 +1849,7 @@
     },
     {
       "date": "2026-06-24",
-      "snapshot_at": "2026-07-01T13:07:58.802954+08:00",
+      "snapshot_at": "2026-07-02T12:50:48.265178+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -1915,7 +1915,7 @@
     },
     {
       "date": "2026-06-25",
-      "snapshot_at": "2026-07-01T13:07:58.802954+08:00",
+      "snapshot_at": "2026-07-02T12:50:48.265178+08:00",
       "hotspots": [
         {
           "title": "建設交通",
@@ -1953,7 +1953,7 @@
     },
     {
       "date": "2026-06-26",
-      "snapshot_at": "2026-07-01T13:07:58.802954+08:00",
+      "snapshot_at": "2026-07-02T12:50:48.265178+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -2032,7 +2032,7 @@
     },
     {
       "date": "2026-06-27",
-      "snapshot_at": "2026-07-01T13:07:58.802954+08:00",
+      "snapshot_at": "2026-07-02T12:50:48.265178+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -2130,7 +2130,7 @@
     },
     {
       "date": "2026-06-28",
-      "snapshot_at": "2026-07-01T13:07:58.802954+08:00",
+      "snapshot_at": "2026-07-02T12:50:48.265178+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -2214,7 +2214,7 @@
     },
     {
       "date": "2026-06-29",
-      "snapshot_at": "2026-07-01T13:07:58.802954+08:00",
+      "snapshot_at": "2026-07-02T12:50:48.265178+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -2280,18 +2280,18 @@
     },
     {
       "date": "2026-06-30",
-      "snapshot_at": "2026-07-01T13:07:58.802954+08:00",
+      "snapshot_at": "2026-07-02T12:50:48.265178+08:00",
       "hotspots": [
         {
           "title": "農業議題",
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "yellow",
-          "news_count": 11,
+          "news_count": 12,
           "comment_count": 0,
-          "negativity_pct": 9,
+          "negativity_pct": 8,
           "is_urgent": false,
-          "urgency_score": 11.5,
+          "urgency_score": 12.5,
           "sample_titles": [
             "從花生到文蛤，從蔬菜到玉米─看見劉建國的行動力，也看見雲林需要一位真正會做事的縣長",
             "雲林SBIR十八載有成 從農業大縣邁向創新智慧新城 | 熱門亮點 | 商情",
@@ -2358,6 +2358,108 @@
           "sample_titles": [
             "從治療到復歸社會！臺大雲林分院打造完整戒癮醫療體系",
             "從治療到復歸社會！臺大雲林分院打造完整戒癮醫療體系- 政府消息新聞- PChome Online 新聞"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-07-01",
+      "snapshot_at": "2026-07-02T12:50:48.265178+08:00",
+      "hotspots": [
+        {
+          "title": "建設交通",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 9,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 9.0,
+          "sample_titles": [
+            "翻轉雲林印象！金馬級團隊拍觀光形象片《雲釀》 曾佩瑜推「這裡」超美茶超好喝",
+            "金馬團隊打造《雲釀》 雲林半年3300萬旅次寫觀光新紀錄",
+            "金馬團隊打造《雲釀》 雲林半年3300萬旅次寫觀光新紀錄 - 社會新聞 - PChome Online 新聞"
+          ]
+        },
+        {
+          "title": "農業議題",
+          "city": "雲林",
+          "place": "雲林斗南",
+          "level": "yellow",
+          "news_count": 4,
+          "comment_count": 0,
+          "negativity_pct": 25,
+          "is_urgent": false,
+          "urgency_score": 4.5,
+          "sample_titles": [
+            "虎尾花生產區迎戰極端氣候 有機質肥料大型機械撒布提升抗病力",
+            "蓬萊米百年登場 「百年稻浪X斗南町」見證臺灣米食文化邁向下一個百年",
+            "虎尾花生產區迎戰極端氣候有機質肥料大型機械撒布提升抗病力| 財經"
+          ]
+        },
+        {
+          "title": "治安／詐騙",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "yellow",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 100,
+          "is_urgent": false,
+          "urgency_score": 1.5,
+          "sample_titles": [
+            "喪屍煙彈升列一級毒品 雲林縣警察局青春專案首日查獲毒駕4件、毒品2件"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-07-02",
+      "snapshot_at": "2026-07-02T12:50:48.265178+08:00",
+      "hotspots": [
+        {
+          "title": "建設交通",
+          "city": "雲林",
+          "place": "雲林斗南",
+          "level": "green",
+          "news_count": 3,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 3.0,
+          "sample_titles": [
+            "智慧治理驅動雲林永續轉型 斗南建設發展見新動能",
+            "雲林觀光破3300萬人！最新形象片《雲釀》首映，曾珮瑜帶路玩遍山海平原 | 夏和宣 | 地方新聞",
+            "智慧治理驅動雲林永續轉型 斗南建設發展見新動能 - 生活新聞 - PChome Online 新聞"
+          ]
+        },
+        {
+          "title": "治安／詐騙",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 1.0,
+          "sample_titles": [
+            "深耕戒癮醫療近20年 臺大雲林分院獲115年反毒有功團體獎"
+          ]
+        },
+        {
+          "title": "消防超勤爭議",
+          "city": "雲林",
+          "place": "雲林斗六",
+          "level": "green",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 1.0,
+          "sample_titles": [
+            "斗六消防分隊收到「最棒彌月蛋糕」！背後藏著一場生命搶救"
           ]
         }
       ]
