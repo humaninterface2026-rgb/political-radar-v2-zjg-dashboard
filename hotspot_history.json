@@ -1848,36 +1848,22 @@
     },
     {
       "date": "2026-06-24",
-      "snapshot_at": "2026-07-07T13:25:13.373747+08:00",
+      "snapshot_at": "2026-07-08T12:31:07.978965+08:00",
       "hotspots": [
         {
           "title": "農業議題",
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "yellow",
-          "news_count": 6,
+          "news_count": 3,
           "comment_count": 0,
-          "negativity_pct": 17,
+          "negativity_pct": 33,
           "is_urgent": false,
-          "urgency_score": 6.5,
+          "urgency_score": 3.5,
           "sample_titles": [
-            "雲林土豆鳥花生 維持去年原價採購",
-            "雲林花生「災害莢」收購 近日公告辦法",
-            "雲林花生「災害莢」收購 近日公告辦法"
-          ]
-        },
-        {
-          "title": "議員衝突",
-          "city": "雲林",
-          "place": "雲林褒忠",
-          "level": "red",
-          "news_count": 1,
-          "comment_count": 0,
-          "negativity_pct": 100,
-          "is_urgent": true,
-          "urgency_score": 3.0,
-          "sample_titles": [
-            "調去公墓洗廁所、35度沒電扇！不爽下屬狂搞霸凌 前褒忠鄉長陳建名判罰50萬"
+            "劉建國會勘高粱、仙草農損 農業部公告納入天然災害救助",
+            "劉建國會勘高粱、仙草農損 農業部公告納入天然災害救助",
+            "雲林花生遭豪雨重創！劉建國出手補助方案曝光 | 民視新聞網"
           ]
         },
         {
@@ -1914,7 +1900,7 @@
     },
     {
       "date": "2026-06-25",
-      "snapshot_at": "2026-07-07T13:25:13.373747+08:00",
+      "snapshot_at": "2026-07-08T12:31:07.978965+08:00",
       "hotspots": [
         {
           "title": "建設交通",
@@ -1952,7 +1938,7 @@
     },
     {
       "date": "2026-06-26",
-      "snapshot_at": "2026-07-07T13:25:13.373747+08:00",
+      "snapshot_at": "2026-07-08T12:31:07.978965+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -2031,7 +2017,7 @@
     },
     {
       "date": "2026-06-27",
-      "snapshot_at": "2026-07-07T13:25:13.373747+08:00",
+      "snapshot_at": "2026-07-08T12:31:07.978965+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -2129,7 +2115,7 @@
     },
     {
       "date": "2026-06-28",
-      "snapshot_at": "2026-07-07T13:25:13.373747+08:00",
+      "snapshot_at": "2026-07-08T12:31:07.978965+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -2213,7 +2199,7 @@
     },
     {
       "date": "2026-06-29",
-      "snapshot_at": "2026-07-07T13:25:13.373747+08:00",
+      "snapshot_at": "2026-07-08T12:31:07.978965+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -2279,7 +2265,7 @@
     },
     {
       "date": "2026-06-30",
-      "snapshot_at": "2026-07-07T13:25:13.373747+08:00",
+      "snapshot_at": "2026-07-08T12:31:07.978965+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -2363,7 +2349,7 @@
     },
     {
       "date": "2026-07-01",
-      "snapshot_at": "2026-07-07T13:25:13.373747+08:00",
+      "snapshot_at": "2026-07-08T12:31:07.978965+08:00",
       "hotspots": [
         {
           "title": "建設交通",
@@ -2415,7 +2401,7 @@
     },
     {
       "date": "2026-07-02",
-      "snapshot_at": "2026-07-07T13:25:13.373747+08:00",
+      "snapshot_at": "2026-07-08T12:31:07.978965+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -2496,7 +2482,7 @@
     },
     {
       "date": "2026-07-03",
-      "snapshot_at": "2026-07-07T13:25:13.373747+08:00",
+      "snapshot_at": "2026-07-08T12:31:07.978965+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -2565,7 +2551,7 @@
     },
     {
       "date": "2026-07-04",
-      "snapshot_at": "2026-07-07T13:25:13.373747+08:00",
+      "snapshot_at": "2026-07-08T12:31:07.978965+08:00",
       "hotspots": [
         {
           "title": "水利",
@@ -2619,7 +2605,7 @@
     },
     {
       "date": "2026-07-05",
-      "snapshot_at": "2026-07-07T13:25:13.373747+08:00",
+      "snapshot_at": "2026-07-08T12:31:07.978965+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -2671,8 +2657,39 @@
     },
     {
       "date": "2026-07-06",
-      "snapshot_at": "2026-07-07T13:25:13.373747+08:00",
+      "snapshot_at": "2026-07-08T12:31:07.978965+08:00",
       "hotspots": [
+        {
+          "title": "六輕／空污",
+          "city": "雲林",
+          "place": "雲林麥寮",
+          "level": "green",
+          "news_count": 6,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 6.0,
+          "sample_titles": [
+            "麥寮公所擬將高架橋下空間活化為籃球場 運動部將核定350萬經費",
+            "麥寮爭取台61橋下設標準籃球場 李洋允補助經費",
+            "雲林麥寮爭設遮蔭籃球場 丁學忠、張嘉郡邀李洋會勘推動運動升級"
+          ]
+        },
+        {
+          "title": "治安／詐騙",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "red",
+          "news_count": 2,
+          "comment_count": 0,
+          "negativity_pct": 100,
+          "is_urgent": true,
+          "urgency_score": 6.0,
+          "sample_titles": [
+            "中聯毒油事件延燒！雲林再增2家下游業者受影響",
+            "中聯毒油事件延燒！雲林再增2家下游業者受影響"
+          ]
+        },
         {
           "title": "農業議題",
           "city": "雲林",
@@ -2687,36 +2704,6 @@
             "院長出席「品味雲林，好事花生」行銷推廣記者會韓國瑜：支持雲林花生、支持臺灣農民，多吃國產農產品讓「好事花生」",
             "雲林崙背花生災損 農糧署啟動專案補助",
             "雲林崙背花生災損 農糧署啟動專案補助 | 客家電視"
-          ]
-        },
-        {
-          "title": "六輕／空污",
-          "city": "雲林",
-          "place": "雲林麥寮",
-          "level": "green",
-          "news_count": 5,
-          "comment_count": 0,
-          "negativity_pct": 0,
-          "is_urgent": false,
-          "urgency_score": 5.0,
-          "sample_titles": [
-            "麥寮公所擬將高架橋下空間活化為籃球場 運動部將核定350萬經費",
-            "麥寮爭取台61橋下設標準籃球場 李洋允補助經費",
-            "雲林麥寮爭設遮蔭籃球場 丁學忠、張嘉郡邀李洋會勘推動運動升級"
-          ]
-        },
-        {
-          "title": "治安／詐騙",
-          "city": "雲林",
-          "place": "雲林（斗六）",
-          "level": "red",
-          "news_count": 1,
-          "comment_count": 0,
-          "negativity_pct": 100,
-          "is_urgent": true,
-          "urgency_score": 3.0,
-          "sample_titles": [
-            "中聯毒油事件延燒！雲林再增2家下游業者受影響"
           ]
         },
         {
@@ -2751,8 +2738,38 @@
     },
     {
       "date": "2026-07-07",
-      "snapshot_at": "2026-07-07T13:25:13.373747+08:00",
+      "snapshot_at": "2026-07-08T12:31:07.978965+08:00",
       "hotspots": [
+        {
+          "title": "水利",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 4,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 4.0,
+          "sample_titles": [
+            "張嘉郡、丁學忠爭取46億推動雲林治水 中央首批核定補助3.21億元",
+            "張嘉郡、丁學忠爭取46億推動雲林治水 中央首批核定補助3.21 億元",
+            "張嘉郡、丁學忠爭取46億推動雲林治水　中央首批核定補助3.21億元"
+          ]
+        },
+        {
+          "title": "議員衝突",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "red",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 100,
+          "is_urgent": true,
+          "urgency_score": 3.0,
+          "sample_titles": [
+            "萬美玲捲愛子霸凌、特權風波 凌濤憶「雲林人情義」力挺"
+          ]
+        },
         {
           "title": "六輕／空污",
           "city": "雲林",
@@ -2765,6 +2782,40 @@
           "urgency_score": 1.0,
           "sample_titles": [
             "麥寮爭取台61線 橋下設籃球場 李洋允補助"
+          ]
+        },
+        {
+          "title": "廉政弊案",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 1.0,
+          "sample_titles": [
+            "雲林縣府舉辦「圖利與便民」訓練講習 讓公務同仁清楚界線勇於任事"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-07-08",
+      "snapshot_at": "2026-07-08T12:31:07.978965+08:00",
+      "hotspots": [
+        {
+          "title": "廉政弊案",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 1.0,
+          "sample_titles": [
+            "雲林縣府「圖利與便民」訓練講習 公務同仁清楚界線勇於任事"
           ]
         }
       ]
