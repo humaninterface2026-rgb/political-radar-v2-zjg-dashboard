@@ -2017,7 +2017,7 @@
     },
     {
       "date": "2026-06-27",
-      "snapshot_at": "2026-07-10T13:18:51.276802+08:00",
+      "snapshot_at": "2026-07-11T13:42:12.818831+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -2056,30 +2056,14 @@
           "city": "雲林",
           "place": "雲林土庫",
           "level": "green",
-          "news_count": 3,
+          "news_count": 2,
           "comment_count": 0,
           "negativity_pct": 0,
           "is_urgent": false,
-          "urgency_score": 3.0,
+          "urgency_score": 2.0,
           "sample_titles": [
             "舊消防分隊變身社區新地標 土庫宮北里迎首座集會所",
-            "雲林縣義勇消防人員年資標表揚 雲林縣長張麗善：感謝打火兄弟無私奉獻",
             "雲林縣義勇消防人員年資標表揚 縣長張麗善、議長黃凱：感謝打火兄弟無私奉獻！"
-          ]
-        },
-        {
-          "title": "廉政弊案",
-          "city": "雲林",
-          "place": "雲林（斗六）",
-          "level": "yellow",
-          "news_count": 2,
-          "comment_count": 0,
-          "negativity_pct": 100,
-          "is_urgent": false,
-          "urgency_score": 3.0,
-          "sample_titles": [
-            "雲林豪雨菜農成重災戶 張嘉郡：協助爭取補助、爭預算改善排水灌溉系統",
-            "雲林豪雨菜農成重災戶 張嘉郡：協助爭取補助、爭預算改善排水灌溉系統"
           ]
         },
         {
@@ -2110,12 +2094,26 @@
           "sample_titles": [
             "吸毒不是一個人的事 雲林戒毒機構：接住成癮家庭，就是接住社會"
           ]
+        },
+        {
+          "title": "廉政弊案",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "yellow",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 100,
+          "is_urgent": false,
+          "urgency_score": 1.5,
+          "sample_titles": [
+            "雲林豪雨菜農成重災戶 張嘉郡：協助爭取補助、爭預算改善排水灌溉系統"
+          ]
         }
       ]
     },
     {
       "date": "2026-06-28",
-      "snapshot_at": "2026-07-10T13:18:51.276802+08:00",
+      "snapshot_at": "2026-07-11T13:42:12.818831+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -2199,7 +2197,7 @@
     },
     {
       "date": "2026-06-29",
-      "snapshot_at": "2026-07-10T13:18:51.276802+08:00",
+      "snapshot_at": "2026-07-11T13:42:12.818831+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -2265,7 +2263,7 @@
     },
     {
       "date": "2026-06-30",
-      "snapshot_at": "2026-07-10T13:18:51.276802+08:00",
+      "snapshot_at": "2026-07-11T13:42:12.818831+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -2349,7 +2347,7 @@
     },
     {
       "date": "2026-07-01",
-      "snapshot_at": "2026-07-10T13:18:51.276802+08:00",
+      "snapshot_at": "2026-07-11T13:42:12.818831+08:00",
       "hotspots": [
         {
           "title": "建設交通",
@@ -2401,7 +2399,7 @@
     },
     {
       "date": "2026-07-02",
-      "snapshot_at": "2026-07-10T13:18:51.276802+08:00",
+      "snapshot_at": "2026-07-11T13:42:12.818831+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -2482,7 +2480,7 @@
     },
     {
       "date": "2026-07-03",
-      "snapshot_at": "2026-07-10T13:18:51.276802+08:00",
+      "snapshot_at": "2026-07-11T13:42:12.818831+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -2551,7 +2549,7 @@
     },
     {
       "date": "2026-07-04",
-      "snapshot_at": "2026-07-10T13:18:51.276802+08:00",
+      "snapshot_at": "2026-07-11T13:42:12.818831+08:00",
       "hotspots": [
         {
           "title": "水利",
@@ -2605,7 +2603,7 @@
     },
     {
       "date": "2026-07-05",
-      "snapshot_at": "2026-07-10T13:18:51.276802+08:00",
+      "snapshot_at": "2026-07-11T13:42:12.818831+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -2657,7 +2655,7 @@
     },
     {
       "date": "2026-07-06",
-      "snapshot_at": "2026-07-10T13:18:51.276802+08:00",
+      "snapshot_at": "2026-07-11T13:42:12.818831+08:00",
       "hotspots": [
         {
           "title": "六輕／空污",
@@ -2738,7 +2736,7 @@
     },
     {
       "date": "2026-07-07",
-      "snapshot_at": "2026-07-10T13:18:51.276802+08:00",
+      "snapshot_at": "2026-07-11T13:42:12.818831+08:00",
       "hotspots": [
         {
           "title": "水利",
@@ -2802,7 +2800,7 @@
     },
     {
       "date": "2026-07-08",
-      "snapshot_at": "2026-07-10T13:18:51.276802+08:00",
+      "snapshot_at": "2026-07-11T13:42:12.818831+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -2871,34 +2869,18 @@
     },
     {
       "date": "2026-07-09",
-      "snapshot_at": "2026-07-10T13:18:51.276802+08:00",
+      "snapshot_at": "2026-07-11T13:42:12.818831+08:00",
       "hotspots": [
-        {
-          "title": "社福醫療",
-          "city": "雲林",
-          "place": "雲林斗六",
-          "level": "green",
-          "news_count": 16,
-          "comment_count": 0,
-          "negativity_pct": 0,
-          "is_urgent": false,
-          "urgency_score": 16.0,
-          "sample_titles": [
-            "肺結節篩檢掀浪潮 臺大雲林分院打造精準醫療新標竿 | 熱門亮點 | 商情",
-            "雲林醫療長照資源再升級 劉建國成功爭取斗六長照教學大樓9億經費缺口",
-            "劉建國催生斗六長照教學大樓 臺大醫院斗六長照教學大樓經費缺口獲中央承諾補足"
-          ]
-        },
         {
           "title": "建設交通",
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "green",
-          "news_count": 14,
+          "news_count": 17,
           "comment_count": 0,
           "negativity_pct": 0,
           "is_urgent": false,
-          "urgency_score": 14.0,
+          "urgency_score": 17.0,
           "sample_titles": [
             "劉建國牽線募愛心！4名善心人士合捐溫馨巴士 助身障朋友圓交通夢",
             "雲林縣觀光人次3377萬創紀錄！ 觀光處：下半年加碼滿額500抽好禮",
@@ -2906,15 +2888,31 @@
           ]
         },
         {
+          "title": "社福醫療",
+          "city": "雲林",
+          "place": "雲林斗六",
+          "level": "green",
+          "news_count": 17,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 17.0,
+          "sample_titles": [
+            "肺結節篩檢掀浪潮 臺大雲林分院打造精準醫療新標竿 | 熱門亮點 | 商情",
+            "雲林醫療長照資源再升級 劉建國成功爭取斗六長照教學大樓9億經費缺口",
+            "劉建國催生斗六長照教學大樓 臺大醫院斗六長照教學大樓經費缺口獲中央承諾補足"
+          ]
+        },
+        {
           "title": "治安／詐騙",
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "red",
-          "news_count": 4,
+          "news_count": 5,
           "comment_count": 0,
           "negativity_pct": 100,
           "is_urgent": true,
-          "urgency_score": 12.0,
+          "urgency_score": 13.5,
           "sample_titles": [
             "中聯毒油處置慢半拍？ 劉建國轟食藥署拖近1週：徹查官員疏失",
             "批中聯毒油「政府應變過慢」 綠委劉建國：也要徹查官員疏失 | 太報",
@@ -2941,18 +2939,18 @@
     },
     {
       "date": "2026-07-10",
-      "snapshot_at": "2026-07-10T13:18:51.276802+08:00",
+      "snapshot_at": "2026-07-11T13:42:12.818831+08:00",
       "hotspots": [
         {
           "title": "社福醫療",
           "city": "雲林",
           "place": "雲林斗六",
           "level": "green",
-          "news_count": 5,
+          "news_count": 11,
           "comment_count": 0,
           "negativity_pct": 0,
           "is_urgent": false,
-          "urgency_score": 5.0,
+          "urgency_score": 11.0,
           "sample_titles": [
             "《雲林觀察》不只是一棟長照教學大樓，而是一座城市的未來劉建國正在為雲林補上最重要的一塊拼圖",
             "劉建國爭取興建斗六長照教學大樓！ 教育部允諾支持－民視新聞- 民視新聞網",
@@ -2964,15 +2962,65 @@
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "green",
-          "news_count": 3,
+          "news_count": 7,
           "comment_count": 0,
           "negativity_pct": 0,
           "is_urgent": false,
-          "urgency_score": 3.0,
+          "urgency_score": 7.0,
           "sample_titles": [
             "雲林觀光大爆發半年破3377萬人次 四大園區加持締造歷史紀錄",
             "雲林觀光大爆發半年破3377萬人次四大園區加持締造歷史紀錄- 旅遊新聞- PChome Online 新聞",
             "雲林觀光半年超越去年全年紀錄 張麗善：成功撕掉不好玩標籤"
+          ]
+        },
+        {
+          "title": "治安／詐騙",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "yellow",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 100,
+          "is_urgent": false,
+          "urgency_score": 1.5,
+          "sample_titles": [
+            "毒油案玩棄車保帥？楊植斗怒批劉建國雙標"
+          ]
+        },
+        {
+          "title": "水利",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 1.0,
+          "sample_titles": [
+            "百億水利建設投入雲林 張麗善迎戰巴威強化防汛能量"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-07-11",
+      "snapshot_at": "2026-07-11T13:42:12.818831+08:00",
+      "hotspots": [
+        {
+          "title": "社福醫療",
+          "city": "雲林",
+          "place": "雲林斗六",
+          "level": "yellow",
+          "news_count": 3,
+          "comment_count": 0,
+          "negativity_pct": 33,
+          "is_urgent": false,
+          "urgency_score": 3.5,
+          "sample_titles": [
+            "台大雲林分院長照教學大樓 缺9億教部允協助",
+            "教學、研究、醫療三合一！劉建國爭取9.08億完善斗六長照建设",
+            "教學、研究、醫療三合一！劉建國爭取9.08億完善斗六長照建设- 健康新聞- PChome Online 新聞"
           ]
         }
       ]
