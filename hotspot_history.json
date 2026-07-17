@@ -2462,22 +2462,22 @@
     },
     {
       "date": "2026-07-03",
-      "snapshot_at": "2026-07-16T13:41:46.585965+08:00",
+      "snapshot_at": "2026-07-17T13:07:27.164284+08:00",
       "hotspots": [
         {
           "title": "農業議題",
           "city": "雲林",
           "place": "雲林斗南",
           "level": "green",
-          "news_count": 23,
+          "news_count": 19,
           "comment_count": 0,
           "negativity_pct": 0,
           "is_urgent": false,
-          "urgency_score": 23.0,
+          "urgency_score": 19.0,
           "sample_titles": [
-            "不只花生蒜頭 雲林再飄茶樹香",
             "韓國瑜推廣雲林花生 籲民眾多採購助農民",
-            "立法院長韓國瑜今天出席雲林縣政府在立法院舉辦的花生推廣會，呼籲民眾多食用雲林花生，支持國產農產品，幫助農漁民"
+            "立法院長韓國瑜今天出席雲林縣政府在立法院舉辦的花生推廣會，呼籲民眾多食用雲林花生，支持國產農產品，幫助農漁民",
+            "韓國瑜推廣雲林花生籲民眾多採購助農民| 政治"
           ]
         },
         {
@@ -2531,7 +2531,7 @@
     },
     {
       "date": "2026-07-04",
-      "snapshot_at": "2026-07-16T13:41:46.585965+08:00",
+      "snapshot_at": "2026-07-17T13:07:27.164284+08:00",
       "hotspots": [
         {
           "title": "水利",
@@ -2585,7 +2585,7 @@
     },
     {
       "date": "2026-07-05",
-      "snapshot_at": "2026-07-16T13:41:46.585965+08:00",
+      "snapshot_at": "2026-07-17T13:07:27.164284+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -2637,7 +2637,7 @@
     },
     {
       "date": "2026-07-06",
-      "snapshot_at": "2026-07-16T13:41:46.585965+08:00",
+      "snapshot_at": "2026-07-17T13:07:27.164284+08:00",
       "hotspots": [
         {
           "title": "六輕／空污",
@@ -2718,7 +2718,7 @@
     },
     {
       "date": "2026-07-07",
-      "snapshot_at": "2026-07-16T13:41:46.585965+08:00",
+      "snapshot_at": "2026-07-17T13:07:27.164284+08:00",
       "hotspots": [
         {
           "title": "水利",
@@ -2782,7 +2782,7 @@
     },
     {
       "date": "2026-07-08",
-      "snapshot_at": "2026-07-16T13:41:46.585965+08:00",
+      "snapshot_at": "2026-07-17T13:07:27.164284+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -2851,7 +2851,7 @@
     },
     {
       "date": "2026-07-09",
-      "snapshot_at": "2026-07-16T13:41:46.585965+08:00",
+      "snapshot_at": "2026-07-17T13:07:27.164284+08:00",
       "hotspots": [
         {
           "title": "建設交通",
@@ -2921,7 +2921,7 @@
     },
     {
       "date": "2026-07-10",
-      "snapshot_at": "2026-07-16T13:41:46.585965+08:00",
+      "snapshot_at": "2026-07-17T13:07:27.164284+08:00",
       "hotspots": [
         {
           "title": "社福醫療",
@@ -2987,7 +2987,7 @@
     },
     {
       "date": "2026-07-11",
-      "snapshot_at": "2026-07-16T13:41:46.585965+08:00",
+      "snapshot_at": "2026-07-17T13:07:27.164284+08:00",
       "hotspots": [
         {
           "title": "消防超勤爭議",
@@ -3040,7 +3040,7 @@
     },
     {
       "date": "2026-07-12",
-      "snapshot_at": "2026-07-16T13:41:46.585965+08:00",
+      "snapshot_at": "2026-07-17T13:07:27.164284+08:00",
       "hotspots": [
         {
           "title": "建設交通",
@@ -3078,7 +3078,7 @@
     },
     {
       "date": "2026-07-13",
-      "snapshot_at": "2026-07-16T13:41:46.585965+08:00",
+      "snapshot_at": "2026-07-17T13:07:27.164284+08:00",
       "hotspots": [
         {
           "title": "社福醫療",
@@ -3164,7 +3164,7 @@
     },
     {
       "date": "2026-07-14",
-      "snapshot_at": "2026-07-16T13:41:46.585965+08:00",
+      "snapshot_at": "2026-07-17T13:07:27.164284+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -3249,22 +3249,38 @@
     },
     {
       "date": "2026-07-15",
-      "snapshot_at": "2026-07-16T13:41:46.585965+08:00",
+      "snapshot_at": "2026-07-17T13:07:27.164284+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
           "city": "雲林",
           "place": "雲林西螺",
           "level": "yellow",
-          "news_count": 26,
+          "news_count": 30,
           "comment_count": 0,
-          "negativity_pct": 92,
+          "negativity_pct": 93,
           "is_urgent": false,
-          "urgency_score": 38.0,
+          "urgency_score": 44.0,
           "sample_titles": [
             "免費玩水＋吃冰！西螺親水節本週末登場 水槍大戰開打",
             "用AI打敗AI！雲林「AI防詐智慧城市」 超前阻斷詐騙訊息",
             "雲林攜Gogolook鴻海防AI詐騙 偵測系統主動下架廣告"
+          ]
+        },
+        {
+          "title": "社福醫療",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 4,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 4.0,
+          "sample_titles": [
+            "公私協力深耕長照 雲林縣政府聯手臺大醫院打造銀光樂活園區",
+            "衛福部社福績效考核蒞雲林 張麗善：建構智慧社安網",
+            "公私協力深耕長照 雲林縣政府聯手臺大醫院打造銀光樂活園區"
           ]
         },
         {
@@ -3281,22 +3297,6 @@
             "台塑打造傳產最強福利 麥寮輪班基層月薪破7.5萬 台北基層主管年薪逼近120萬",
             "傳產最強福利！台塑大舉加薪4.5% 麥寮輪班員月薪破7.5萬元",
             "台塑企業調薪4.5％！平均加薪2700 麥寮輪班基層平均月薪破7.5萬"
-          ]
-        },
-        {
-          "title": "社福醫療",
-          "city": "雲林",
-          "place": "雲林（斗六）",
-          "level": "green",
-          "news_count": 3,
-          "comment_count": 0,
-          "negativity_pct": 0,
-          "is_urgent": false,
-          "urgency_score": 3.0,
-          "sample_titles": [
-            "公私協力深耕長照 雲林縣政府聯手臺大醫院打造銀光樂活園區",
-            "衛福部社福績效考核蒞雲林 張麗善：建構智慧社安網",
-            "公私協力深耕長照 雲林縣政府聯手臺大醫院打造銀光樂活園區"
           ]
         },
         {
@@ -3333,18 +3333,18 @@
     },
     {
       "date": "2026-07-16",
-      "snapshot_at": "2026-07-16T13:41:46.585965+08:00",
+      "snapshot_at": "2026-07-17T13:07:27.164284+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "yellow",
-          "news_count": 12,
+          "news_count": 16,
           "comment_count": 0,
-          "negativity_pct": 92,
+          "negativity_pct": 94,
           "is_urgent": false,
-          "urgency_score": 17.5,
+          "urgency_score": 23.5,
           "sample_titles": [
             "「持有」電子菸即觸法！劉建國：應當場進行毒品檢驗",
             "用AI防AI詐騙！雲林縣府攜手鴻海 1個月揪逾400風險廣告",
@@ -3356,11 +3356,11 @@
           "city": "雲林",
           "place": "雲林林內",
           "level": "green",
-          "news_count": 4,
+          "news_count": 7,
           "comment_count": 0,
           "negativity_pct": 0,
           "is_urgent": false,
-          "urgency_score": 4.0,
+          "urgency_score": 7.0,
           "sample_titles": [
             "減債101億元、觀光衝破3219萬人次 張麗善：雲林邁向永續智慧城市",
             "卸任前感恩之旅！張麗善林內說明會盤點政績 擘劃雲林產業與建設新藍圖",
@@ -3372,13 +3372,30 @@
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "yellow",
-          "news_count": 1,
+          "news_count": 3,
           "comment_count": 0,
           "negativity_pct": 100,
           "is_urgent": false,
-          "urgency_score": 1.5,
+          "urgency_score": 4.5,
           "sample_titles": [
+            "雲林檢警聯手打詐轟賄選 邀全民看短影音抽好禮",
+            "雲林檢警聯手打詐轟賄選 邀全民看短影音抽好禮 - 政治新聞 - PChome Online 新聞",
             "雲林檢警聯手打詐轟賄選 邀全民看短影音抽好禮"
+          ]
+        },
+        {
+          "title": "農業議題",
+          "city": "雲林",
+          "place": "雲林水林",
+          "level": "green",
+          "news_count": 2,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 2.0,
+          "sample_titles": [
+            "農業部公告水林鄉文蛤天然災害現金救助 立委劉建國提醒7月16日至29日受理申請",
+            "雲林鰻魚、台灣鯛、雜糧蔬果暨農特產品 臺北花博農民市集展售"
           ]
         },
         {
@@ -3394,11 +3411,17 @@
           "sample_titles": [
             "討論牆 | 拚雲林升級、轉型 張嘉郡推台大斗六長照大樓、電動車產業園區"
           ]
-        },
+        }
+      ]
+    },
+    {
+      "date": "2026-07-17",
+      "snapshot_at": "2026-07-17T13:07:27.164284+08:00",
+      "hotspots": [
         {
-          "title": "農業議題",
+          "title": "水利",
           "city": "雲林",
-          "place": "雲林水林",
+          "place": "雲林四湖",
           "level": "green",
           "news_count": 1,
           "comment_count": 0,
@@ -3406,7 +3429,21 @@
           "is_urgent": false,
           "urgency_score": 1.0,
           "sample_titles": [
-            "農業部公告水林鄉文蛤天然災害現金救助 立委劉建國提醒7月16日至29日受理申請"
+            "雲林縣政說明會前進四湖 交通治水產業照顧全面升級"
+          ]
+        },
+        {
+          "title": "建設交通",
+          "city": "雲林",
+          "place": "雲林四湖",
+          "level": "green",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 1.0,
+          "sample_titles": [
+            "雲縣政說明會前進四湖 張麗善：持續加碼建設打造青年返鄉幸福家園"
           ]
         }
       ]
