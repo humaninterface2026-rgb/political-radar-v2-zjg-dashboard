@@ -2531,7 +2531,7 @@
     },
     {
       "date": "2026-07-04",
-      "snapshot_at": "2026-07-17T13:07:27.164284+08:00",
+      "snapshot_at": "2026-07-18T12:22:09.969893+08:00",
       "hotspots": [
         {
           "title": "水利",
@@ -2554,15 +2554,15 @@
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "green",
-          "news_count": 8,
+          "news_count": 7,
           "comment_count": 0,
           "negativity_pct": 0,
           "is_urgent": false,
-          "urgency_score": 8.0,
+          "urgency_score": 7.0,
           "sample_titles": [
-            "雲林多元建設成果逐步展現 張麗善：逐步撕掉「又老又窮」標籤",
             "雲林多元建設成果逐步展現 張麗善：逐步撕掉「又老又窮」 標籤",
-            "減債101億元、觀光飆破3219萬人次 張麗善揭雲林蛻變關鍵成果"
+            "減債101億元、觀光飆破3219萬人次 張麗善揭雲林蛻變關鍵成果",
+            "減債101億元、觀光飆破3219萬人次 張麗善揭雲林蛻變關鍵成果 | 觀傳媒"
           ]
         },
         {
@@ -2585,7 +2585,7 @@
     },
     {
       "date": "2026-07-05",
-      "snapshot_at": "2026-07-17T13:07:27.164284+08:00",
+      "snapshot_at": "2026-07-18T12:22:09.969893+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -2637,7 +2637,7 @@
     },
     {
       "date": "2026-07-06",
-      "snapshot_at": "2026-07-17T13:07:27.164284+08:00",
+      "snapshot_at": "2026-07-18T12:22:09.969893+08:00",
       "hotspots": [
         {
           "title": "六輕／空污",
@@ -2718,7 +2718,7 @@
     },
     {
       "date": "2026-07-07",
-      "snapshot_at": "2026-07-17T13:07:27.164284+08:00",
+      "snapshot_at": "2026-07-18T12:22:09.969893+08:00",
       "hotspots": [
         {
           "title": "水利",
@@ -2782,7 +2782,7 @@
     },
     {
       "date": "2026-07-08",
-      "snapshot_at": "2026-07-17T13:07:27.164284+08:00",
+      "snapshot_at": "2026-07-18T12:22:09.969893+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -2851,7 +2851,7 @@
     },
     {
       "date": "2026-07-09",
-      "snapshot_at": "2026-07-17T13:07:27.164284+08:00",
+      "snapshot_at": "2026-07-18T12:22:09.969893+08:00",
       "hotspots": [
         {
           "title": "建設交通",
@@ -2921,7 +2921,7 @@
     },
     {
       "date": "2026-07-10",
-      "snapshot_at": "2026-07-17T13:07:27.164284+08:00",
+      "snapshot_at": "2026-07-18T12:22:09.969893+08:00",
       "hotspots": [
         {
           "title": "社福醫療",
@@ -2987,7 +2987,7 @@
     },
     {
       "date": "2026-07-11",
-      "snapshot_at": "2026-07-17T13:07:27.164284+08:00",
+      "snapshot_at": "2026-07-18T12:22:09.969893+08:00",
       "hotspots": [
         {
           "title": "消防超勤爭議",
@@ -3040,7 +3040,7 @@
     },
     {
       "date": "2026-07-12",
-      "snapshot_at": "2026-07-17T13:07:27.164284+08:00",
+      "snapshot_at": "2026-07-18T12:22:09.969893+08:00",
       "hotspots": [
         {
           "title": "建設交通",
@@ -3078,7 +3078,7 @@
     },
     {
       "date": "2026-07-13",
-      "snapshot_at": "2026-07-17T13:07:27.164284+08:00",
+      "snapshot_at": "2026-07-18T12:22:09.969893+08:00",
       "hotspots": [
         {
           "title": "社福醫療",
@@ -3164,7 +3164,7 @@
     },
     {
       "date": "2026-07-14",
-      "snapshot_at": "2026-07-17T13:07:27.164284+08:00",
+      "snapshot_at": "2026-07-18T12:22:09.969893+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -3249,7 +3249,7 @@
     },
     {
       "date": "2026-07-15",
-      "snapshot_at": "2026-07-17T13:07:27.164284+08:00",
+      "snapshot_at": "2026-07-18T12:22:09.969893+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -3272,11 +3272,11 @@
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "green",
-          "news_count": 4,
+          "news_count": 5,
           "comment_count": 0,
           "negativity_pct": 0,
           "is_urgent": false,
-          "urgency_score": 4.0,
+          "urgency_score": 5.0,
           "sample_titles": [
             "公私協力深耕長照 雲林縣政府聯手臺大醫院打造銀光樂活園區",
             "衛福部社福績效考核蒞雲林 張麗善：建構智慧社安網",
@@ -3333,18 +3333,18 @@
     },
     {
       "date": "2026-07-16",
-      "snapshot_at": "2026-07-17T13:07:27.164284+08:00",
+      "snapshot_at": "2026-07-18T12:22:09.969893+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "yellow",
-          "news_count": 16,
+          "news_count": 18,
           "comment_count": 0,
-          "negativity_pct": 94,
+          "negativity_pct": 89,
           "is_urgent": false,
-          "urgency_score": 23.5,
+          "urgency_score": 26.0,
           "sample_titles": [
             "「持有」電子菸即觸法！劉建國：應當場進行毒品檢驗",
             "用AI防AI詐騙！雲林縣府攜手鴻海 1個月揪逾400風險廣告",
@@ -3356,11 +3356,11 @@
           "city": "雲林",
           "place": "雲林林內",
           "level": "green",
-          "news_count": 7,
+          "news_count": 8,
           "comment_count": 0,
           "negativity_pct": 0,
           "is_urgent": false,
-          "urgency_score": 7.0,
+          "urgency_score": 8.0,
           "sample_titles": [
             "減債101億元、觀光衝破3219萬人次 張麗善：雲林邁向永續智慧城市",
             "卸任前感恩之旅！張麗善林內說明會盤點政績 擘劃雲林產業與建設新藍圖",
@@ -3416,8 +3416,56 @@
     },
     {
       "date": "2026-07-17",
-      "snapshot_at": "2026-07-17T13:07:27.164284+08:00",
+      "snapshot_at": "2026-07-18T12:22:09.969893+08:00",
       "hotspots": [
+        {
+          "title": "治安／詐騙",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "red",
+          "news_count": 16,
+          "comment_count": 0,
+          "negativity_pct": 100,
+          "is_urgent": true,
+          "urgency_score": 25.5,
+          "sample_titles": [
+            "雲林檢警鐵腕掃黑肅槍打詐 半年查扣逾2.66億元不法所得",
+            "雲林檢警雷霆掃蕩黑金槍毒詐 半年查扣不法所得逾2.6億元 打詐成效居全台之冠",
+            "雲林警執行打擊黑金槍毒詐專案 取締73件毒駕、查獲26藥頭"
+          ]
+        },
+        {
+          "title": "農業議題",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "yellow",
+          "news_count": 18,
+          "comment_count": 0,
+          "negativity_pct": 22,
+          "is_urgent": false,
+          "urgency_score": 20.0,
+          "sample_titles": [
+            "雲林縣府推薦在地花生好油品 (圖)",
+            "張麗善推薦安全無毒天然雲林花生油 (圖)",
+            "雲林縣府推薦在地花生好油品 守護餐桌食安"
+          ]
+        },
+        {
+          "title": "六輕／空污",
+          "city": "雲林",
+          "place": "雲林麥寮",
+          "level": "green",
+          "news_count": 5,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 5.0,
+          "sample_titles": [
+            "打造世界級的公共建築! 麥寮鄉社教園區建築獲「義大利A'設計大獎」",
+            "雲林麥寮再傳捷報！社教園區勇奪義大利國際設計大獎銅獎",
+            "台灣之光！麥寮社教園區摘設計界奧斯卡銅獎 世界看見雲林"
+          ]
+        },
         {
           "title": "水利",
           "city": "雲林",
@@ -3444,6 +3492,20 @@
           "urgency_score": 1.0,
           "sample_titles": [
             "雲縣政說明會前進四湖 張麗善：持續加碼建設打造青年返鄉幸福家園"
+          ]
+        },
+        {
+          "title": "廉政弊案",
+          "city": "雲林",
+          "place": "雲林臺西",
+          "level": "green",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 1.0,
+          "sample_titles": [
+            "反賄選結合綠能廉政 臺西鄉公所攜手雲檢打造廉能治理"
           ]
         }
       ]
