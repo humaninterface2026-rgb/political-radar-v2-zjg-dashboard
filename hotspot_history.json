@@ -2637,24 +2637,8 @@
     },
     {
       "date": "2026-07-06",
-      "snapshot_at": "2026-07-19T12:35:38.177105+08:00",
+      "snapshot_at": "2026-07-20T13:17:08.998581+08:00",
       "hotspots": [
-        {
-          "title": "六輕／空污",
-          "city": "雲林",
-          "place": "雲林麥寮",
-          "level": "green",
-          "news_count": 6,
-          "comment_count": 0,
-          "negativity_pct": 0,
-          "is_urgent": false,
-          "urgency_score": 6.0,
-          "sample_titles": [
-            "麥寮公所擬將高架橋下空間活化為籃球場 運動部將核定350萬經費",
-            "麥寮爭取台61橋下設標準籃球場 李洋允補助經費",
-            "雲林麥寮爭設遮蔭籃球場 丁學忠、張嘉郡邀李洋會勘推動運動升級"
-          ]
-        },
         {
           "title": "治安／詐騙",
           "city": "雲林",
@@ -2687,17 +2671,19 @@
           ]
         },
         {
-          "title": "建設交通",
+          "title": "六輕／空污",
           "city": "雲林",
-          "place": "雲林（斗六）",
+          "place": "雲林麥寮",
           "level": "green",
-          "news_count": 1,
+          "news_count": 5,
           "comment_count": 0,
           "negativity_pct": 0,
           "is_urgent": false,
-          "urgency_score": 1.0,
+          "urgency_score": 5.0,
           "sample_titles": [
-            "會勘雲林運動建設 李洋等人推廣匹克球運動 (圖)"
+            "麥寮公所擬將高架橋下空間活化為籃球場 運動部將核定350萬經費",
+            "雲林麥寮爭設遮蔭籃球場 丁學忠、張嘉郡邀李洋會勘推動運動升級",
+            "活化台61線橋下空間 丁學忠、張嘉郡爭取設麥寮標準籃球場 | 觀傳媒"
           ]
         },
         {
@@ -2718,7 +2704,7 @@
     },
     {
       "date": "2026-07-07",
-      "snapshot_at": "2026-07-19T12:35:38.177105+08:00",
+      "snapshot_at": "2026-07-20T13:17:08.998581+08:00",
       "hotspots": [
         {
           "title": "水利",
@@ -2782,7 +2768,7 @@
     },
     {
       "date": "2026-07-08",
-      "snapshot_at": "2026-07-19T12:35:38.177105+08:00",
+      "snapshot_at": "2026-07-20T13:17:08.998581+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -2851,7 +2837,7 @@
     },
     {
       "date": "2026-07-09",
-      "snapshot_at": "2026-07-19T12:35:38.177105+08:00",
+      "snapshot_at": "2026-07-20T13:17:08.998581+08:00",
       "hotspots": [
         {
           "title": "建設交通",
@@ -2921,7 +2907,7 @@
     },
     {
       "date": "2026-07-10",
-      "snapshot_at": "2026-07-19T12:35:38.177105+08:00",
+      "snapshot_at": "2026-07-20T13:17:08.998581+08:00",
       "hotspots": [
         {
           "title": "社福醫療",
@@ -2987,7 +2973,7 @@
     },
     {
       "date": "2026-07-11",
-      "snapshot_at": "2026-07-19T12:35:38.177105+08:00",
+      "snapshot_at": "2026-07-20T13:17:08.998581+08:00",
       "hotspots": [
         {
           "title": "消防超勤爭議",
@@ -3040,7 +3026,7 @@
     },
     {
       "date": "2026-07-12",
-      "snapshot_at": "2026-07-19T12:35:38.177105+08:00",
+      "snapshot_at": "2026-07-20T13:17:08.998581+08:00",
       "hotspots": [
         {
           "title": "建設交通",
@@ -3078,7 +3064,7 @@
     },
     {
       "date": "2026-07-13",
-      "snapshot_at": "2026-07-19T12:35:38.177105+08:00",
+      "snapshot_at": "2026-07-20T13:17:08.998581+08:00",
       "hotspots": [
         {
           "title": "社福醫療",
@@ -3164,7 +3150,7 @@
     },
     {
       "date": "2026-07-14",
-      "snapshot_at": "2026-07-19T12:35:38.177105+08:00",
+      "snapshot_at": "2026-07-20T13:17:08.998581+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -3249,7 +3235,7 @@
     },
     {
       "date": "2026-07-15",
-      "snapshot_at": "2026-07-19T12:35:38.177105+08:00",
+      "snapshot_at": "2026-07-20T13:17:08.998581+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -3333,7 +3319,7 @@
     },
     {
       "date": "2026-07-16",
-      "snapshot_at": "2026-07-19T12:35:38.177105+08:00",
+      "snapshot_at": "2026-07-20T13:17:08.998581+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -3416,7 +3402,7 @@
     },
     {
       "date": "2026-07-17",
-      "snapshot_at": "2026-07-19T12:35:38.177105+08:00",
+      "snapshot_at": "2026-07-20T13:17:08.998581+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -3467,6 +3453,21 @@
           ]
         },
         {
+          "title": "水利",
+          "city": "雲林",
+          "place": "雲林四湖",
+          "level": "green",
+          "news_count": 2,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 2.0,
+          "sample_titles": [
+            "雲林縣政說明會前進四湖 交通治水產業照顧全面升級",
+            "雲林縣政說明會前進四湖 交通治水產業照顧全面升級"
+          ]
+        },
+        {
           "title": "建設交通",
           "city": "雲林",
           "place": "雲林林內",
@@ -3479,20 +3480,6 @@
           "sample_titles": [
             "雲縣政說明會前進四湖 張麗善：持續加碼建設打造青年返鄉幸福家園",
             "林內縣政說明會登場 雲林多元建設成果逐步展現"
-          ]
-        },
-        {
-          "title": "水利",
-          "city": "雲林",
-          "place": "雲林四湖",
-          "level": "green",
-          "news_count": 1,
-          "comment_count": 0,
-          "negativity_pct": 0,
-          "is_urgent": false,
-          "urgency_score": 1.0,
-          "sample_titles": [
-            "雲林縣政說明會前進四湖 交通治水產業照顧全面升級"
           ]
         },
         {
@@ -3513,18 +3500,18 @@
     },
     {
       "date": "2026-07-18",
-      "snapshot_at": "2026-07-19T12:35:38.177105+08:00",
+      "snapshot_at": "2026-07-20T13:17:08.998581+08:00",
       "hotspots": [
         {
           "title": "農業議題",
           "city": "雲林",
           "place": "雲林古坑",
           "level": "green",
-          "news_count": 6,
+          "news_count": 7,
           "comment_count": 0,
           "negativity_pct": 0,
           "is_urgent": false,
-          "urgency_score": 6.0,
+          "urgency_score": 7.0,
           "sample_titles": [
             "花生價格創十年新低 張嘉郡籲農業部這樣做",
             "雲林翻轉農業大縣定位陳璧君提「雲林模式」打造國家戰略新基地- 政府消息新聞- PChome Online 新聞",
@@ -3536,14 +3523,15 @@
           "city": "雲林",
           "place": "雲林西螺",
           "level": "yellow",
-          "news_count": 2,
+          "news_count": 4,
           "comment_count": 0,
-          "negativity_pct": 50,
+          "negativity_pct": 75,
           "is_urgent": false,
-          "urgency_score": 2.5,
+          "urgency_score": 5.5,
           "sample_titles": [
             "雲林檢警強勢掃蕩黑幫毒品詐騙！肅槍、緝毒、打詐、掃黑四大行動成果曝光",
-            "西螺親水節嗨玩！氣墊水上樂園、水槍大戰 還有泡泡秀、魔術秀"
+            "西螺親水節嗨玩！氣墊水上樂園、水槍大戰 還有泡泡秀、魔術秀",
+            "雲林檢警強勢掃蕩黑幫毒品詐騙！肅槍、緝毒、打詐、掃黑四大行動成果曝光"
           ]
         },
         {
@@ -3564,18 +3552,18 @@
     },
     {
       "date": "2026-07-19",
-      "snapshot_at": "2026-07-19T12:35:38.177105+08:00",
+      "snapshot_at": "2026-07-20T13:17:08.998581+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "red",
-          "news_count": 3,
+          "news_count": 15,
           "comment_count": 0,
           "negativity_pct": 100,
           "is_urgent": true,
-          "urgency_score": 7.5,
+          "urgency_score": 28.5,
           "sample_titles": [
             "喪屍菸彈流竄!劉建國要求警政署研議:「查獲電子菸當場驗毒」",
             "台北市長蔣萬安、基隆市長謝國樑與雲林縣長張麗善今天上午針對日前中聯發生毒油案前往台中市政府拜會市長盧秀燕。盧秀燕在受訪時",
@@ -3587,14 +3575,80 @@
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "green",
+          "news_count": 5,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 5.0,
+          "sample_titles": [
+            "雲林花生藤農廢變飼料 水牛安養中心「用吃的消滅它」",
+            "雲林花生藤農廢變飼料水牛安養中心「用吃的消滅它」－民視新聞- 民視新聞網",
+            "（有影片）／雲林庇護工場突破雙位數！全國首家「鈞品農產」攜手全聯開創農業就業新模式"
+          ]
+        },
+        {
+          "title": "社福醫療",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 3,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 3.0,
+          "sample_titles": [
+            "臺大醫院雲林分院串聯國際與區域醫療 打造兒童急重症照護新視野",
+            "臺大醫院雲林分院串聯國際與區域醫療 打造兒童急重症照護新視野 | 觀傳媒",
+            "台日美國際學術研討會齊聚雲林 深化國際與區域醫療合作 - 社會新聞 - PChome Online 新聞"
+          ]
+        },
+        {
+          "title": "廉政弊案",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "red",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 100,
+          "is_urgent": true,
+          "urgency_score": 3.0,
+          "sample_titles": [
+            "台北市長蔣萬安、基隆市長謝國樑、雲林縣長張麗善今齊聚台中市，與市長盧秀燕共商致癌油事件。目前擔任台中市工策會總幹事的前立"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-07-20",
+      "snapshot_at": "2026-07-20T13:17:08.998581+08:00",
+      "hotspots": [
+        {
+          "title": "建設交通",
+          "city": "雲林",
+          "place": "雲林斗六",
+          "level": "green",
           "news_count": 2,
           "comment_count": 0,
           "negativity_pct": 0,
           "is_urgent": false,
           "urgency_score": 2.0,
           "sample_titles": [
-            "雲林花生藤農廢變飼料 水牛安養中心「用吃的消滅它」",
-            "雲林花生藤農廢變飼料水牛安養中心「用吃的消滅它」－民視新聞- 民視新聞網"
+            "雲林縣斗六市民代表賴瑪玲宣布參選第一選區縣議員賴瑪玲：12年市民代表、8年調解委員深知要給鄉親更多溫暖更有感建設！",
+            "林內縣政說明會登場 雲林多元建設成果逐步展現"
+          ]
+        },
+        {
+          "title": "社福醫療",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 1.0,
+          "sample_titles": [
+            "臺大醫院雲林分院串聯國際與區域醫療建構雲林兒童區域聯防網- 健康新聞- PChome Online 新聞"
           ]
         }
       ]
