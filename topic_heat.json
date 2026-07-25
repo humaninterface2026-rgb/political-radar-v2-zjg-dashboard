@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-24T12:27:35",
+  "generated_at": "2026-07-25T12:56:55",
   "topics": [
     {
       "id": "puppet",
@@ -1071,7 +1071,8 @@
         "keyword": "雲林國際偶戲節",
         "geo": "TW",
         "time_range": "today 5-y",
-        "fetched_at": "2026-07-23T05:46:50.663718+00:00"
+        "fetched_at": "2026-07-23T05:46:50.663718+00:00",
+        "stale": true
       }
     }
   ]
