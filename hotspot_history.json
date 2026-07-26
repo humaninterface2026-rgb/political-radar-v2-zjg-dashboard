@@ -2996,22 +2996,22 @@
     },
     {
       "date": "2026-07-12",
-      "snapshot_at": "2026-07-25T12:56:50.243766+08:00",
+      "snapshot_at": "2026-07-26T12:56:13.702224+08:00",
       "hotspots": [
         {
           "title": "建設交通",
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "green",
-          "news_count": 5,
+          "news_count": 4,
           "comment_count": 0,
           "negativity_pct": 0,
           "is_urgent": false,
-          "urgency_score": 5.0,
+          "urgency_score": 4.0,
           "sample_titles": [
-            "迎雞年！到雲林跨年賞煙火交通管制要先看| 生活",
             "上半年觀光人次超越去年全年 雲林下半年海洋音樂季、偶戲節輪番吸客",
-            "超越去年紀錄！雲林上半年觀光飆3377萬人次 縣府再推大型活動拚5000萬人次"
+            "超越去年紀錄！雲林上半年觀光飆3377萬人次 縣府再推大型活動拚5000萬人次",
+            "上半年觀光人次超越去年全年 雲林下半年海洋音樂季、偶戲節輪番吸客"
           ]
         },
         {
@@ -3034,7 +3034,7 @@
     },
     {
       "date": "2026-07-13",
-      "snapshot_at": "2026-07-25T12:56:50.243766+08:00",
+      "snapshot_at": "2026-07-26T12:56:13.702224+08:00",
       "hotspots": [
         {
           "title": "社福醫療",
@@ -3120,7 +3120,7 @@
     },
     {
       "date": "2026-07-14",
-      "snapshot_at": "2026-07-25T12:56:50.243766+08:00",
+      "snapshot_at": "2026-07-26T12:56:13.702224+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -3205,7 +3205,7 @@
     },
     {
       "date": "2026-07-15",
-      "snapshot_at": "2026-07-25T12:56:50.243766+08:00",
+      "snapshot_at": "2026-07-26T12:56:13.702224+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -3289,7 +3289,7 @@
     },
     {
       "date": "2026-07-16",
-      "snapshot_at": "2026-07-25T12:56:50.243766+08:00",
+      "snapshot_at": "2026-07-26T12:56:13.702224+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -3372,7 +3372,7 @@
     },
     {
       "date": "2026-07-17",
-      "snapshot_at": "2026-07-25T12:56:50.243766+08:00",
+      "snapshot_at": "2026-07-26T12:56:13.702224+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -3470,7 +3470,7 @@
     },
     {
       "date": "2026-07-18",
-      "snapshot_at": "2026-07-25T12:56:50.243766+08:00",
+      "snapshot_at": "2026-07-26T12:56:13.702224+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -3522,7 +3522,7 @@
     },
     {
       "date": "2026-07-19",
-      "snapshot_at": "2026-07-25T12:56:50.243766+08:00",
+      "snapshot_at": "2026-07-26T12:56:13.702224+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -3590,7 +3590,7 @@
     },
     {
       "date": "2026-07-20",
-      "snapshot_at": "2026-07-25T12:56:50.243766+08:00",
+      "snapshot_at": "2026-07-26T12:56:13.702224+08:00",
       "hotspots": [
         {
           "title": "社福醫療",
@@ -3644,7 +3644,7 @@
     },
     {
       "date": "2026-07-21",
-      "snapshot_at": "2026-07-25T12:56:50.243766+08:00",
+      "snapshot_at": "2026-07-26T12:56:13.702224+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -3714,7 +3714,7 @@
     },
     {
       "date": "2026-07-22",
-      "snapshot_at": "2026-07-25T12:56:50.243766+08:00",
+      "snapshot_at": "2026-07-26T12:56:13.702224+08:00",
       "hotspots": [
         {
           "title": "社福醫療",
@@ -3782,7 +3782,7 @@
     },
     {
       "date": "2026-07-23",
-      "snapshot_at": "2026-07-25T12:56:50.243766+08:00",
+      "snapshot_at": "2026-07-26T12:56:13.702224+08:00",
       "hotspots": [
         {
           "title": "廉政弊案",
@@ -3835,18 +3835,18 @@
     },
     {
       "date": "2026-07-24",
-      "snapshot_at": "2026-07-25T12:56:50.243766+08:00",
+      "snapshot_at": "2026-07-26T12:56:13.702224+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "red",
-          "news_count": 5,
+          "news_count": 6,
           "comment_count": 0,
           "negativity_pct": 100,
           "is_urgent": true,
-          "urgency_score": 9.0,
+          "urgency_score": 10.5,
           "sample_titles": [
             "國民黨明天將在台北凱達格蘭大道舉辦「我是人、我反毒台」集會，雲林縣也號召支持者北上參與。國民黨雲林縣黨部表示，不少民眾自",
             "反毒台集會明登場 雲林9車北上挺凱道、張麗善晚間7時抵達",
@@ -3858,11 +3858,11 @@
           "city": "雲林",
           "place": "雲林莿桐",
           "level": "yellow",
-          "news_count": 8,
+          "news_count": 9,
           "comment_count": 0,
-          "negativity_pct": 12,
+          "negativity_pct": 11,
           "is_urgent": false,
-          "urgency_score": 8.5,
+          "urgency_score": 9.5,
           "sample_titles": [
             "2026縣政說明會二崙登場 縣府持續推動建設 提升二崙發展量能",
             "2026縣政說明會二崙登場 張麗善細數逾34億元建設成果",
@@ -3918,22 +3918,38 @@
     },
     {
       "date": "2026-07-25",
-      "snapshot_at": "2026-07-25T12:56:50.243766+08:00",
+      "snapshot_at": "2026-07-26T12:56:13.702224+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "red",
-          "news_count": 3,
+          "news_count": 11,
           "comment_count": 0,
           "negativity_pct": 100,
           "is_urgent": true,
-          "urgency_score": 9.0,
+          "urgency_score": 33.0,
           "sample_titles": [
             "雲林羊肉驗出「世紀之毒」戴奧辛超標2倍 嘉南羊乳也中鏢",
             "雲林羊肉驗出「世紀之毒」戴奧辛超標2倍 嘉南羊乳也中鏢 | 太報",
             "雲林羊肉驗出「世紀之毒」戴奧辛超標2倍 嘉南羊乳也中鏢| 醫藥健康"
+          ]
+        },
+        {
+          "title": "六輕／空污",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "red",
+          "news_count": 12,
+          "comment_count": 0,
+          "negativity_pct": 100,
+          "is_urgent": true,
+          "urgency_score": 31.5,
+          "sample_titles": [
+            "生活 2026/07/25 12:19 雲林羊肉戴奧辛超標 環境部採樣釐清污染源",
+            "雲林羊肉戴奧辛超標環境部採樣釐清污染源| 生活",
+            "雲林羊肉戴奧辛超標未流入市面 環境部採檢釐清可能污染源"
           ]
         },
         {
@@ -3948,7 +3964,83 @@
           "urgency_score": 4.0,
           "sample_titles": [
             "雲林純釀在地花生好油品 點亮餐桌食安",
-            "雲林首爆「戴奧辛羊肉」！農業部追汙染源：問題肉品未流入市面"
+            "雲林首爆「戴奧辛羊肉」！農業部追汙染源：問題肉品未流入市面 | TVBS"
+          ]
+        },
+        {
+          "title": "水利",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "yellow",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 100,
+          "is_urgent": false,
+          "urgency_score": 1.5,
+          "sample_titles": [
+            "雲林以北、花東10縣市豪雨開轟！彰化二林2級淹水警戒"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "snapshot_at": "2026-07-26T12:56:13.702224+08:00",
+      "hotspots": [
+        {
+          "title": "六輕／空污",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "red",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 100,
+          "is_urgent": true,
+          "urgency_score": 3.0,
+          "sample_titles": [
+            "雲林戴奧辛羊肉案擴大！檢警搜索牧場 8隻羊全數撲殺追查污染源"
+          ]
+        },
+        {
+          "title": "建設交通",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 1.0,
+          "sample_titles": [
+            "中央地方攜手改善農村環境 劉建國會勘雲林六鄉鎮 爭取農路與社區建設加速推動"
+          ]
+        },
+        {
+          "title": "消防超勤爭議",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 1.0,
+          "sample_titles": [
+            "化身小小消防員！雲林學童穿消防衣射水、垂降闖關學防災"
+          ]
+        },
+        {
+          "title": "治安／詐騙",
+          "city": "雲林",
+          "place": "雲林土庫",
+          "level": "green",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 1.0,
+          "sample_titles": [
+            "暑假消暑首選！土庫親水節登場 張麗善發限量水槍同樂"
           ]
         }
       ]
