@@ -3271,22 +3271,22 @@
     },
     {
       "date": "2026-07-16",
-      "snapshot_at": "2026-07-29T13:25:41.839507+08:00",
+      "snapshot_at": "2026-07-30T13:05:12.782796+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "yellow",
-          "news_count": 18,
+          "news_count": 14,
           "comment_count": 0,
-          "negativity_pct": 89,
+          "negativity_pct": 100,
           "is_urgent": false,
-          "urgency_score": 26.0,
+          "urgency_score": 21.0,
           "sample_titles": [
-            "「持有」電子菸即觸法！劉建國：應當場進行毒品檢驗",
-            "用AI防AI詐騙！雲林縣府攜手鴻海 1個月揪逾400風險廣告",
-            "持有電子煙就罰 立委劉建國：查獲應當場驗毒"
+            "查獲電子菸就驗毒？劉建國提修法盼堵住漏洞",
+            "查獲電子菸就驗毒？劉建國提修法 盼堵住這個漏洞 | 政治快訊 | 要聞",
+            "喪屍菸彈流竄！劉建國要求警政署研議：「查獲電子菸當場驗毒」 | Newtalk"
           ]
         },
         {
@@ -3310,13 +3310,12 @@
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "yellow",
-          "news_count": 3,
+          "news_count": 2,
           "comment_count": 0,
           "negativity_pct": 100,
           "is_urgent": false,
-          "urgency_score": 4.5,
+          "urgency_score": 3.0,
           "sample_titles": [
-            "雲林檢警聯手打詐轟賄選 邀全民看短影音抽好禮",
             "雲林檢警聯手打詐轟賄選 邀全民看短影音抽好禮 - 政治新聞 - PChome Online 新聞",
             "雲林檢警聯手打詐轟賄選 邀全民看短影音抽好禮"
           ]
@@ -3335,26 +3334,12 @@
             "農業部公告水林鄉文蛤天然災害現金救助 立委劉建國提醒7月16日至29日受理申請",
             "雲林鰻魚、台灣鯛、雜糧蔬果暨農特產品 臺北花博農民市集展售"
           ]
-        },
-        {
-          "title": "社福醫療",
-          "city": "雲林",
-          "place": "雲林斗六",
-          "level": "green",
-          "news_count": 1,
-          "comment_count": 0,
-          "negativity_pct": 0,
-          "is_urgent": false,
-          "urgency_score": 1.0,
-          "sample_titles": [
-            "討論牆 | 拚雲林升級、轉型 張嘉郡推台大斗六長照大樓、電動車產業園區"
-          ]
         }
       ]
     },
     {
       "date": "2026-07-17",
-      "snapshot_at": "2026-07-29T13:25:41.839507+08:00",
+      "snapshot_at": "2026-07-30T13:05:12.782796+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -3452,7 +3437,7 @@
     },
     {
       "date": "2026-07-18",
-      "snapshot_at": "2026-07-29T13:25:41.839507+08:00",
+      "snapshot_at": "2026-07-30T13:05:12.782796+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -3504,7 +3489,7 @@
     },
     {
       "date": "2026-07-19",
-      "snapshot_at": "2026-07-29T13:25:41.839507+08:00",
+      "snapshot_at": "2026-07-30T13:05:12.782796+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -3572,7 +3557,7 @@
     },
     {
       "date": "2026-07-20",
-      "snapshot_at": "2026-07-29T13:25:41.839507+08:00",
+      "snapshot_at": "2026-07-30T13:05:12.782796+08:00",
       "hotspots": [
         {
           "title": "社福醫療",
@@ -3626,7 +3611,7 @@
     },
     {
       "date": "2026-07-21",
-      "snapshot_at": "2026-07-29T13:25:41.839507+08:00",
+      "snapshot_at": "2026-07-30T13:05:12.782796+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -3696,7 +3681,7 @@
     },
     {
       "date": "2026-07-22",
-      "snapshot_at": "2026-07-29T13:25:41.839507+08:00",
+      "snapshot_at": "2026-07-30T13:05:12.782796+08:00",
       "hotspots": [
         {
           "title": "社福醫療",
@@ -3764,7 +3749,7 @@
     },
     {
       "date": "2026-07-23",
-      "snapshot_at": "2026-07-29T13:25:41.839507+08:00",
+      "snapshot_at": "2026-07-30T13:05:12.782796+08:00",
       "hotspots": [
         {
           "title": "廉政弊案",
@@ -3817,7 +3802,7 @@
     },
     {
       "date": "2026-07-24",
-      "snapshot_at": "2026-07-29T13:25:41.839507+08:00",
+      "snapshot_at": "2026-07-30T13:05:12.782796+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -3900,7 +3885,7 @@
     },
     {
       "date": "2026-07-25",
-      "snapshot_at": "2026-07-29T13:25:41.839507+08:00",
+      "snapshot_at": "2026-07-30T13:05:12.782796+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -3967,7 +3952,7 @@
     },
     {
       "date": "2026-07-26",
-      "snapshot_at": "2026-07-29T13:25:41.839507+08:00",
+      "snapshot_at": "2026-07-30T13:05:12.782796+08:00",
       "hotspots": [
         {
           "title": "消防超勤爭議",
@@ -4033,7 +4018,7 @@
     },
     {
       "date": "2026-07-27",
-      "snapshot_at": "2026-07-29T13:25:41.839507+08:00",
+      "snapshot_at": "2026-07-30T13:05:12.782796+08:00",
       "hotspots": [
         {
           "title": "水利",
@@ -4098,18 +4083,18 @@
     },
     {
       "date": "2026-07-28",
-      "snapshot_at": "2026-07-29T13:25:41.839507+08:00",
+      "snapshot_at": "2026-07-30T13:05:12.782796+08:00",
       "hotspots": [
         {
           "title": "社福醫療",
           "city": "雲林",
           "place": "雲林虎尾",
           "level": "green",
-          "news_count": 20,
+          "news_count": 26,
           "comment_count": 0,
           "negativity_pct": 0,
           "is_urgent": false,
-          "urgency_score": 20.0,
+          "urgency_score": 26.0,
           "sample_titles": [
             "前總統蔡英文今天抵雲林走透透行程排滿滿，踏勘她任內核定的建設，首站先到台大虎尾二期擴建、高齡健康福利中心了解雲林醫療、長",
             "蔡英文訪雲林 關心地方醫療、「虎尾潮」韌性城鎮建設",
@@ -4121,14 +4106,14 @@
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "red",
-          "news_count": 7,
+          "news_count": 9,
           "comment_count": 0,
           "negativity_pct": 100,
           "is_urgent": true,
-          "urgency_score": 15.0,
+          "urgency_score": 18.0,
           "sample_titles": [
             "反毒油燒不到南部？郭正亮曝雲林以南「1現象」：選情難翻盤",
-            "雲林羊肉驗出世紀之毒 飼主使用草料驗出微量戴奧辛將追查來源",
+            "雲林羊肉驗出世紀之毒 飼主草料有微量戴奧辛將追查來源",
             "藍、白凱道集會轟毒油案! 他曝雲林以南選情難翻盤 因「這2大關鍵」"
           ]
         },
@@ -4153,11 +4138,11 @@
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "green",
-          "news_count": 5,
+          "news_count": 6,
           "comment_count": 0,
           "negativity_pct": 0,
           "is_urgent": false,
-          "urgency_score": 5.0,
+          "urgency_score": 6.0,
           "sample_titles": [
             "蔡英文低調訪雲林 回顧任內力推三大建設",
             "小英雲林走透透拜宮廟品嘗小吃 走訪任內三大建設成果",
@@ -4169,34 +4154,53 @@
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "yellow",
-          "news_count": 2,
+          "news_count": 3,
           "comment_count": 0,
-          "negativity_pct": 50,
+          "negativity_pct": 33,
           "is_urgent": false,
-          "urgency_score": 2.5,
+          "urgency_score": 3.5,
           "sample_titles": [
             "民進黨立委劉建國獲黨內提名競逐下屆雲林縣長，他昨率領團隊及雲林大豆農民南下拜會高雄市長陳其邁，除針對城市治理等議題交流，",
-            "豪雨重創雲林花生 張嘉郡籲從速從寬從簡補助"
+            "豪雨重創雲林花生 張嘉郡籲從速從寬從簡補助",
+            "「智農上場・資源共享」第七屆雲林縣智慧農業大學開跑打造智慧農業共學平台培育新世代農業人才"
           ]
         }
       ]
     },
     {
       "date": "2026-07-29",
-      "snapshot_at": "2026-07-29T13:25:41.839507+08:00",
+      "snapshot_at": "2026-07-30T13:05:12.782796+08:00",
       "hotspots": [
+        {
+          "title": "農業議題",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 16,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 16.0,
+          "sample_titles": [
+            "劉建國爭取農業用電補貼！政院核定每年投入1億元 減輕16.8萬農民負擔",
+            "快新聞／劉建國爭取農業用電補貼！政院核定每年投入1億元 減輕16.8萬農民負擔",
+            "立委劉建國成功爭取農業用電補貼 行政院核定每年投入1億元 16.8萬農民受惠"
+          ]
+        },
         {
           "title": "社福醫療",
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "green",
-          "news_count": 1,
+          "news_count": 3,
           "comment_count": 0,
           "negativity_pct": 0,
           "is_urgent": false,
-          "urgency_score": 1.0,
+          "urgency_score": 3.0,
           "sample_titles": [
-            "蔡英文挺雲林醫療照護升級 劉建國提「醫療照護產業園區」 | 鏡週刊"
+            "蔡英文挺雲林醫療照護升級 劉建國提「醫療照護產業園區」 | 鏡週刊",
+            "蔡英文挺雲林醫療照護升級 劉建國提「醫療照護產業園區」",
+            "前總統蔡英文挺雲林醫療照護升級 縣長參選人劉建國立委提出「醫療照護產業園區」縣政願景"
           ]
         },
         {
@@ -4204,13 +4208,79 @@
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "green",
-          "news_count": 1,
+          "news_count": 2,
           "comment_count": 0,
           "negativity_pct": 0,
           "is_urgent": false,
-          "urgency_score": 1.0,
+          "urgency_score": 2.0,
           "sample_titles": [
-            "小英訪雲林任內核定三大建設 劉建國持續推動"
+            "小英訪雲林任內核定三大建設 劉建國持續推動",
+            "雲林警政建設再升級 三年投入逾1.7億元 警察局園區整建動土"
+          ]
+        },
+        {
+          "title": "六輕／空污",
+          "city": "雲林",
+          "place": "雲林麥寮",
+          "level": "yellow",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 100,
+          "is_urgent": false,
+          "urgency_score": 1.5,
+          "sample_titles": [
+            "距住家僅500公尺！台塑六輕外蓋6風機 麥寮居民怒喊反對"
+          ]
+        },
+        {
+          "title": "水利",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "yellow",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 100,
+          "is_urgent": false,
+          "urgency_score": 1.5,
+          "sample_titles": [
+            "雲林縣警局逾30年老廳舍遇雨淹水 縣府斥資6634萬元翻新"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-07-30",
+      "snapshot_at": "2026-07-30T13:05:12.782796+08:00",
+      "hotspots": [
+        {
+          "title": "農業議題",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 3,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 3.0,
+          "sample_titles": [
+            "劉建國成功爭取農業用電補貼 行政院核定每年投入1億元減輕農民負擔",
+            "第七屆雲林縣智慧農業大學開跑 打造智慧農業共學平台與培育新世代農業人才 | 熱門亮點 | 商情",
+            "第七屆雲林縣智慧農業大學 開跑"
+          ]
+        },
+        {
+          "title": "社福醫療",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 2,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 2.0,
+          "sample_titles": [
+            "蔡英文挺雲林醫療照護升級 劉建國倡設醫療照護產業園區促地方轉型",
+            "蔡英文挺雲林醫療照護升級劉建國倡設醫療照護產業園區促地方轉型- 生活新聞- PChome Online 新聞"
           ]
         }
       ]
