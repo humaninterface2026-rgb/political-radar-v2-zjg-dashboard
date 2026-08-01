@@ -3436,7 +3436,7 @@
     },
     {
       "date": "2026-07-18",
-      "snapshot_at": "2026-07-31T12:38:05.022335+08:00",
+      "snapshot_at": "2026-08-01T13:14:56.309377+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -3488,7 +3488,7 @@
     },
     {
       "date": "2026-07-19",
-      "snapshot_at": "2026-07-31T12:38:05.022335+08:00",
+      "snapshot_at": "2026-08-01T13:14:56.309377+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -3556,7 +3556,7 @@
     },
     {
       "date": "2026-07-20",
-      "snapshot_at": "2026-07-31T12:38:05.022335+08:00",
+      "snapshot_at": "2026-08-01T13:14:56.309377+08:00",
       "hotspots": [
         {
           "title": "社福醫療",
@@ -3610,7 +3610,7 @@
     },
     {
       "date": "2026-07-21",
-      "snapshot_at": "2026-07-31T12:38:05.022335+08:00",
+      "snapshot_at": "2026-08-01T13:14:56.309377+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -3680,7 +3680,7 @@
     },
     {
       "date": "2026-07-22",
-      "snapshot_at": "2026-07-31T12:38:05.022335+08:00",
+      "snapshot_at": "2026-08-01T13:14:56.309377+08:00",
       "hotspots": [
         {
           "title": "社福醫療",
@@ -3748,7 +3748,7 @@
     },
     {
       "date": "2026-07-23",
-      "snapshot_at": "2026-07-31T12:38:05.022335+08:00",
+      "snapshot_at": "2026-08-01T13:14:56.309377+08:00",
       "hotspots": [
         {
           "title": "廉政弊案",
@@ -3801,7 +3801,7 @@
     },
     {
       "date": "2026-07-24",
-      "snapshot_at": "2026-07-31T12:38:05.022335+08:00",
+      "snapshot_at": "2026-08-01T13:14:56.309377+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -3884,7 +3884,7 @@
     },
     {
       "date": "2026-07-25",
-      "snapshot_at": "2026-07-31T12:38:05.022335+08:00",
+      "snapshot_at": "2026-08-01T13:14:56.309377+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -3951,7 +3951,7 @@
     },
     {
       "date": "2026-07-26",
-      "snapshot_at": "2026-07-31T12:38:05.022335+08:00",
+      "snapshot_at": "2026-08-01T13:14:56.309377+08:00",
       "hotspots": [
         {
           "title": "消防超勤爭議",
@@ -4017,7 +4017,7 @@
     },
     {
       "date": "2026-07-27",
-      "snapshot_at": "2026-07-31T12:38:05.022335+08:00",
+      "snapshot_at": "2026-08-01T13:14:56.309377+08:00",
       "hotspots": [
         {
           "title": "水利",
@@ -4082,7 +4082,7 @@
     },
     {
       "date": "2026-07-28",
-      "snapshot_at": "2026-07-31T12:38:05.022335+08:00",
+      "snapshot_at": "2026-08-01T13:14:56.309377+08:00",
       "hotspots": [
         {
           "title": "社福醫療",
@@ -4168,7 +4168,7 @@
     },
     {
       "date": "2026-07-29",
-      "snapshot_at": "2026-07-31T12:38:05.022335+08:00",
+      "snapshot_at": "2026-08-01T13:14:56.309377+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -4250,18 +4250,18 @@
     },
     {
       "date": "2026-07-30",
-      "snapshot_at": "2026-07-31T12:38:05.022335+08:00",
+      "snapshot_at": "2026-08-01T13:14:56.309377+08:00",
       "hotspots": [
         {
           "title": "農業議題",
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "green",
-          "news_count": 10,
+          "news_count": 11,
           "comment_count": 0,
           "negativity_pct": 0,
           "is_urgent": false,
-          "urgency_score": 10.0,
+          "urgency_score": 11.0,
           "sample_titles": [
             "劉建國成功爭取農業用電補貼 行政院核定每年投入1億元減輕農民負擔",
             "第七屆雲林縣智慧農業大學開跑 打造智慧農業共學平台與培育新世代農業人才 | 熱門亮點 | 商情",
@@ -4289,11 +4289,11 @@
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "green",
-          "news_count": 3,
+          "news_count": 4,
           "comment_count": 0,
           "negativity_pct": 0,
           "is_urgent": false,
-          "urgency_score": 3.0,
+          "urgency_score": 4.0,
           "sample_titles": [
             "蔡英文挺雲林醫療照護升級 劉建國倡設醫療照護產業園區促地方轉型",
             "蔡英文挺雲林醫療照護升級劉建國倡設醫療照護產業園區促地方轉型- 生活新聞- PChome Online 新聞",
@@ -4304,22 +4304,102 @@
     },
     {
       "date": "2026-07-31",
-      "snapshot_at": "2026-07-31T12:38:05.022335+08:00",
+      "snapshot_at": "2026-08-01T13:14:56.309377+08:00",
       "hotspots": [
+        {
+          "title": "農業議題",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 8,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 8.0,
+          "sample_titles": [
+            "AI能幫農民與長輩做什麼？張嘉郡發表雲林智慧城市白皮書，整合醫療防詐與APP打造數位縣政| 夏和宣| 地方新聞",
+            "雲林農業不能只拚產值 劉建國主張打造科技、生技農業產業園區",
+            "【政治觀察】體會農民的艱苦到中央一年1億元補貼 劉建國展現未來縣長該有的解決問題能力"
+          ]
+        },
         {
           "title": "治安／詐騙",
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "red",
-          "news_count": 3,
+          "news_count": 4,
           "comment_count": 0,
           "negativity_pct": 100,
           "is_urgent": true,
-          "urgency_score": 6.0,
+          "urgency_score": 7.5,
           "sample_titles": [
             "鄭麗文南下雲林婦女營嗆聲：從核食萊豬到毒油 民進黨吃相難看 民進黨不下架毒油 只好下架民進黨",
             "鄭麗文南下雲林婦女營嗆聲：從核食萊豬到毒油民進黨吃相難看民進黨不下架毒油只好下架民進黨",
             "澄清「草嶺苦茶油」無辜躺槍！永豐餘違規油品僅在雲林分裝"
+          ]
+        },
+        {
+          "title": "水利",
+          "city": "雲林",
+          "place": "雲林莿桐",
+          "level": "green",
+          "news_count": 2,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 2.0,
+          "sample_titles": [
+            "雲林縣政說明會前進莿桐 交通治水產業照顧全面升級",
+            "建設從治水到醫療 蔡英文同框劉建國：讓雲林不只適合打拚，也適合生活"
+          ]
+        },
+        {
+          "title": "建設交通",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "yellow",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 100,
+          "is_urgent": false,
+          "urgency_score": 1.5,
+          "sample_titles": [
+            "重大建設沒完成，「青埔宮」卻先蓋好 劉建國質疑張麗善把時間用在哪裡"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-08-01",
+      "snapshot_at": "2026-08-01T13:14:56.309377+08:00",
+      "hotspots": [
+        {
+          "title": "水利",
+          "city": "雲林",
+          "place": "雲林莿桐",
+          "level": "green",
+          "news_count": 2,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 2.0,
+          "sample_titles": [
+            "雲林縣政說明會前進莿桐 交通治水產業照顧全面升級",
+            "雲林縣政說明會前進莿桐 交通治水產業照顧全面升級 - 生活新聞 - PChome Online 新聞"
+          ]
+        },
+        {
+          "title": "農業議題",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 1.0,
+          "sample_titles": [
+            "全台約 16.8 萬戶受惠 每戶每年最高可省 774 元 張嘉郡爭取農業用電底度費補貼"
           ]
         }
       ]
