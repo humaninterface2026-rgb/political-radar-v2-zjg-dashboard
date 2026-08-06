@@ -3748,7 +3748,7 @@
     },
     {
       "date": "2026-07-23",
-      "snapshot_at": "2026-08-05T12:21:30.575040+08:00",
+      "snapshot_at": "2026-08-06T12:51:17.861897+08:00",
       "hotspots": [
         {
           "title": "廉政弊案",
@@ -3801,7 +3801,7 @@
     },
     {
       "date": "2026-07-24",
-      "snapshot_at": "2026-08-05T12:21:30.575040+08:00",
+      "snapshot_at": "2026-08-06T12:51:17.861897+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -3884,7 +3884,7 @@
     },
     {
       "date": "2026-07-25",
-      "snapshot_at": "2026-08-05T12:21:30.575040+08:00",
+      "snapshot_at": "2026-08-06T12:51:17.861897+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -3951,7 +3951,7 @@
     },
     {
       "date": "2026-07-26",
-      "snapshot_at": "2026-08-05T12:21:30.575040+08:00",
+      "snapshot_at": "2026-08-06T12:51:17.861897+08:00",
       "hotspots": [
         {
           "title": "消防超勤爭議",
@@ -4017,7 +4017,7 @@
     },
     {
       "date": "2026-07-27",
-      "snapshot_at": "2026-08-05T12:21:30.575040+08:00",
+      "snapshot_at": "2026-08-06T12:51:17.861897+08:00",
       "hotspots": [
         {
           "title": "水利",
@@ -4082,7 +4082,7 @@
     },
     {
       "date": "2026-07-28",
-      "snapshot_at": "2026-08-05T12:21:30.575040+08:00",
+      "snapshot_at": "2026-08-06T12:51:17.861897+08:00",
       "hotspots": [
         {
           "title": "社福醫療",
@@ -4168,7 +4168,7 @@
     },
     {
       "date": "2026-07-29",
-      "snapshot_at": "2026-08-05T12:21:30.575040+08:00",
+      "snapshot_at": "2026-08-06T12:51:17.861897+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -4250,7 +4250,7 @@
     },
     {
       "date": "2026-07-30",
-      "snapshot_at": "2026-08-05T12:21:30.575040+08:00",
+      "snapshot_at": "2026-08-06T12:51:17.861897+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -4304,7 +4304,7 @@
     },
     {
       "date": "2026-07-31",
-      "snapshot_at": "2026-08-05T12:21:30.575040+08:00",
+      "snapshot_at": "2026-08-06T12:51:17.861897+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -4373,7 +4373,7 @@
     },
     {
       "date": "2026-08-01",
-      "snapshot_at": "2026-08-05T12:21:30.575040+08:00",
+      "snapshot_at": "2026-08-06T12:51:17.861897+08:00",
       "hotspots": [
         {
           "title": "社福醫療",
@@ -4441,7 +4441,7 @@
     },
     {
       "date": "2026-08-02",
-      "snapshot_at": "2026-08-05T12:21:30.575040+08:00",
+      "snapshot_at": "2026-08-06T12:51:17.861897+08:00",
       "hotspots": [
         {
           "title": "社福醫療",
@@ -4495,7 +4495,7 @@
     },
     {
       "date": "2026-08-03",
-      "snapshot_at": "2026-08-05T12:21:30.575040+08:00",
+      "snapshot_at": "2026-08-06T12:51:17.861897+08:00",
       "hotspots": [
         {
           "title": "廉政弊案",
@@ -4562,18 +4562,18 @@
     },
     {
       "date": "2026-08-04",
-      "snapshot_at": "2026-08-05T12:21:30.575040+08:00",
+      "snapshot_at": "2026-08-06T12:51:17.861897+08:00",
       "hotspots": [
         {
           "title": "建設交通",
           "city": "雲林",
           "place": "雲林斗六",
           "level": "yellow",
-          "news_count": 10,
+          "news_count": 12,
           "comment_count": 0,
-          "negativity_pct": 10,
+          "negativity_pct": 8,
           "is_urgent": false,
-          "urgency_score": 10.5,
+          "urgency_score": 12.5,
           "sample_titles": [
             "穿越近百年客庄時光！雲林二崙分駐所眷舍修復奪國家建設金質獎",
             "百年眷舍蛻變文化新地標 雲林勇奪國家卓越建設金質獎",
@@ -4614,35 +4614,86 @@
     },
     {
       "date": "2026-08-05",
-      "snapshot_at": "2026-08-05T12:21:30.575040+08:00",
+      "snapshot_at": "2026-08-06T12:51:17.861897+08:00",
       "hotspots": [
-        {
-          "title": "建設交通",
-          "city": "雲林",
-          "place": "雲林二崙",
-          "level": "green",
-          "news_count": 2,
-          "comment_count": 0,
-          "negativity_pct": 0,
-          "is_urgent": false,
-          "urgency_score": 2.0,
-          "sample_titles": [
-            "雲林翻轉「又老又窮」標籤！張麗善曝家庭所得飆升、觀光衝5000萬人次",
-            "穿越近百年時光重現客庄文學風華！雲林「二崙分駐所眷舍修復工程」榮獲2026國家卓越建設獎金質獎"
-          ]
-        },
         {
           "title": "六輕／空污",
           "city": "雲林",
           "place": "雲林麥寮",
           "level": "green",
-          "news_count": 1,
+          "news_count": 8,
           "comment_count": 0,
           "negativity_pct": 0,
           "is_urgent": false,
-          "urgency_score": 1.0,
+          "urgency_score": 8.0,
           "sample_titles": [
-            "生者安居、逝者圓滿〜雲林麥寮以公共建設翻轉地方價值榮獲「2026國家卓越建設獎」2金、1優質大獎肯定！"
+            "生者安居、逝者圓滿〜雲林麥寮以公共建設翻轉地方價值榮獲「2026國家卓越建設獎」2金、1優質大獎肯定！",
+            "8年投入50億提升麥寮建設及生活品質 張麗善細數建設：感謝鄉親支持",
+            "8年投入50億提升麥寮建設及生活品質 張麗善細數建設： 感謝鄉親支持"
+          ]
+        },
+        {
+          "title": "建設交通",
+          "city": "雲林",
+          "place": "雲林二崙",
+          "level": "green",
+          "news_count": 6,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 6.0,
+          "sample_titles": [
+            "雲林翻轉「又老又窮」標籤！張麗善曝家庭所得飆升、觀光衝5000萬人次",
+            "穿越近百年時光重現客庄文學風華！雲林「二崙分駐所眷舍修復工程」榮獲2026國家卓越建設獎金質獎",
+            "雲林翻轉「又老又窮」標籤！張麗善曝家庭所得飆升、觀光衝5000萬人次 | 觀傳媒"
+          ]
+        },
+        {
+          "title": "農業議題",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 5,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 5.0,
+          "sample_titles": [
+            "全國人數最多 雲林縣十七位青年農民獲選百大青農 蟬聯全國第一 | 中華日報",
+            "全國人數最多 雲林縣十七位青年農民獲選百大青農 蟬聯全國第一",
+            "蟬聯全國第一 雲林17位青農躋身第八屆百大青農展現農業新實力"
+          ]
+        },
+        {
+          "title": "廉政弊案",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 3,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 3.0,
+          "sample_titles": [
+            "​​​AI助攻法治宣導 雲林監獄築牢行政中立反賄選防線",
+            "​​​AI助攻法治宣導！ 雲林監獄築牢行政中立反賄選防線 - 社會新聞 - PChome Online 新聞",
+            "​​​AI助攻法治宣導！ 雲林監獄築牢行政中立反賄選防線"
+          ]
+        },
+        {
+          "title": "社福醫療",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 3,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 3.0,
+          "sample_titles": [
+            "不只拯救武林也守護長輩！霹靂男主角素還真代言雲林在宅醫療",
+            "素還真從武林走進雲林 跨界推廣在宅醫療守護長輩",
+            "素還真從武林走進雲林 跨界推廣在宅醫療守護長輩"
           ]
         },
         {
@@ -4657,6 +4708,55 @@
           "urgency_score": 1.0,
           "sample_titles": [
             "斗南「水世界」8/8開戰免費水槍、冰棒爽拿 戰鬥陀螺大賽等你來戰"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-08-06",
+      "snapshot_at": "2026-08-06T12:51:17.861897+08:00",
+      "hotspots": [
+        {
+          "title": "社福醫療",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 2,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 2.0,
+          "sample_titles": [
+            "雲林宣傳在宅醫療 素還真當代言人",
+            "雲林宣傳在宅醫療素還真當代言人- 雲林縣"
+          ]
+        },
+        {
+          "title": "治安／詐騙",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "yellow",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 100,
+          "is_urgent": false,
+          "urgency_score": 1.5,
+          "sample_titles": [
+            "（有影片）／海巡雲林警聯手破獲槍毒案 高齡孕婦同居吸毒竟也被逮"
+          ]
+        },
+        {
+          "title": "農業議題",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 1.0,
+          "sample_titles": [
+            "雲林青農太猛！17人抱回百大青農 張麗善喊「打造農業台積電」"
           ]
         }
       ]
