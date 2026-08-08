@@ -3884,7 +3884,7 @@
     },
     {
       "date": "2026-07-25",
-      "snapshot_at": "2026-08-07T13:10:48.994360+08:00",
+      "snapshot_at": "2026-08-08T13:15:11.365330+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -3923,13 +3923,12 @@
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "red",
-          "news_count": 2,
+          "news_count": 1,
           "comment_count": 0,
-          "negativity_pct": 50,
+          "negativity_pct": 100,
           "is_urgent": true,
-          "urgency_score": 4.0,
+          "urgency_score": 3.0,
           "sample_titles": [
-            "雲林純釀在地花生好油品 點亮餐桌食安",
             "雲林首爆「戴奧辛羊肉」！農業部追汙染源：問題肉品未流入市面 | TVBS"
           ]
         },
@@ -3951,7 +3950,7 @@
     },
     {
       "date": "2026-07-26",
-      "snapshot_at": "2026-08-07T13:10:48.994360+08:00",
+      "snapshot_at": "2026-08-08T13:15:11.365330+08:00",
       "hotspots": [
         {
           "title": "消防超勤爭議",
@@ -4017,7 +4016,7 @@
     },
     {
       "date": "2026-07-27",
-      "snapshot_at": "2026-08-07T13:10:48.994360+08:00",
+      "snapshot_at": "2026-08-08T13:15:11.365330+08:00",
       "hotspots": [
         {
           "title": "水利",
@@ -4082,7 +4081,7 @@
     },
     {
       "date": "2026-07-28",
-      "snapshot_at": "2026-08-07T13:10:48.994360+08:00",
+      "snapshot_at": "2026-08-08T13:15:11.365330+08:00",
       "hotspots": [
         {
           "title": "社福醫療",
@@ -4168,7 +4167,7 @@
     },
     {
       "date": "2026-07-29",
-      "snapshot_at": "2026-08-07T13:10:48.994360+08:00",
+      "snapshot_at": "2026-08-08T13:15:11.365330+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -4250,7 +4249,7 @@
     },
     {
       "date": "2026-07-30",
-      "snapshot_at": "2026-08-07T13:10:48.994360+08:00",
+      "snapshot_at": "2026-08-08T13:15:11.365330+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -4304,7 +4303,7 @@
     },
     {
       "date": "2026-07-31",
-      "snapshot_at": "2026-08-07T13:10:48.994360+08:00",
+      "snapshot_at": "2026-08-08T13:15:11.365330+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -4373,7 +4372,7 @@
     },
     {
       "date": "2026-08-01",
-      "snapshot_at": "2026-08-07T13:10:48.994360+08:00",
+      "snapshot_at": "2026-08-08T13:15:11.365330+08:00",
       "hotspots": [
         {
           "title": "社福醫療",
@@ -4441,7 +4440,7 @@
     },
     {
       "date": "2026-08-02",
-      "snapshot_at": "2026-08-07T13:10:48.994360+08:00",
+      "snapshot_at": "2026-08-08T13:15:11.365330+08:00",
       "hotspots": [
         {
           "title": "社福醫療",
@@ -4495,7 +4494,7 @@
     },
     {
       "date": "2026-08-03",
-      "snapshot_at": "2026-08-07T13:10:48.994360+08:00",
+      "snapshot_at": "2026-08-08T13:15:11.365330+08:00",
       "hotspots": [
         {
           "title": "廉政弊案",
@@ -4562,7 +4561,7 @@
     },
     {
       "date": "2026-08-04",
-      "snapshot_at": "2026-08-07T13:10:48.994360+08:00",
+      "snapshot_at": "2026-08-08T13:15:11.365330+08:00",
       "hotspots": [
         {
           "title": "建設交通",
@@ -4614,7 +4613,7 @@
     },
     {
       "date": "2026-08-05",
-      "snapshot_at": "2026-08-07T13:10:48.994360+08:00",
+      "snapshot_at": "2026-08-08T13:15:11.365330+08:00",
       "hotspots": [
         {
           "title": "六輕／空污",
@@ -4714,18 +4713,18 @@
     },
     {
       "date": "2026-08-06",
-      "snapshot_at": "2026-08-07T13:10:48.994360+08:00",
+      "snapshot_at": "2026-08-08T13:15:11.365330+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "yellow",
-          "news_count": 14,
+          "news_count": 16,
           "comment_count": 0,
-          "negativity_pct": 93,
+          "negativity_pct": 94,
           "is_urgent": false,
-          "urgency_score": 20.5,
+          "urgency_score": 23.5,
           "sample_titles": [
             "（有影片）／海巡雲林警聯手破獲槍毒案 高齡孕婦同居吸毒竟也被逮",
             "誇張！懷孕5個月還吸毒 雲林毒鴛鴦被逮搜出毒品及改造槍",
@@ -4737,11 +4736,11 @@
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "green",
-          "news_count": 10,
+          "news_count": 11,
           "comment_count": 0,
           "negativity_pct": 0,
           "is_urgent": false,
-          "urgency_score": 10.0,
+          "urgency_score": 11.0,
           "sample_titles": [
             "雲林青農太猛！17人抱回百大青農 張麗善喊「打造農業台積電」",
             "訪嘉義縣成功經驗 劉建國提雲林推無人機、青創基地及AI農業園區",
@@ -4782,21 +4781,38 @@
     },
     {
       "date": "2026-08-07",
-      "snapshot_at": "2026-08-07T13:10:48.994360+08:00",
+      "snapshot_at": "2026-08-08T13:15:11.365330+08:00",
       "hotspots": [
+        {
+          "title": "六輕／空污",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "red",
+          "news_count": 11,
+          "comment_count": 0,
+          "negativity_pct": 100,
+          "is_urgent": true,
+          "urgency_score": 30.0,
+          "sample_titles": [
+            "雲林戴奧辛羊肉污染源指向「牧草」 剩餘8頭羊全驗出超標",
+            "快訊》雲林羊肉污染源找到了！草料檢出戴奧辛超標",
+            "雲林羊肉驗出「世紀之毒」戴奧辛！污染源初步掌握是這個 問題羊肉未流市"
+          ]
+        },
         {
           "title": "農業議題",
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "yellow",
-          "news_count": 2,
+          "news_count": 3,
           "comment_count": 0,
-          "negativity_pct": 100,
+          "negativity_pct": 67,
           "is_urgent": false,
-          "urgency_score": 3.0,
+          "urgency_score": 4.0,
           "sample_titles": [
             "政面交鋒3-3》批張麗善「九加一」進度慢劉建國拋「勇敢轉型」打造雙技農業、無人載具基地- 政治",
-            "政面交鋒3-3》批張麗善「九加一」進度慢 劉建國拋「勇敢轉型」打造雙技農業、無人載具基地"
+            "政面交鋒3-3》批張麗善「九加一」進度慢 劉建國拋「勇敢轉型」打造雙技農業、無人載具基地",
+            "臺北花博農民市集 8/8雲林海味登場"
           ]
         },
         {
@@ -4804,13 +4820,66 @@
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "green",
-          "news_count": 1,
+          "news_count": 3,
           "comment_count": 0,
           "negativity_pct": 0,
           "is_urgent": false,
-          "urgency_score": 1.0,
+          "urgency_score": 3.0,
           "sample_titles": [
-            "雲林交通工務局勇奪雙金！斬獲2026國家卓越建設獎兩項金質大獎"
+            "雲林交通工務局勇奪雙金！斬獲2026國家卓越建設獎兩項金質大獎",
+            "雲林交通工務局勇奪雙金！斬獲2026國家卓越建設獎兩項金質大獎",
+            "嘉義分署交通專案 雲林機電償40萬保住小貨車"
+          ]
+        },
+        {
+          "title": "治安／詐騙",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "red",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 100,
+          "is_urgent": true,
+          "urgency_score": 3.0,
+          "sample_titles": [
+            "雲林羊肉「世紀之毒」超標 汙染源找到了！"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-08-08",
+      "snapshot_at": "2026-08-08T13:15:11.365330+08:00",
+      "hotspots": [
+        {
+          "title": "六輕／空污",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "red",
+          "news_count": 6,
+          "comment_count": 0,
+          "negativity_pct": 100,
+          "is_urgent": true,
+          "urgency_score": 15.0,
+          "sample_titles": [
+            "雲林戴奧辛羊肉污染源指向牧草 剩餘8頭羊全驗出超標 | 自由電子報",
+            "雲林戴奧辛羊肉污染源指向牧草剩餘8頭羊全驗出超標- 生活",
+            "羊驗出戴奧辛 雲林追查污染源疑鎖定牧草"
+          ]
+        },
+        {
+          "title": "治安／詐騙",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "red",
+          "news_count": 2,
+          "comment_count": 0,
+          "negativity_pct": 100,
+          "is_urgent": true,
+          "urgency_score": 6.0,
+          "sample_titles": [
+            "驗出世紀毒物！雲林羊肉戴奧辛超標1.8倍 食藥署曝最新稽查進度",
+            "驗出世紀毒物！雲林羊肉戴奧辛超標1.8倍 食藥署曝最新稽查進度 | 三立新聞網"
           ]
         }
       ]
