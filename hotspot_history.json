@@ -4407,38 +4407,22 @@
     },
     {
       "date": "2026-08-02",
-      "snapshot_at": "2026-08-15T13:48:16.671603+08:00",
+      "snapshot_at": "2026-08-16T12:37:03.477774+08:00",
       "hotspots": [
         {
           "title": "社福醫療",
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "green",
-          "news_count": 6,
+          "news_count": 5,
           "comment_count": 0,
           "negativity_pct": 0,
           "is_urgent": false,
-          "urgency_score": 6.0,
+          "urgency_score": 5.0,
           "sample_titles": [
-            "培育照護人才 雲林辦在宅醫療體驗教育營",
             "扎根高齡照護人才培育 雲林首辦「在宅醫療體驗教育營」",
-            "扎根高齡照護人才培育 雲林首辦「在宅醫療體驗教育營」 | 台灣好新聞"
-          ]
-        },
-        {
-          "title": "六輕／空污",
-          "city": "雲林",
-          "place": "雲林麥寮",
-          "level": "green",
-          "news_count": 3,
-          "comment_count": 0,
-          "negativity_pct": 0,
-          "is_urgent": false,
-          "urgency_score": 3.0,
-          "sample_titles": [
-            "免費玩到瘋！麥寮泡泡趴首日湧破萬人 把握最後一天",
-            "2026麥浪潮FUN水一夏！ 最強親子盛會雲林麥寮登場－民視新聞- 民視新聞網",
-            "2026麥浪潮FUN水一夏! 最強親子盛會雲林麥寮登場"
+            "扎根高齡照護人才培育 雲林首辦「在宅醫療體驗教育營」 | 台灣好新聞",
+            "扎根高齡照護人才培育 雲林首辦「在宅醫療體驗教育營」"
           ]
         },
         {
@@ -4456,12 +4440,26 @@
             "雲林砸23.84億建設莿桐！張麗善曝減債101億 明年再推2福利",
             "雲林砸23.84億建設莿桐！張麗善曝減債101億 明年再推2福利 | 觀傳媒"
           ]
+        },
+        {
+          "title": "六輕／空污",
+          "city": "雲林",
+          "place": "雲林麥寮",
+          "level": "green",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 1.0,
+          "sample_titles": [
+            "免費玩到瘋！麥寮泡泡趴首日湧破萬人 把握最後一天"
+          ]
         }
       ]
     },
     {
       "date": "2026-08-03",
-      "snapshot_at": "2026-08-15T13:48:16.671603+08:00",
+      "snapshot_at": "2026-08-16T12:37:03.477774+08:00",
       "hotspots": [
         {
           "title": "廉政弊案",
@@ -4528,7 +4526,7 @@
     },
     {
       "date": "2026-08-04",
-      "snapshot_at": "2026-08-15T13:48:16.671603+08:00",
+      "snapshot_at": "2026-08-16T12:37:03.477774+08:00",
       "hotspots": [
         {
           "title": "建設交通",
@@ -4580,7 +4578,7 @@
     },
     {
       "date": "2026-08-05",
-      "snapshot_at": "2026-08-15T13:48:16.671603+08:00",
+      "snapshot_at": "2026-08-16T12:37:03.477774+08:00",
       "hotspots": [
         {
           "title": "六輕／空污",
@@ -4680,7 +4678,7 @@
     },
     {
       "date": "2026-08-06",
-      "snapshot_at": "2026-08-15T13:48:16.671603+08:00",
+      "snapshot_at": "2026-08-16T12:37:03.477774+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -4748,7 +4746,7 @@
     },
     {
       "date": "2026-08-07",
-      "snapshot_at": "2026-08-15T13:48:16.671603+08:00",
+      "snapshot_at": "2026-08-16T12:37:03.477774+08:00",
       "hotspots": [
         {
           "title": "六輕／空污",
@@ -4816,7 +4814,7 @@
     },
     {
       "date": "2026-08-08",
-      "snapshot_at": "2026-08-15T13:48:16.671603+08:00",
+      "snapshot_at": "2026-08-16T12:37:03.477774+08:00",
       "hotspots": [
         {
           "title": "六輕／空污",
@@ -4899,7 +4897,7 @@
     },
     {
       "date": "2026-08-09",
-      "snapshot_at": "2026-08-15T13:48:16.671603+08:00",
+      "snapshot_at": "2026-08-16T12:37:03.477774+08:00",
       "hotspots": [
         {
           "title": "水利",
@@ -4948,7 +4946,7 @@
     },
     {
       "date": "2026-08-10",
-      "snapshot_at": "2026-08-15T13:48:16.671603+08:00",
+      "snapshot_at": "2026-08-16T12:37:03.477774+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -4983,7 +4981,7 @@
     },
     {
       "date": "2026-08-11",
-      "snapshot_at": "2026-08-15T13:48:16.671603+08:00",
+      "snapshot_at": "2026-08-16T12:37:03.477774+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -5018,7 +5016,7 @@
     },
     {
       "date": "2026-08-12",
-      "snapshot_at": "2026-08-15T13:48:16.671603+08:00",
+      "snapshot_at": "2026-08-16T12:37:03.477774+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -5072,7 +5070,7 @@
     },
     {
       "date": "2026-08-13",
-      "snapshot_at": "2026-08-15T13:48:16.671603+08:00",
+      "snapshot_at": "2026-08-16T12:37:03.477774+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -5110,12 +5108,13 @@
           "city": "雲林",
           "place": "雲林褒忠",
           "level": "green",
-          "news_count": 1,
+          "news_count": 2,
           "comment_count": 0,
           "negativity_pct": 0,
           "is_urgent": false,
-          "urgency_score": 1.0,
+          "urgency_score": 2.0,
           "sample_titles": [
+            "褒忠縣政說明會展現建設成果 產業發展、生活環境持續升級",
             "褒忠縣政說明會展現建設成果 產業發展、生活環境持續升級"
           ]
         },
@@ -5137,7 +5136,7 @@
     },
     {
       "date": "2026-08-14",
-      "snapshot_at": "2026-08-15T13:48:16.671603+08:00",
+      "snapshot_at": "2026-08-16T12:37:03.477774+08:00",
       "hotspots": [
         {
           "title": "消防超勤爭議",
@@ -5160,11 +5159,11 @@
           "city": "雲林",
           "place": "雲林西螺",
           "level": "green",
-          "news_count": 7,
+          "news_count": 9,
           "comment_count": 0,
           "negativity_pct": 0,
           "is_urgent": false,
-          "urgency_score": 7.0,
+          "urgency_score": 9.0,
           "sample_titles": [
             "褒忠縣政說明會展現建設成果 產業發展、生活環境持續升級",
             "雲林縣政說明會前進西螺 細數建設成果擘劃地方未來",
@@ -5176,11 +5175,11 @@
           "city": "雲林",
           "place": "雲林斗六",
           "level": "green",
-          "news_count": 4,
+          "news_count": 5,
           "comment_count": 0,
           "negativity_pct": 0,
           "is_urgent": false,
-          "urgency_score": 4.0,
+          "urgency_score": 5.0,
           "sample_titles": [
             "抽水電費免負擔、農水路砸800萬改善 立委劉建國：讓農民「田要顧、水要有、路要通」",
             "農水署雲林管理處斗六竹圍子、溝壩工作站地下水井抽水電費農民不需再自行負擔另溝子埧分線等農水路投入800萬改善！",
@@ -5205,34 +5204,18 @@
     },
     {
       "date": "2026-08-15",
-      "snapshot_at": "2026-08-15T13:48:16.671603+08:00",
+      "snapshot_at": "2026-08-16T12:37:03.477774+08:00",
       "hotspots": [
-        {
-          "title": "廉政弊案",
-          "city": "雲林",
-          "place": "雲林斗六",
-          "level": "yellow",
-          "news_count": 4,
-          "comment_count": 0,
-          "negativity_pct": 75,
-          "is_urgent": false,
-          "urgency_score": 5.5,
-          "sample_titles": [
-            "斗六警啟動「護柚專案」護農心血 攜手雲林地檢署宣導「反賄選」同心打造淨選防竊治安網",
-            "賴清德同日雲林「尬場」！盧秀燕喊話：中央總預算要公平分配",
-            "賴清德同日雲林「尬場」！盧秀燕喊話：中央總預算要公平分配- 政治"
-          ]
-        },
         {
           "title": "農業議題",
           "city": "雲林",
           "place": "雲林虎尾",
           "level": "green",
-          "news_count": 3,
+          "news_count": 19,
           "comment_count": 0,
           "negativity_pct": 0,
           "is_urgent": false,
-          "urgency_score": 3.0,
+          "urgency_score": 19.0,
           "sample_titles": [
             "虎尾鎮公所攜手虎尾科大推動社區共學「雲林之花」不蒜花美學工藝",
             "守住雲林，也打開雲林的未來 劉建國從農業、醫療一路布局AI產業新願景",
@@ -5240,9 +5223,108 @@
           ]
         },
         {
+          "title": "廉政弊案",
+          "city": "雲林",
+          "place": "雲林斗六",
+          "level": "yellow",
+          "news_count": 8,
+          "comment_count": 0,
+          "negativity_pct": 88,
+          "is_urgent": false,
+          "urgency_score": 11.5,
+          "sample_titles": [
+            "斗六警啟動「護柚專案」護農心血 攜手雲林地檢署宣導「反賄選」同心打造淨選防竊治安網",
+            "賴清德同日雲林「尬場」！盧秀燕喊話：中央總預算要公平分配",
+            "賴清德同日雲林「尬場」！盧秀燕喊話：中央總預算要公平分配- 政治"
+          ]
+        },
+        {
           "title": "建設交通",
           "city": "雲林",
           "place": "雲林西螺",
+          "level": "green",
+          "news_count": 7,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 7.0,
+          "sample_titles": [
+            "西螺33億建設成果全面開花 張麗善盼政策延續打造幸福雲林",
+            "西螺33億建設成果全面開花 張麗善盼政策延續打造幸福雲林 | 觀傳媒",
+            "賴清德赴靈台山建德寺地母廟祈福 肯定劉建國長期爭取雲林建設發展"
+          ]
+        },
+        {
+          "title": "消防超勤爭議",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 6,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 6.0,
+          "sample_titles": [
+            "雲林小小消防員暑期營穿消防衣、扛水線救火 學童嗨翻",
+            "VR地震、射水、CPR全都玩！雲林小小消防員暑期營超吸睛",
+            "雲林消防營多元闖關內容寓教於樂 學習正確防災觀念 | 台灣生活新聞"
+          ]
+        },
+        {
+          "title": "社福醫療",
+          "city": "雲林",
+          "place": "雲林土庫",
+          "level": "yellow",
+          "news_count": 3,
+          "comment_count": 0,
+          "negativity_pct": 67,
+          "is_urgent": false,
+          "urgency_score": 4.0,
+          "sample_titles": [
+            "從教育、創生到長照 打造全齡宜居的土庫家園",
+            "心有罣礙？賴總統赴中榮挺醫療 盧秀燕跨區跑雲林輔選張嘉郡",
+            "雲林助選拚場！盧要總統多消費賴聚焦醫療建設- 政治"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "snapshot_at": "2026-08-16T12:37:03.477774+08:00",
+      "hotspots": [
+        {
+          "title": "社福醫療",
+          "city": "雲林",
+          "place": "雲林土庫",
+          "level": "green",
+          "news_count": 2,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 2.0,
+          "sample_titles": [
+            "從教育、創生到長照 土庫打造全齡宜居家園",
+            "從教育、創生到長照 土庫打造全齡宜居家園 - 生活新聞 - PChome Online 新聞"
+          ]
+        },
+        {
+          "title": "治安／詐騙",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "yellow",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 100,
+          "is_urgent": false,
+          "urgency_score": 1.5,
+          "sample_titles": [
+            "車藏槍彈與喪屍煙彈 雲林縣槍毒案驚見孕婦涉毒"
+          ]
+        },
+        {
+          "title": "農業議題",
+          "city": "雲林",
+          "place": "雲林（斗六）",
           "level": "green",
           "news_count": 1,
           "comment_count": 0,
@@ -5250,7 +5332,21 @@
           "is_urgent": false,
           "urgency_score": 1.0,
           "sample_titles": [
-            "西螺33億建設成果全面開花 張麗善盼政策延續打造幸福雲林"
+            "劉建國爭取農民福祉 抽水電費免負擔800萬元改善農水路"
+          ]
+        },
+        {
+          "title": "水利",
+          "city": "雲林",
+          "place": "雲林口湖",
+          "level": "green",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 1.0,
+          "sample_titles": [
+            "口湖8年砸90億！張麗善端出治水、觀光、養殖建設大計"
           ]
         }
       ]
