@@ -4664,18 +4664,18 @@
     },
     {
       "date": "2026-08-06",
-      "snapshot_at": "2026-08-19T13:24:49.792313+08:00",
+      "snapshot_at": "2026-08-20T12:31:12.893321+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "yellow",
-          "news_count": 16,
+          "news_count": 15,
           "comment_count": 0,
-          "negativity_pct": 94,
+          "negativity_pct": 93,
           "is_urgent": false,
-          "urgency_score": 23.5,
+          "urgency_score": 22.0,
           "sample_titles": [
             "（有影片）／海巡雲林警聯手破獲槍毒案 高齡孕婦同居吸毒竟也被逮",
             "誇張！懷孕5個月還吸毒 雲林毒鴛鴦被逮搜出毒品及改造槍",
@@ -4699,21 +4699,6 @@
           ]
         },
         {
-          "title": "社福醫療",
-          "city": "雲林",
-          "place": "雲林（斗六）",
-          "level": "green",
-          "news_count": 2,
-          "comment_count": 0,
-          "negativity_pct": 0,
-          "is_urgent": false,
-          "urgency_score": 2.0,
-          "sample_titles": [
-            "雲林宣傳在宅醫療 素還真當代言人",
-            "雲林宣傳在宅醫療素還真當代言人- 雲林縣"
-          ]
-        },
-        {
           "title": "建設交通",
           "city": "雲林",
           "place": "雲林斗六",
@@ -4732,7 +4717,7 @@
     },
     {
       "date": "2026-08-07",
-      "snapshot_at": "2026-08-19T13:24:49.792313+08:00",
+      "snapshot_at": "2026-08-20T12:31:12.893321+08:00",
       "hotspots": [
         {
           "title": "六輕／空污",
@@ -4800,7 +4785,7 @@
     },
     {
       "date": "2026-08-08",
-      "snapshot_at": "2026-08-19T13:24:49.792313+08:00",
+      "snapshot_at": "2026-08-20T12:31:12.893321+08:00",
       "hotspots": [
         {
           "title": "六輕／空污",
@@ -4883,7 +4868,7 @@
     },
     {
       "date": "2026-08-09",
-      "snapshot_at": "2026-08-19T13:24:49.792313+08:00",
+      "snapshot_at": "2026-08-20T12:31:12.893321+08:00",
       "hotspots": [
         {
           "title": "水利",
@@ -4932,7 +4917,7 @@
     },
     {
       "date": "2026-08-10",
-      "snapshot_at": "2026-08-19T13:24:49.792313+08:00",
+      "snapshot_at": "2026-08-20T12:31:12.893321+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -4967,7 +4952,7 @@
     },
     {
       "date": "2026-08-11",
-      "snapshot_at": "2026-08-19T13:24:49.792313+08:00",
+      "snapshot_at": "2026-08-20T12:31:12.893321+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -5002,7 +4987,7 @@
     },
     {
       "date": "2026-08-12",
-      "snapshot_at": "2026-08-19T13:24:49.792313+08:00",
+      "snapshot_at": "2026-08-20T12:31:12.893321+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -5056,7 +5041,7 @@
     },
     {
       "date": "2026-08-13",
-      "snapshot_at": "2026-08-19T13:24:49.792313+08:00",
+      "snapshot_at": "2026-08-20T12:31:12.893321+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -5122,7 +5107,7 @@
     },
     {
       "date": "2026-08-14",
-      "snapshot_at": "2026-08-19T13:24:49.792313+08:00",
+      "snapshot_at": "2026-08-20T12:31:12.893321+08:00",
       "hotspots": [
         {
           "title": "消防超勤爭議",
@@ -5190,7 +5175,7 @@
     },
     {
       "date": "2026-08-15",
-      "snapshot_at": "2026-08-19T13:24:49.792313+08:00",
+      "snapshot_at": "2026-08-20T12:31:12.893321+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -5276,7 +5261,7 @@
     },
     {
       "date": "2026-08-16",
-      "snapshot_at": "2026-08-19T13:24:49.792313+08:00",
+      "snapshot_at": "2026-08-20T12:31:12.893321+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -5384,7 +5369,7 @@
     },
     {
       "date": "2026-08-17",
-      "snapshot_at": "2026-08-19T13:24:49.792313+08:00",
+      "snapshot_at": "2026-08-20T12:31:12.893321+08:00",
       "hotspots": [
         {
           "title": "建設交通",
@@ -5464,34 +5449,18 @@
     },
     {
       "date": "2026-08-18",
-      "snapshot_at": "2026-08-19T13:24:49.792313+08:00",
+      "snapshot_at": "2026-08-20T12:31:12.893321+08:00",
       "hotspots": [
-        {
-          "title": "廉政弊案",
-          "city": "雲林",
-          "place": "雲林（斗六）",
-          "level": "yellow",
-          "news_count": 5,
-          "comment_count": 0,
-          "negativity_pct": 100,
-          "is_urgent": false,
-          "urgency_score": 7.5,
-          "sample_titles": [
-            "普發1萬在野批雙標 劉建國反擊「自相矛盾」喊話明年度預算勿再卡",
-            "賴清德總統昨天宣布明年普發現金1萬元，引起在野批評執政黨雙標。立委劉建國今天表示， 在野黨過去口口聲聲主張「經濟成果全民",
-            "普發1萬在野批雙標劉建國反擊「自相矛盾」喊話明年度預算勿再卡- 政治"
-          ]
-        },
         {
           "title": "治安／詐騙",
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "yellow",
-          "news_count": 7,
+          "news_count": 10,
           "comment_count": 0,
-          "negativity_pct": 14,
+          "negativity_pct": 10,
           "is_urgent": false,
-          "urgency_score": 7.5,
+          "urgency_score": 10.5,
           "sample_titles": [
             "全國毒品業務觀護人訓練雲林登場 司法攜手醫療深化戒癮處遇",
             "全國毒品業務觀護人在職訓練雲林登場 法務部攜手醫療深化戒癮處遇",
@@ -5499,19 +5468,50 @@
           ]
         },
         {
+          "title": "廉政弊案",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "yellow",
+          "news_count": 6,
+          "comment_count": 0,
+          "negativity_pct": 100,
+          "is_urgent": false,
+          "urgency_score": 9.0,
+          "sample_titles": [
+            "普發1萬在野批雙標 劉建國反擊「自相矛盾」喊話明年度預算勿再卡",
+            "賴清德總統昨天宣布明年普發現金1萬元，引起在野批評執政黨雙標。立委劉建國今天表示， 在野黨過去口口聲聲主張「經濟成果全民",
+            "普發1萬在野批雙標劉建國反擊「自相矛盾」喊話明年度預算勿再卡- 政治"
+          ]
+        },
+        {
           "title": "農業議題",
           "city": "雲林",
           "place": "雲林莿桐",
           "level": "green",
-          "news_count": 4,
+          "news_count": 5,
           "comment_count": 0,
           "negativity_pct": 0,
           "is_urgent": false,
-          "urgency_score": 4.0,
+          "urgency_score": 5.0,
           "sample_titles": [
             "不讓花生易有「油耗味」 莿桐青農育種3年「紅不讓花生」問世",
             "雲林縣莿桐紅不讓花生 八二九希望廣場邀您來揮出全壘打",
             "循環雙法說明會前進雲林 串聯農業循環與產業低碳轉型"
+          ]
+        },
+        {
+          "title": "建設交通",
+          "city": "雲林",
+          "place": "雲林西螺",
+          "level": "green",
+          "news_count": 2,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 2.0,
+          "sample_titles": [
+            "從揚塵治理文資修復到長者福利 雲林縣府推進西螺多項建設重現小鎮風華",
+            "從揚塵治理文資修復到長者福利 雲林縣府推進西螺多項建設重現小鎮風華"
           ]
         },
         {
@@ -5527,11 +5527,87 @@
           "sample_titles": [
             "口湖下崙路面年久失修破損 民眾陳情盼盡速路平"
           ]
-        },
+        }
+      ]
+    },
+    {
+      "date": "2026-08-19",
+      "snapshot_at": "2026-08-20T12:31:12.893321+08:00",
+      "hotspots": [
         {
           "title": "建設交通",
           "city": "雲林",
-          "place": "雲林西螺",
+          "place": "雲林北港",
+          "level": "green",
+          "news_count": 6,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 6.0,
+          "sample_titles": [
+            "從媽祖信仰到科技產業 張麗善宣布北港68億建設布局曝光 - 生活新聞 - PChome Online 新聞",
+            "雲縣府挹注68億建設北港 推文化觀光與基建升級",
+            "建設北港全面升級 打造文化觀光新北港"
+          ]
+        },
+        {
+          "title": "社福醫療",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 5,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 5.0,
+          "sample_titles": [
+            "智慧醫療深耕雲林 從一張X光看見骨折風險 臺大雲林分院AI骨密度研究躍上國際舞台",
+            "智慧醫療深耕雲林 研究躍上國際舞台",
+            "雲林醫療AI登國際！從一張X光提前揪出骨折高風險"
+          ]
+        },
+        {
+          "title": "治安／詐騙",
+          "city": "雲林",
+          "place": "雲林北港",
+          "level": "yellow",
+          "news_count": 4,
+          "comment_count": 0,
+          "negativity_pct": 50,
+          "is_urgent": false,
+          "urgency_score": 5.0,
+          "sample_titles": [
+            "「2026雲林上場．加速前進」縣政說明會北港登場 北港警零距離宣導治安與交通 | 觀傳媒",
+            "「2026雲林上場．加速前進」縣政說明會北港登場 北港警零距離宣導治安與交通",
+            "全國毒品觀護人員雲林受訓 司法醫療共推戒癮處遇 - 生活新聞 - PChome Online 新聞"
+          ]
+        },
+        {
+          "title": "農業議題",
+          "city": "雲林",
+          "place": "雲林莿桐",
+          "level": "green",
+          "news_count": 4,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 4.0,
+          "sample_titles": [
+            "雲林紅不讓花生問世 沒油耗味",
+            "雲林紅不讓花生問世沒油耗味- 生活",
+            "莿桐花生紅不讓 8/29希望廣場開打"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-08-20",
+      "snapshot_at": "2026-08-20T12:31:12.893321+08:00",
+      "hotspots": [
+        {
+          "title": "農業議題",
+          "city": "雲林",
+          "place": "雲林斗南",
           "level": "green",
           "news_count": 1,
           "comment_count": 0,
@@ -5539,28 +5615,21 @@
           "is_urgent": false,
           "urgency_score": 1.0,
           "sample_titles": [
-            "從揚塵治理文資修復到長者福利 雲林縣府推進西螺多項建設重現小鎮風華"
+            "彎腰割稻 米香滿田《Linking 368 Taiwan 恁去台灣》走進雲林斗南"
           ]
-        }
-      ]
-    },
-    {
-      "date": "2026-08-19",
-      "snapshot_at": "2026-08-19T13:24:49.792313+08:00",
-      "hotspots": [
+        },
         {
-          "title": "農業議題",
+          "title": "建設交通",
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "green",
-          "news_count": 2,
+          "news_count": 1,
           "comment_count": 0,
           "negativity_pct": 0,
           "is_urgent": false,
-          "urgency_score": 2.0,
+          "urgency_score": 1.0,
           "sample_titles": [
-            "雲林紅不讓花生問世 沒油耗味",
-            "雲林紅不讓花生問世沒油耗味- 生活"
+            "彰雲嘉南交通跨域合作再升級 雲林攜手產官學打造智慧韌性生活圈"
           ]
         }
       ]
