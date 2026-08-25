@@ -4935,7 +4935,7 @@
     },
     {
       "date": "2026-08-11",
-      "snapshot_at": "2026-08-23T13:09:01.708398+08:00",
+      "snapshot_at": "2026-08-25T13:35:09.976460+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -4970,7 +4970,7 @@
     },
     {
       "date": "2026-08-12",
-      "snapshot_at": "2026-08-23T13:09:01.708398+08:00",
+      "snapshot_at": "2026-08-25T13:35:09.976460+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -5024,7 +5024,7 @@
     },
     {
       "date": "2026-08-13",
-      "snapshot_at": "2026-08-23T13:09:01.708398+08:00",
+      "snapshot_at": "2026-08-25T13:35:09.976460+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -5090,7 +5090,7 @@
     },
     {
       "date": "2026-08-14",
-      "snapshot_at": "2026-08-23T13:09:01.708398+08:00",
+      "snapshot_at": "2026-08-25T13:35:09.976460+08:00",
       "hotspots": [
         {
           "title": "消防超勤爭議",
@@ -5158,7 +5158,7 @@
     },
     {
       "date": "2026-08-15",
-      "snapshot_at": "2026-08-23T13:09:01.708398+08:00",
+      "snapshot_at": "2026-08-25T13:35:09.976460+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -5244,7 +5244,7 @@
     },
     {
       "date": "2026-08-16",
-      "snapshot_at": "2026-08-23T13:09:01.708398+08:00",
+      "snapshot_at": "2026-08-25T13:35:09.976460+08:00",
       "hotspots": [
         {
           "title": "農業議題",
@@ -5352,7 +5352,7 @@
     },
     {
       "date": "2026-08-17",
-      "snapshot_at": "2026-08-23T13:09:01.708398+08:00",
+      "snapshot_at": "2026-08-25T13:35:09.976460+08:00",
       "hotspots": [
         {
           "title": "建設交通",
@@ -5432,7 +5432,7 @@
     },
     {
       "date": "2026-08-18",
-      "snapshot_at": "2026-08-23T13:09:01.708398+08:00",
+      "snapshot_at": "2026-08-25T13:35:09.976460+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
@@ -5515,7 +5515,7 @@
     },
     {
       "date": "2026-08-19",
-      "snapshot_at": "2026-08-23T13:09:01.708398+08:00",
+      "snapshot_at": "2026-08-25T13:35:09.976460+08:00",
       "hotspots": [
         {
           "title": "建設交通",
@@ -5585,7 +5585,7 @@
     },
     {
       "date": "2026-08-20",
-      "snapshot_at": "2026-08-23T13:09:01.708398+08:00",
+      "snapshot_at": "2026-08-25T13:35:09.976460+08:00",
       "hotspots": [
         {
           "title": "建設交通",
@@ -5654,7 +5654,7 @@
     },
     {
       "date": "2026-08-21",
-      "snapshot_at": "2026-08-23T13:09:01.708398+08:00",
+      "snapshot_at": "2026-08-25T13:35:09.976460+08:00",
       "hotspots": [
         {
           "title": "社福醫療",
@@ -5705,18 +5705,18 @@
     },
     {
       "date": "2026-08-22",
-      "snapshot_at": "2026-08-23T13:09:01.708398+08:00",
+      "snapshot_at": "2026-08-25T13:35:09.976460+08:00",
       "hotspots": [
         {
           "title": "消防超勤爭議",
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "yellow",
-          "news_count": 6,
+          "news_count": 8,
           "comment_count": 0,
-          "negativity_pct": 17,
+          "negativity_pct": 12,
           "is_urgent": false,
-          "urgency_score": 6.5,
+          "urgency_score": 8.5,
           "sample_titles": [
             "暑假尾聲學自救 雲林小小消防員變安全尖兵",
             "震災VR實境逼真慘叫？雲林小小消防員壓軸場爆滿 逼出學童救命極限",
@@ -5728,14 +5728,15 @@
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "green",
-          "news_count": 2,
+          "news_count": 3,
           "comment_count": 0,
           "negativity_pct": 0,
           "is_urgent": false,
-          "urgency_score": 2.0,
+          "urgency_score": 3.0,
           "sample_titles": [
             "211隊青春球場拚輸贏 雲林以籃球築起拒毒反霸防線",
-            "211隊青春球場拚輸贏 雲林以籃球築起拒毒反霸防線 - 體育新聞 - PChome Online 新聞"
+            "211隊青春球場拚輸贏 雲林以籃球築起拒毒反霸防線 - 體育新聞 - PChome Online 新聞",
+            "211隊青春球場拚輸贏 雲林以籃球築起拒毒反霸防線"
           ]
         },
         {
@@ -5770,18 +5771,18 @@
     },
     {
       "date": "2026-08-23",
-      "snapshot_at": "2026-08-23T13:09:01.708398+08:00",
+      "snapshot_at": "2026-08-25T13:35:09.976460+08:00",
       "hotspots": [
         {
           "title": "治安／詐騙",
           "city": "雲林",
           "place": "雲林（斗六）",
           "level": "yellow",
-          "news_count": 4,
+          "news_count": 8,
           "comment_count": 0,
           "negativity_pct": 100,
           "is_urgent": false,
-          "urgency_score": 6.0,
+          "urgency_score": 12.0,
           "sample_titles": [
             "詐騙受害別怕丟臉！雲林警揭保命關鍵「這些紀錄」千萬別刪",
             "雲林政風處長被詐騙！誤信抖音投資137萬血本無歸…刑啓春：個人失誤",
@@ -5791,6 +5792,22 @@
         {
           "title": "建設交通",
           "city": "雲林",
+          "place": "雲林口湖",
+          "level": "green",
+          "news_count": 3,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 3.0,
+          "sample_titles": [
+            "張嘉郡提美術館政見 盼延續雲林重大建設",
+            "年久失修變身觀光新亮點！口湖海口故事園區砸1700萬拚年底完工",
+            "年久失修變身觀光新亮點！口湖海口故事園區砸1700萬拚年底完工- 生活"
+          ]
+        },
+        {
+          "title": "農業議題",
+          "city": "雲林",
           "place": "雲林（斗六）",
           "level": "green",
           "news_count": 1,
@@ -5799,7 +5816,135 @@
           "is_urgent": false,
           "urgency_score": 1.0,
           "sample_titles": [
-            "張嘉郡提美術館政見 盼延續雲林重大建設"
+            "中臺灣農業行銷展售會登場 雲林良品展現農產實力"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-08-24",
+      "snapshot_at": "2026-08-25T13:35:09.976460+08:00",
+      "hotspots": [
+        {
+          "title": "農業議題",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "green",
+          "news_count": 2,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 2.0,
+          "sample_titles": [
+            "2026中臺灣農業行銷展售會本週熱鬧登場 為期9天雲林良品攜手八縣市展現亮點農產",
+            "中臺灣農業行銷展售 雲林良品展現亮點農產"
+          ]
+        },
+        {
+          "title": "社福醫療",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "yellow",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 100,
+          "is_urgent": false,
+          "urgency_score": 1.5,
+          "sample_titles": [
+            "立法院日前通過國民黨立委翁曉玲提案，刪凍總統府3000萬元國務機要費。總統府原規畫向全台庇護工場及身心障礙團體採購1.5"
+          ]
+        },
+        {
+          "title": "廉政弊案",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "yellow",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 100,
+          "is_urgent": false,
+          "urgency_score": 1.5,
+          "sample_titles": [
+            "藍白砍弱勢預算！張嘉郡買月餅救火陳培瑜轟：打完人才給糖吃- 政治"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-08-25",
+      "snapshot_at": "2026-08-25T13:35:09.976460+08:00",
+      "hotspots": [
+        {
+          "title": "消防超勤爭議",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "red",
+          "news_count": 3,
+          "comment_count": 0,
+          "negativity_pct": 100,
+          "is_urgent": true,
+          "urgency_score": 9.0,
+          "sample_titles": [
+            "快訊／雲林平房竄大火濃煙全燒黑！消防救出受困3人 2人命危搶救中",
+            "雲林民宅火警2人無生命徵象！ 消防隊員共救出3人送醫",
+            "雲林平房清晨竄濃煙！消防破門救出3人 2人昏迷搶救"
+          ]
+        },
+        {
+          "title": "六輕／空污",
+          "city": "雲林",
+          "place": "雲林麥寮",
+          "level": "red",
+          "news_count": 2,
+          "comment_count": 0,
+          "negativity_pct": 100,
+          "is_urgent": true,
+          "urgency_score": 6.0,
+          "sample_titles": [
+            "涉暴力圍堵、恐嚇土尾業者收112萬保護費 麥寮鄉代主席韓青山求刑20年",
+            "檢方痛斥「橫行鄉里視法治於無物」！ 雲林麥寮鄉代會主席韓青山涉數罪遭起訴求刑20年"
+          ]
+        },
+        {
+          "title": "廉政弊案",
+          "city": "雲林",
+          "place": "雲林（斗六）",
+          "level": "yellow",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 100,
+          "is_urgent": false,
+          "urgency_score": 1.5,
+          "sample_titles": [
+            "藍白砍弱勢預算！張嘉郡買月餅救火 陳培瑜轟：打完人才給糖吃"
+          ]
+        },
+        {
+          "title": "建設交通",
+          "city": "雲林",
+          "place": "雲林虎尾",
+          "level": "green",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 1.0,
+          "sample_titles": [
+            "虎尾中元祭8/27迎最高潮！ 7大普度區「交通攻略」看這裡"
+          ]
+        },
+        {
+          "title": "水利",
+          "city": "雲林",
+          "place": "雲林土庫",
+          "level": "green",
+          "news_count": 1,
+          "comment_count": 0,
+          "negativity_pct": 0,
+          "is_urgent": false,
+          "urgency_score": 1.0,
+          "sample_titles": [
+            "賴清德總統25日前往高雄岡山，關心土庫排水流域及五甲尾滯洪池改善情形。他提到，大台北地區數十年前便開始推動防洪工程，累計"
           ]
         }
       ]
