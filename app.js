@@ -840,7 +840,8 @@ function renderRedCommentsPanel(){
     const INITIAL_RED = 30;
     const renderRedLi = (c) => {
       const li = document.createElement('li');
-      const authorHtml = `<span class="author">${escapeHtml(c.author || '匿名')}</span>` +
+      const stickerTag = c.kind === 'image' ? '<span class="sticker-tag" title="這則是貼圖／表情，內容為系統辨識">🖼 貼圖</span>' : '';
+      const authorHtml = `<span class="author">${escapeHtml(c.author || '匿名')}</span>` + stickerTag +
                         (c.time_text ? `<span class="when">（${escapeHtml(c.time_text)}）</span>` : '');
       let textHtml = escapeHtml(c.text || '');
       if (c.url) {
@@ -1241,9 +1242,11 @@ function renderModalBody(){
     const url = (c.url && modalState.platform !== 'facebook')
       ? `<div class="linkrow"><a href="${escapeHtml(c.url)}" target="_blank" rel="noopener">原文連結 ↗</a></div>`
       : '';
+    const stickerTag = c.kind === 'image' ? '<span class="sticker-tag" title="這則是貼圖／表情，內容為系統辨識">🖼 貼圖</span>' : '';
     div.innerHTML = `
       <div class="hdr">
         <span class="author">${escapeHtml(c.author || '匿名')}</span>
+        ${stickerTag}
         <span class="when">${escapeHtml(c.time_text || '')}</span>
         <span class="light-chip ${lightClass}">${lightLabel}</span>
       </div>
@@ -3014,11 +3017,13 @@ function openHotspotDetailModal(h, markersByTitle){
     const time = c.time_text ? `<span class="hd-c-time">${escapeHtml(c.time_text)}</span>` : '';
     const author = c.author ? `<span class="hd-c-author">${escapeHtml(c.author)}</span>` : '';
     const sigChip = sigCls ? `<span class="light-chip ${sigCls}">${sigCls === 'red' ? '🔴' : sigCls === 'yellow' ? '🟡' : '🟢'}</span>` : '';
+    const stickerTag = c.kind === 'image' ? '<span class="sticker-tag" title="這則是貼圖／表情，內容為系統辨識">🖼 貼圖</span>' : '';
     const link = c.url ? `<a class="hd-c-link" href="${escapeHtml(c.url)}" target="_blank" rel="noopener">原文 →</a>` : '';
     li.innerHTML = `
       <div class="hd-c-hdr">
         <span class="hd-c-platform plat-${platCls}">${platName}</span>
         ${sigChip}
+        ${stickerTag}
         ${author}
         ${time}
         ${link}

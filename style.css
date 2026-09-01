@@ -951,3 +951,8 @@ body.legal-page {
 .legal-body .contact-table code {
   font-size: 12px;
 }
+
+/* 貼圖／表情徽章（新機交接後，貼圖留言標示；與 lxy 版一致） */
+.sticker-tag{display:inline-block;font-size:11px;font-weight:700;line-height:1;
+  padding:2px 7px;margin-right:6px;border-radius:6px;vertical-align:1px;
+  color:#7fd4ff;background:rgba(0,180,230,.14);border:1px solid rgba(0,180,230,.35)}
