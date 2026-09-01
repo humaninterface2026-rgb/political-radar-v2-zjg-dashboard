@@ -229,7 +229,8 @@ const _STICKER_GENERIC = /^(🖼\s*)?(貼圖|\[貼圖\]|未知動圖|動圖|GIF|
 
 // 篩「最新一批抓取」＝最新貼文快照。
 // 原理：採集端每包只抓「最新貼文」的全部留言，入庫時整批刷新 first_seen_at；
-// 舊貼文的留言不再被刷新 → 取 max(first_seen_at) 往回 30 分鐘內的列，就是當前貼文。
+// 舊貼文的留言不再被刷新 → 取 max(first_seen_at) 往回 10 分鐘內的列，就是當前貼文。
+// （單包入庫只需數秒；10 分鐘既容納單包，又不會把上一輪其他批次圈進來）
 function latestBatchOnly(list){
   if (!list || !list.length) return list || [];
   let maxT = 0;
@@ -238,7 +239,7 @@ function latestBatchOnly(list){
     if (!isNaN(t) && t > maxT) maxT = t;
   }
   if (!maxT) return list;
-  const cutoff = maxT - 30 * 60 * 1000;
+  const cutoff = maxT - 10 * 60 * 1000;
   return list.filter(c => {
     const t = c && c.first_seen_at ? Date.parse(c.first_seen_at) : NaN;
     return !isNaN(t) && t >= cutoff;
