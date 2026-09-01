@@ -217,11 +217,33 @@ const _STICKER_NOISE = /^(oleh Pembuat|by the maker|by the creator|Sticker|Stike
 function stickerView(c){
   const lines = String((c && c.text) ?? '').split('\n');
   const kept = lines.filter(ln => !_STICKER_NOISE.test(ln.trim()));
-  const isSticker = (c && c.kind === 'image') || (kept.length < lines.length);
-  const body = kept.join('\n').trim();
+  let isSticker = (c && c.kind === 'image') || (kept.length < lines.length);
+  let body = kept.join('\n').trim();
+  if (_STICKER_GENERIC.test(body)) { isSticker = true; body = ''; }   // 佔位字樣 → 統一（貼圖）
   return { isSticker: isSticker, body: body || (isSticker ? '（貼圖）' : '') };
 }
 const STICKER_TAG_HTML = '<span class="sticker-tag" title="這則是貼圖／表情，內容為系統辨識">🖼 貼圖</span>';
+
+// 「內容只是佔位」的貼圖字樣（早期交接格式把貼圖寫成這些字）→ 一律視為貼圖、統一顯示（貼圖）
+const _STICKER_GENERIC = /^(🖼\s*)?(貼圖|\[貼圖\]|未知動圖|動圖|GIF|💬\s*表情回應)$/i;
+
+// 篩「最新一批抓取」＝最新貼文快照。
+// 原理：採集端每包只抓「最新貼文」的全部留言，入庫時整批刷新 first_seen_at；
+// 舊貼文的留言不再被刷新 → 取 max(first_seen_at) 往回 30 分鐘內的列，就是當前貼文。
+function latestBatchOnly(list){
+  if (!list || !list.length) return list || [];
+  let maxT = 0;
+  for (const c of list){
+    const t = c && c.first_seen_at ? Date.parse(c.first_seen_at) : NaN;
+    if (!isNaN(t) && t > maxT) maxT = t;
+  }
+  if (!maxT) return list;
+  const cutoff = maxT - 30 * 60 * 1000;
+  return list.filter(c => {
+    const t = c && c.first_seen_at ? Date.parse(c.first_seen_at) : NaN;
+    return !isNaN(t) && t >= cutoff;
+  });
+}
 
 // Format updated_at strings consistently as Taiwan time.
 // Two input shapes coexist (RPC vs JSON fallback):
@@ -3177,6 +3199,9 @@ async function run(){
         // 按政治人物分開抓留言（張嘉郡 vs 劉建國）— subject 篩選，互不混
         const SUBJECTS = ['張嘉郡', '劉建國'];
         state.commentsBySubject = state.commentsBySubject || {};
+        // 24h 視圖：只留「最新一批抓取」＝該候選人最新貼文的留言（資料庫仍累積全量，
+        // 供 7 天趨勢/追查；卡片與彈窗要對得上最新貼文的實際留言數）。
+        const pick = (isWeek ? (x => x) : latestBatchOnly);
         for (const subj of SUBJECTS) {
           const [fbCmt, igCmt, threadsCmt] = await Promise.all([
             LxyDB.recentComments('facebook',  5000, hours, subj).catch(() => null),
@@ -3184,7 +3209,7 @@ async function run(){
             LxyDB.recentComments('threads',   5000, hours, subj).catch(() => null),
           ]);
           state.commentsBySubject[subj] = {
-            facebook:  fbCmt || [], instagram: igCmt || [], threads: threadsCmt || [],
+            facebook:  pick(fbCmt || []), instagram: pick(igCmt || []), threads: pick(threadsCmt || []),
           };
         }
         // 主角張嘉郡的留言 → state.comments（既有燈號卡/圓餅/modal 沿用）
