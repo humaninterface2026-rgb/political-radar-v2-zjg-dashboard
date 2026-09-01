@@ -210,6 +210,19 @@ function escapeHtml(s){
   ));
 }
 
+// FB 印尼語系下貼圖只回傳「oleh Pembuat」（由作者）這種屬性字、不是描述，
+// 爬蟲當一般文字存（kind=text）。這裡剝掉純貼圖屬性字行：剩真內容就顯示真內容
+// （並標貼圖），否則顯示「（貼圖）」；kind=image 也一律回報為貼圖。
+const _STICKER_NOISE = /^(oleh Pembuat|by the maker|by the creator|Sticker|Stiker|Autocollant|GIF)$/i;
+function stickerView(c){
+  const lines = String((c && c.text) ?? '').split('\n');
+  const kept = lines.filter(ln => !_STICKER_NOISE.test(ln.trim()));
+  const isSticker = (c && c.kind === 'image') || (kept.length < lines.length);
+  const body = kept.join('\n').trim();
+  return { isSticker: isSticker, body: body || (isSticker ? '（貼圖）' : '') };
+}
+const STICKER_TAG_HTML = '<span class="sticker-tag" title="這則是貼圖／表情，內容為系統辨識">🖼 貼圖</span>';
+
 // Format updated_at strings consistently as Taiwan time.
 // Two input shapes coexist (RPC vs JSON fallback):
 //   "2026-05-20 16:41:44.772134+00"  ← Supabase RPC (UTC, postgres tstz)
@@ -840,11 +853,13 @@ function renderRedCommentsPanel(){
     const INITIAL_RED = 30;
     const renderRedLi = (c) => {
       const li = document.createElement('li');
-      const stickerTag = c.kind === 'image' ? '<span class="sticker-tag" title="這則是貼圖／表情，內容為系統辨識">🖼 貼圖</span>' : '';
+      const sv = stickerView(c);
+      const stickerTag = sv.isSticker ? STICKER_TAG_HTML : '';
       const authorHtml = `<span class="author">${escapeHtml(c.author || '匿名')}</span>` + stickerTag +
                         (c.time_text ? `<span class="when">（${escapeHtml(c.time_text)}）</span>` : '');
-      let textHtml = escapeHtml(c.text || '');
-      if (c.url) {
+      let textHtml = escapeHtml(sv.body);
+      // FB 的 c.url 只是留言者個人檔案（沒用）→ FB 不套連結；threads/IG 才連原文。
+      if (c.url && c.platform !== 'facebook') {
         textHtml = `<a href="${escapeHtml(c.url)}" target="_blank" rel="noopener">${textHtml}</a>`;
       }
       li.innerHTML = `${authorHtml}<br/>${textHtml}`;
@@ -1242,7 +1257,8 @@ function renderModalBody(){
     const url = (c.url && modalState.platform !== 'facebook')
       ? `<div class="linkrow"><a href="${escapeHtml(c.url)}" target="_blank" rel="noopener">原文連結 ↗</a></div>`
       : '';
-    const stickerTag = c.kind === 'image' ? '<span class="sticker-tag" title="這則是貼圖／表情，內容為系統辨識">🖼 貼圖</span>' : '';
+    const sv = stickerView(c);
+    const stickerTag = sv.isSticker ? STICKER_TAG_HTML : '';
     div.innerHTML = `
       <div class="hdr">
         <span class="author">${escapeHtml(c.author || '匿名')}</span>
@@ -1250,7 +1266,7 @@ function renderModalBody(){
         <span class="when">${escapeHtml(c.time_text || '')}</span>
         <span class="light-chip ${lightClass}">${lightLabel}</span>
       </div>
-      <div class="text">${escapeHtml(c.text || '')}</div>
+      <div class="text">${escapeHtml(sv.body)}</div>
       ${url}
     `;
     // LLM feedback loop — admin sees 🚩 標錯了 on each comment.
@@ -3017,8 +3033,10 @@ function openHotspotDetailModal(h, markersByTitle){
     const time = c.time_text ? `<span class="hd-c-time">${escapeHtml(c.time_text)}</span>` : '';
     const author = c.author ? `<span class="hd-c-author">${escapeHtml(c.author)}</span>` : '';
     const sigChip = sigCls ? `<span class="light-chip ${sigCls}">${sigCls === 'red' ? '🔴' : sigCls === 'yellow' ? '🟡' : '🟢'}</span>` : '';
-    const stickerTag = c.kind === 'image' ? '<span class="sticker-tag" title="這則是貼圖／表情，內容為系統辨識">🖼 貼圖</span>' : '';
-    const link = c.url ? `<a class="hd-c-link" href="${escapeHtml(c.url)}" target="_blank" rel="noopener">原文 →</a>` : '';
+    const sv = stickerView(c);
+    const stickerTag = sv.isSticker ? STICKER_TAG_HTML : '';
+    // FB 留言 url 只是個人檔案（沒用）→ FB 不顯示原文；threads/IG 才顯示。
+    const link = (c.url && c.platform !== 'facebook') ? `<a class="hd-c-link" href="${escapeHtml(c.url)}" target="_blank" rel="noopener">原文 →</a>` : '';
     li.innerHTML = `
       <div class="hd-c-hdr">
         <span class="hd-c-platform plat-${platCls}">${platName}</span>
@@ -3028,7 +3046,7 @@ function openHotspotDetailModal(h, markersByTitle){
         ${time}
         ${link}
       </div>
-      <div class="hd-c-text">${escapeHtml(c.text || '')}</div>
+      <div class="hd-c-text">${escapeHtml(sv.body)}</div>
     `;
     const cmtTargetId = c.url || `cmt:${c.platform || '?'}::${(c.text || '').slice(0, 80)}`;
     attachCorrectionAffordance(li, {
