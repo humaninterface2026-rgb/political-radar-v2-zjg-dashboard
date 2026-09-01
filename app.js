@@ -225,7 +225,7 @@ function stickerView(c){
 const STICKER_TAG_HTML = '<span class="sticker-tag" title="這則是貼圖／表情，內容為系統辨識">🖼 貼圖</span>';
 
 // 「內容只是佔位」的貼圖字樣（早期交接格式把貼圖寫成這些字）→ 一律視為貼圖、統一顯示（貼圖）
-const _STICKER_GENERIC = /^(🖼\s*)?(貼圖|\[貼圖\]|未知動圖|動圖|GIF|💬\s*表情回應)$/i;
+const _STICKER_GENERIC = /^(🖼\s*)?(貼圖|\[貼圖\]|未知動圖|動圖|GIF|💬\s*表情回應|無描述)$/i;
 
 // 篩「最新一批抓取」＝最新貼文快照。
 // 原理：採集端每包只抓「最新貼文」的全部留言，入庫時整批刷新 first_seen_at；
