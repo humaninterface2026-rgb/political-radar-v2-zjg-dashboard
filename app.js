@@ -215,12 +215,23 @@ function escapeHtml(s){
 // （並標貼圖），否則顯示「（貼圖）」；kind=image 也一律回報為貼圖。
 const _STICKER_NOISE = /^(oleh Pembuat|by the maker|by the creator|Sticker|Stiker|Autocollant|GIF)$/i;
 function stickerView(c){
-  const lines = String((c && c.text) ?? '').split('\n');
+  const author = String((c && c.author) || '');
+  let s = String((c && c.text) ?? '');
+  // 黏連 UI 雜訊（採集端抓到整張留言卡 innerText）：「作者 ·時間 ·」前綴、
+  // SukaBalas/LikeReply 尾巴、內嵌 oleh Pembuat/by Author/GIPHY（2026-09-02）
+  const hadMarker = /(oleh Pembuat|by Author|by the maker|by the creator|GIPHY)/i.test(s);
+  if (author) {
+    const esc = author.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    s = s.replace(new RegExp('^\\s*' + esc + '\\s*[\u00b7\u2022]\\s*[^\u00b7\u2022]{1,24}[\u00b7\u2022]\\s*'), '');
+  }
+  s = s.replace(/(?:(?:\s*(?:Like|Suka|Reply|Balas)){2,}|(?:\s*(?:Like|Suka|Reply|Balas))*\s*(?:See translation|Lihat terjemahan))\s*\d{0,4}\s*$/i, '');
+  s = s.replace(/(oleh Pembuat|by Author|by the maker|by the creator|GIPHY)/gi, ' ');
+  const lines = s.split('\n');
   const kept = lines.filter(ln => !_STICKER_NOISE.test(ln.trim()));
-  let isSticker = (c && c.kind === 'image') || (kept.length < lines.length);
-  let body = kept.join('\n').trim();
-  if (_STICKER_GENERIC.test(body)) { isSticker = true; body = ''; }   // 佔位字樣 → 統一（貼圖）
-  return { isSticker: isSticker, body: body || (isSticker ? '（貼圖）' : '') };
+  let body = kept.join('\n').replace(/[ \t]{2,}/g, ' ').trim().replace(/^[\u00b7\u2022\s]+|[\u00b7\u2022\s]+$/g, '');
+  const isSticker = (c && c.kind === 'image') || (kept.length < lines.length) || (hadMarker && !body);
+  if (isSticker && _STICKER_GENERIC.test(body)) body = '';
+  return { isSticker: isSticker, body: body };
 }
 const STICKER_TAG_HTML = '<span class="sticker-tag" title="這則是貼圖／表情，內容為系統辨識">🖼 貼圖</span>';
 
