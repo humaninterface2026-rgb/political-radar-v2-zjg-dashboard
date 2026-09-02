@@ -158,7 +158,7 @@
 
     <div class="ov" id="ov"></div>
 
-    <div class="foot">聲量＝各候選人「最新貼文」的讚/愛心數（FB 由爬蟲每日自動更新，IG／Threads 暫為人工）；正/中立/負評與評價總數為留言 AI 情緒分析結果，僅供參考。</div>
+    <div class="foot">聲量＝各候選人「最新貼文」的讚/愛心數（隨採集自動更新）；正/中立/負評與評價總數為近 7 天留言的 AI 情緒分析結果，僅供參考。</div>
   </div>
 
   <script defer src="./lib/config.js?v=2026-05-18-customer-cfg"></script>
@@ -185,7 +185,7 @@
   function bars(t){
     function b(lbl,cls,p){ return '<div class="bar"><span class="lbl">'+lbl+'</span><span class="track"><span class="fill '+cls+'" style="width:'+p+'%"></span></span><span class="pct">'+p+'%</span></div>'; }
     return '<div class="bars">'+b('正評','fg',t.gp)+b('中立','fy',t.yp)+b('負評','fr',t.rp)
-      +'<div style="font-size:11px;color:var(--muted);margin-top:4px">評價總數 <b style="color:var(--txt)">'+t.total+'</b> 則</div></div>';
+      +'<div style="font-size:11px;color:var(--muted);margin-top:4px">評價（近7天）<b style="color:var(--txt)">'+t.total+'</b> 則</div></div>';
   }
 
   async function boot(){
@@ -200,7 +200,7 @@
       for(var s in SUBS){
         for(var i=0;i<PLATS.length;i++){
           var p=PLATS[i][0];
-          var rows=await LxyDB.recentComments(p,5000,null,SUBS[s]).catch(function(){return null;});
+          var rows=await LxyDB.recentComments(p,5000,168,SUBS[s]).catch(function(){return null;});
           if(rows===null) throw new Error('rpc_fail');
           var t=tally(rows); t.likes=((V[SUBS[s]]||{})[p])||0; data[s][p]=t;
         }
@@ -259,10 +259,10 @@
     function orow(lbl,cls,p,side){ return '<div class="row">'+(side==='a'?'<span style="width:42px">'+lbl+'</span>':'')+'<span class="track"><span class="fill '+cls+'" style="width:'+p+'%;display:block;height:100%"></span></span><span style="width:34px;color:var(--txt);font-weight:700">'+p+'%</span>'+(side==='b'?'<span style="width:42px">'+lbl+'</span>':'')+'</div>'; }
     var olead=A.likes-B.likes;
     document.getElementById('ov').innerHTML=
-      '<div class="col a"><div class="big">'+A.likes.toLocaleString()+'</div><div style="font-size:12px;color:var(--muted);margin-bottom:6px">總聲量（讚/愛心）· 評價 '+A.total+' 則</div>'
+      '<div class="col a"><div class="big">'+A.likes.toLocaleString()+'</div><div style="font-size:12px;color:var(--muted);margin-bottom:6px">總聲量（讚/愛心）· 評價（近7天）'+A.total+' 則</div>'
         +orow('正評','fg',A.gp,'a')+orow('中立','fy',A.yp,'a')+orow('負評','fr',A.rp,'a')+'</div>'
       +'<div class="mid2"><div class="vt">VS</div><div class="ld">目前領先<b>'+(olead>=0?'張嘉郡':'劉建國')+'</b>'+Math.abs(olead).toLocaleString()+'</div></div>'
-      +'<div class="col b"><div class="big">'+B.likes.toLocaleString()+'</div><div style="font-size:12px;color:var(--muted);margin-bottom:6px">總聲量（讚/愛心）· 評價 '+B.total+' 則</div>'
+      +'<div class="col b"><div class="big">'+B.likes.toLocaleString()+'</div><div style="font-size:12px;color:var(--muted);margin-bottom:6px">總聲量（讚/愛心）· 評價（近7天）'+B.total+' 則</div>'
         +orow('正評','fg',B.gp,'b')+orow('中立','fy',B.yp,'b')+orow('負評','fr',B.rp,'b')+'</div>';
   }
   </script>
