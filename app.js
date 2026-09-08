@@ -275,6 +275,9 @@ function publisherLabel(article){
 // 爬蟲當一般文字存（kind=text）。這裡剝掉純貼圖屬性字行：剩真內容就顯示真內容
 // （並標貼圖），否則顯示「（貼圖）」；kind=image 也一律回報為貼圖。
 const _STICKER_NOISE = /^(oleh Pembuat|by the maker|by the creator|Sticker|Stiker|Autocollant|GIF)$/i;
+// FB 抓到整張留言卡時，可能把「作者 · 相對時間」一起黏進內容；部分批次
+// 少了時間後面的第二個分隔點，所以舊規則清不掉（例：`黃吉男 ·1jam留言`）。
+const _COMMENT_RELATIVE_TIME_GLUE = '(?:about\\s+)?(?:\\d+(?:[.,]\\d+)?|an?|a)\\s*(?:seconds?|secs?|sec|detik|saat|minutes?|minit|menit|mins?|min|hours?|hrs?|hr|jam|days?|hari|weeks?|wks?|wk|minggu|months?|mos?|mo|bulan|years?|yrs?|yr|tahun|[smhdwy](?![A-Za-z])|秒(?:鐘)?|分鐘|分|小時|時|天|日|週|周|個月|月|年)(?:\\s+(?:ago|yang\\s+lalu|lalu))?';
 function stickerView(c){
   const author = String((c && c.author) || '');
   let s = String((c && c.text) ?? '');
@@ -289,8 +292,12 @@ function stickerView(c){
   const hadMarker = /(oleh Pembuat|by Author|by the maker|by the creator|GIPHY)/i.test(s);
   if (author) {
     const esc = author.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    s = s.replace(new RegExp('^\\s*' + esc + '\\s*[\u00b7\u2022]\\s*' + _COMMENT_RELATIVE_TIME_GLUE + '\\s*(?:[\u00b7\u2022]\\s*)?', 'i'), '');
     s = s.replace(new RegExp('^\\s*' + esc + '\\s*[\u00b7\u2022]\\s*[^\u00b7\u2022]{1,24}[\u00b7\u2022]\\s*'), '');
   }
+  // 印尼語介面的「Ikuti」（追蹤）只在開頭且後面接中文時移除；避免把真正的
+  // 印尼文留言誤判為 UI。
+  s = s.replace(/^\s*Ikuti\s*(?:[\u00b7\u2022]\s*)?(?=[\u3400-\u9fff])/i, '');
   s = s.replace(/(?:(?:\s*(?:Like|Suka|Reply|Balas)){2,}|(?:\s*(?:Like|Suka|Reply|Balas))*\s*(?:See translation|Lihat terjemahan))\s*\d{0,4}\s*$/i, '');
   s = s.replace(/(oleh Pembuat|by Author|by the maker|by the creator|GIPHY)/gi, ' ');
   const lines = s.split('\n');

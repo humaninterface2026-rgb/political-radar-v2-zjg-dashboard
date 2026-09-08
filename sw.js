@@ -11,7 +11,7 @@
 //
 // Bump VERSION when changing SW logic to invalidate old caches.
 
-const VERSION = 'v5';  // 2026-09-08 bump：留言時間中文化＋Threads UI 雜訊清理
+const VERSION = 'v6';  // 2026-09-08 bump：FB Ikuti／作者時間前綴清理
 const STATIC_CACHE = `lxy-static-${VERSION}`;
 const JSON_CACHE   = `lxy-json-${VERSION}`;
 
