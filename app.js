@@ -210,6 +210,51 @@ function escapeHtml(s){
   ));
 }
 
+// 留言時間來自不同語系的社群帳號，資料可能是 `1d`、`1 hari`、
+// `7 jam` 或英文 `2 hours ago`。畫面一律轉成中文；無法辨識的日期／文字
+// 保留原值，避免誤改像 2026-09-07 這類絕對日期。
+function formatCommentTimeZh(value){
+  const original = String(value ?? '').trim();
+  if (!original) return '';
+
+  let text = original.replace(/\s+/g, ' ').trim();
+  const lower = text.toLocaleLowerCase('en-US')
+    .replace(/[.,]$/, '')
+    .replace(/\s+(?:yang\s+lalu|ago|lalu)$/, '')
+    .trim();
+
+  const fixed = {
+    'just now': '剛剛',
+    'baru saja': '剛剛',
+    'sebentar tadi': '剛剛',
+    'today': '今天',
+    'hari ini': '今天',
+    'yesterday': '昨天',
+    'kemarin': '昨天',
+  };
+  if (fixed[lower]) return fixed[lower];
+
+  const chinese = lower.match(/^(\d+(?:[.,]\d+)?)\s*(秒(?:鐘)?|分鐘|分|小時|時|天|日|週|周|個月|月|年)(?:前)?$/);
+  if (chinese) {
+    const unit = { '秒鐘':'秒', '分':'分鐘', '時':'小時', '日':'天', '周':'週', '月':'個月' }[chinese[2]] || chinese[2];
+    return `${chinese[1]}${unit}`;
+  }
+
+  const relative = lower.match(/^(\d+(?:[.,]\d+)?)\s*(seconds?|secs?|sec|s|detik|saat|minutes?|mins?|min|m|menit|minit|hours?|hrs?|hr|h|jam|days?|d|hari|weeks?|wks?|wk|w|minggu|months?|mos?|mo|bulan|years?|yrs?|yr|y|tahun)$/);
+  if (!relative) return text;
+
+  const amount = relative[1];
+  const unit = relative[2];
+  if (/^(?:seconds?|secs?|sec|s|detik|saat)$/.test(unit)) return `${amount}秒`;
+  if (/^(?:minutes?|mins?|min|m|menit|minit)$/.test(unit)) return `${amount}分鐘`;
+  if (/^(?:hours?|hrs?|hr|h|jam)$/.test(unit)) return `${amount}小時`;
+  if (/^(?:days?|d|hari)$/.test(unit)) return `${amount}天`;
+  if (/^(?:weeks?|wks?|wk|w|minggu)$/.test(unit)) return `${amount}週`;
+  if (/^(?:months?|mos?|mo|bulan)$/.test(unit)) return `${amount}個月`;
+  if (/^(?:years?|yrs?|yr|y|tahun)$/.test(unit)) return `${amount}年`;
+  return text;
+}
+
 // RPC、靜態 JSON 與各平台採集器曾使用不同欄位名稱；統一取出媒體／頻道名稱。
 // 顯示時明確加上「來源：」，避免同標題的轉載新聞被誤認為同一筆。
 function publisherOf(article){
@@ -233,6 +278,12 @@ const _STICKER_NOISE = /^(oleh Pembuat|by the maker|by the creator|Sticker|Stike
 function stickerView(c){
   const author = String((c && c.author) || '');
   let s = String((c && c.text) ?? '');
+  // Threads 會把狀態標籤黏進留言文字：
+  //   `Liked by original author加油`、`·Author林內木瓜一級棒`。
+  // 前者是固定 UI 句，任何位置都可安全移除；Author 僅在開頭且緊接中文時移除，
+  // 避免誤傷一般英文留言中的 author 一詞。
+  s = s.replace(/\s*Liked by original author\s*/gi, ' ');
+  s = s.replace(/^\s*[·•]?\s*Author(?=[\u3400-\u9fff])/i, '');
   // 黏連 UI 雜訊（採集端抓到整張留言卡 innerText）：「作者 ·時間 ·」前綴、
   // SukaBalas/LikeReply 尾巴、內嵌 oleh Pembuat/by Author/GIPHY（2026-09-02）
   const hadMarker = /(oleh Pembuat|by Author|by the maker|by the creator|GIPHY)/i.test(s);
@@ -906,7 +957,7 @@ function renderRedCommentsPanel(){
       const sv = stickerView(c);
       const stickerTag = sv.isSticker ? STICKER_TAG_HTML : '';
       const authorHtml = `<span class="author">${escapeHtml(c.author || '匿名')}</span>` + stickerTag +
-                        (c.time_text ? `<span class="when">（${escapeHtml(c.time_text)}）</span>` : '');
+                        (c.time_text ? `<span class="when">（${escapeHtml(formatCommentTimeZh(c.time_text))}）</span>` : '');
       let textHtml = escapeHtml(sv.body);
       // FB 的 c.url 只是留言者個人檔案（沒用）→ FB 不套連結；threads/IG 才連原文。
       if (c.url && c.platform !== 'facebook') {
@@ -1313,7 +1364,7 @@ function renderModalBody(){
       <div class="hdr">
         <span class="author">${escapeHtml(c.author || '匿名')}</span>
         ${stickerTag}
-        <span class="when">${escapeHtml(c.time_text || '')}</span>
+        <span class="when">${escapeHtml(formatCommentTimeZh(c.time_text))}</span>
         <span class="light-chip ${lightClass}">${lightLabel}</span>
       </div>
       <div class="text">${escapeHtml(sv.body)}</div>
@@ -3082,7 +3133,7 @@ function openHotspotDetailModal(h, markersByTitle){
     const platCls = PLATFORM_CHIP_CLASS[c.platform] || '';
     const platName = PLATFORM_DISPLAY[c.platform] || c.platform;
     const sigCls = c.signal === 'red' ? 'red' : c.signal === 'yellow' ? 'yellow' : c.signal === 'green' ? 'green' : '';
-    const time = c.time_text ? `<span class="hd-c-time">${escapeHtml(c.time_text)}</span>` : '';
+    const time = c.time_text ? `<span class="hd-c-time">${escapeHtml(formatCommentTimeZh(c.time_text))}</span>` : '';
     const author = c.author ? `<span class="hd-c-author">${escapeHtml(c.author)}</span>` : '';
     const sigChip = sigCls ? `<span class="light-chip ${sigCls}">${sigCls === 'red' ? '🔴' : sigCls === 'yellow' ? '🟡' : '🟢'}</span>` : '';
     const sv = stickerView(c);
